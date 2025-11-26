@@ -53,7 +53,7 @@
     .nav {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0.75rem 1rem;
+      padding: 0.6rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -61,18 +61,34 @@
     }
 
     .nav-logo {
-      font-weight: 700;
-      font-size: 1.1rem;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.75rem;
     }
 
-    .nav-logo-img {
-      height: 32px;
-      width: auto;
+    /* Contenedor cuadrado que recorta el póster y deja visible el ícono */
+    .nav-logo-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+      background: #000; /* fondo para que el glow se vea con contraste */
+      flex-shrink: 0;
+    }
+
+    .nav-logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       display: block;
-      border-radius: 6px;
+    }
+
+    .nav-logo-text {
+      font-weight: 700;
+      font-size: 1.1rem;
+      white-space: nowrap;
     }
 
     .nav-links {
@@ -85,7 +101,7 @@
     .nav-links a {
       padding: 0.25rem 0.4rem;
       border-radius: 999px;
-      font-weight: 600; 
+      font-weight: 600;
     }
 
     .nav-links a:hover {
@@ -153,8 +169,8 @@
       gap: 0.4rem;
       padding: 0.2rem 0.6rem;
       border-radius: 999px;
-      background-color: #e6f9f2; /* fondo verde suave */
-      color: #0b6b4b;            /* texto verde oscuro */
+      background-color: #e6f9f2;
+      color: #0b6b4b;
       font-size: 0.8rem;
       font-weight: 500;
       margin-bottom: 0.5rem;
@@ -192,7 +208,7 @@
       width: 8px;
       height: 8px;
       border-radius: 999px;
-      background-color: var(--azul-nexus); /* ahora verde */
+      background-color: var(--azul-nexus);
     }
 
     .hero-ctas {
@@ -217,13 +233,13 @@
     }
 
     .btn-primary {
-      background-color: var(--azul-nexus);  /* verde brand */
+      background-color: var(--azul-nexus);
       color: #fff;
       border-color: var(--azul-nexus);
     }
 
     .btn-primary:hover {
-      background-color: #078a62;           /* verde más oscuro */
+      background-color: #078a62;
       border-color: #078a62;
       text-decoration: none;
     }
@@ -337,7 +353,7 @@
       width: 26px;
       height: 26px;
       border-radius: 999px;
-      background-color: var(--azul-nexus); /* verde */
+      background-color: var(--azul-nexus);
       color: #fff;
       font-size: 0.85rem;
       font-weight: 600;
@@ -347,7 +363,7 @@
     /* CASOS REALES */
 
     .case {
-      border-left: 3px solid var(--azul-nexus); /* verde */
+      border-left: 3px solid var(--azul-nexus);
       padding: 0.75rem 1rem;
       margin-bottom: 1rem;
       background-color: #fafafa;
@@ -417,6 +433,16 @@
       .nav {
         flex-direction: column;
         align-items: flex-start;
+        gap: 0.4rem;
+      }
+
+      .nav-logo-icon {
+        width: 36px;
+        height: 36px;
+      }
+
+      .nav-logo-text {
+        font-size: 1rem;
       }
     }
 
@@ -436,8 +462,10 @@
   <header>
     <nav class="nav">
       <div class="nav-logo">
-        <img src="logo-nexus.png" alt="Nexus Intelligence logo" class="nav-logo-img" />
-        <span>Nexus Intelligence</span>
+        <div class="nav-logo-icon">
+          <img src="logo-nexus.png" alt="Nexus Intelligence logo" />
+        </div>
+        <span class="nav-logo-text">Nexus Intelligence</span>
       </div>
       <div class="nav-links">
         <a href="#inicio">Inicio</a>
