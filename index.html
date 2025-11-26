@@ -63,11 +63,19 @@
     .nav-logo {
       display: flex;
       align-items: center;
+      gap: 0.6rem;
     }
 
-    /* PNG original del logo, más grande */
+    .nav-logo-text {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #111111;
+      white-space: nowrap;
+    }
+
+    /* (No usamos el logo en el header, pero dejamos la clase por si la quieres después) */
     .nav-logo-img {
-      height: 120px;          /* AJUSTA AQUÍ SI LO QUIERES AÚN MÁS GRANDE */
+      height: 32px;
       width: auto;
       display: block;
     }
@@ -144,6 +152,21 @@
       border: 1px solid var(--borde-suave);
     }
 
+    /* Nueva línea de marca en el hero: logo + texto arquitectura */
+    .hero-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-logo-img {
+      height: 52px;
+      width: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
     .hero-tag {
       display: inline-flex;
       align-items: center;
@@ -154,11 +177,11 @@
       color: #0b6b4b;
       font-size: 0.8rem;
       font-weight: 500;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0; /* ya no deja hueco extra, lo controla hero-brand */
     }
 
     .hero-title {
-      margin: 0.2rem 0 0.75rem;
+      margin: 0.4rem 0 0.75rem;
     }
 
     .hero-subtitle {
@@ -417,8 +440,8 @@
         gap: 0.4rem;
       }
 
-      .nav-logo-img {
-        height: 48px;
+      .hero-logo-img {
+        height: 46px;
       }
     }
 
@@ -431,8 +454,12 @@
         padding-inline: 1rem;
       }
 
-      .nav-logo-img {
-        height: 44px;
+      .hero-brand {
+        align-items: flex-start;
+      }
+
+      .hero-logo-img {
+        height: 42px;
       }
     }
   </style>
@@ -442,8 +469,7 @@
   <header>
     <nav class="nav">
       <div class="nav-logo">
-        <!-- Solo el PNG original del logo -->
-        <img src="logo-nexus.png" alt="Nexus Intelligence" class="nav-logo-img" />
+        <span class="nav-logo-text">Nexus Intelligence</span>
       </div>
       <div class="nav-links">
         <a href="#inicio">Inicio</a>
@@ -460,9 +486,13 @@
     <!-- HERO -->
     <section id="inicio" class="hero">
       <div>
-        <div class="hero-tag">
-          <span>Arquitectura sobre Microsoft 365 · Power Platform</span>
+        <div class="hero-brand">
+          <img src="logo-nexus.png" alt="Nexus Intelligence" class="hero-logo-img" />
+          <div class="hero-tag">
+            <span>Arquitectura sobre Microsoft 365 · Power Platform</span>
+          </div>
         </div>
+
         <h1 class="hero-title">Apps, automatización y analítica listas para usar</h1>
         <p class="hero-subtitle">
           Diseño soluciones plug-and-play sobre tu tenant de Microsoft: Power Apps, Power Automate y Power BI
