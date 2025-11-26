@@ -63,21 +63,20 @@
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.45rem;
+    }
+
+    .nav-logo-icon {
+      height: 28px;
+      width: auto;
+      display: block;
     }
 
     .nav-logo-text {
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: #111111;
       white-space: nowrap;
-    }
-
-    /* (No usamos el logo en el header, pero dejamos la clase por si la quieres después) */
-    .nav-logo-img {
-      height: 32px;
-      width: auto;
-      display: block;
     }
 
     .nav-links {
@@ -152,36 +151,39 @@
       border: 1px solid var(--borde-suave);
     }
 
-    /* Nueva línea de marca en el hero: logo + texto arquitectura */
-    .hero-brand {
-      display: inline-flex;
-      align-items: flex-end;
-      gap: 0.75rem;
-      margin-bottom: 0.6rem;
+    .hero-left {
+      display: flex;
+      flex-direction: column;
     }
 
-    .hero-logo-img {
-      height: 120px;
+    .hero-top {
+      display: flex;
+      align-items: center;          /* baja el texto respecto al logo */
+      gap: 1rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-logo {
+      height: 96px;
       width: auto;
       display: block;
-      border-radius: 10px;
+      flex-shrink: 0;
     }
 
     .hero-tag {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.2rem 0.6rem;
+      padding: 0.2rem 0.7rem;
       border-radius: 999px;
       background-color: #e6f9f2;
       color: #0b6b4b;
       font-size: 0.8rem;
       font-weight: 500;
-      margin-bottom: 0; /* ya no deja hueco extra, lo controla hero-brand */
+      white-space: nowrap;
     }
 
     .hero-title {
-      margin: 0.4rem 0 0.75rem;
+      margin: 0.2rem 0 0.75rem;
     }
 
     .hero-subtitle {
@@ -440,8 +442,8 @@
         gap: 0.4rem;
       }
 
-      .hero-logo-img {
-        height: 46px;
+      .nav-logo-icon {
+        height: 26px;
       }
     }
 
@@ -454,12 +456,8 @@
         padding-inline: 1rem;
       }
 
-      .hero-brand {
-        align-items: flex-start;
-      }
-
-      .hero-logo-img {
-        height: 42px;
+      .nav-logo-icon {
+        height: 24px;
       }
     }
   </style>
@@ -469,6 +467,8 @@
   <header>
     <nav class="nav">
       <div class="nav-logo">
+        <!-- Ícono N en el encabezado -->
+        <img src="N_nexus.png" alt="Nexus Intelligence" class="nav-logo-icon" />
         <span class="nav-logo-text">Nexus Intelligence</span>
       </div>
       <div class="nav-links">
@@ -485,11 +485,11 @@
   <main>
     <!-- HERO -->
     <section id="inicio" class="hero">
-      <div>
-        <div class="hero-brand">
-          <img src="logo-nexus.png" alt="Nexus Intelligence" class="hero-logo-img" />
+      <div class="hero-left">
+        <div class="hero-top">
+          <img src="logo-nexus.png" alt="Nexus Intelligence" class="hero-logo" />
           <div class="hero-tag">
-            <span>Arquitectura sobre Microsoft 365 · Power Platform</span>
+            Arquitectura sobre Microsoft 365 · Power Platform
           </div>
         </div>
 
@@ -659,7 +659,7 @@
           <ul>
             <li>Microsoft Certified: Azure Fundamentals (AZ-900).</li>
             <li>Microsoft Certified: Data Analyst Associate (Power BI).</li>
-            <li>Microsoft Power Platform Functional Consultant (PL-200). <!-- Actualiza cuando lo apruebes --></li>
+            <li>Microsoft Power Platform Functional Consultant (PL-200).</li>
             <li>Power Apps, Power Automate, Dataverse, SharePoint, Excel Online, Power BI.</li>
           </ul>
         </div>
