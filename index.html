@@ -8,7 +8,8 @@
 
   <style>
     :root {
-      --azul-nexus: #0078d4;
+      /* Ahora el color principal de la marca es el verde del logo */
+      --azul-nexus: #09be7a;        /* verde Nexus */
       --verde-asistix: #09be7a;
       --ambar-notarix: #ffb900;
       --texto: #222222;
@@ -140,7 +141,7 @@
       align-items: center;
       padding: 2rem 1.5rem;
       margin: 1rem 0 2.5rem;
-      background: linear-gradient(135deg, #f3f8ff, #ffffff);
+      background: linear-gradient(135deg, #e6f9f2, #ffffff); /* degradado verdoso */
       border-radius: 14px;
       border: 1px solid var(--borde-suave);
     }
@@ -151,8 +152,8 @@
       gap: 0.4rem;
       padding: 0.2rem 0.6rem;
       border-radius: 999px;
-      background-color: #e8f3ff;
-      color: #155a9e;
+      background-color: #e6f9f2; /* fondo verde suave */
+      color: #0b6b4b;            /* texto verde oscuro */
       font-size: 0.8rem;
       font-weight: 500;
       margin-bottom: 0.5rem;
@@ -190,7 +191,7 @@
       width: 8px;
       height: 8px;
       border-radius: 999px;
-      background-color: var(--azul-nexus);
+      background-color: var(--azul-nexus); /* ahora verde */
     }
 
     .hero-ctas {
@@ -215,14 +216,14 @@
     }
 
     .btn-primary {
-      background-color: var(--azul-nexus);
+      background-color: var(--azul-nexus);  /* verde brand */
       color: #fff;
       border-color: var(--azul-nexus);
     }
 
     .btn-primary:hover {
-      background-color: #005ca0;
-      border-color: #005ca0;
+      background-color: #078a62;           /* verde más oscuro */
+      border-color: #078a62;
       text-decoration: none;
     }
 
@@ -335,7 +336,7 @@
       width: 26px;
       height: 26px;
       border-radius: 999px;
-      background-color: var(--azul-nexus);
+      background-color: var(--azul-nexus); /* verde */
       color: #fff;
       font-size: 0.85rem;
       font-weight: 600;
@@ -345,7 +346,7 @@
     /* CASOS REALES */
 
     .case {
-      border-left: 3px solid var(--azul-nexus);
+      border-left: 3px solid var(--azul-nexus); /* verde */
       padding: 0.75rem 1rem;
       margin-bottom: 1rem;
       background-color: #fafafa;
@@ -434,7 +435,6 @@
   <header>
     <nav class="nav">
       <div class="nav-logo">
-        <!-- Pon aquí tu archivo de logo (cámbiale el nombre si lo subes distinto) -->
         <img src="logo-nexus.png" alt="Nexus Intelligence logo" class="nav-logo-img" />
         <span>Nexus Intelligence</span>
       </div>
