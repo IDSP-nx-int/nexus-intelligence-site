@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nexus Intelligence · Soluciones sobre Microsoft 365 y Power Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Arquitectura de soluciones sobre Microsoft 365 y Power Platform. Apps, automatización y analítica listas para usar." />
+
+  <style>
+    :root {
+      --azul-nexus: #0078d4;
+      --verde-asistix: #09be7a;
+      --ambar-notarix: #ffb900;
+      --texto: #222222;
+      --gris-suave: #f5f5f5;
+      --borde-suave: #e0e0e0;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--texto);
+      background-color: #ffffff;
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--azul-nexus);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #ffffffcc;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--borde-suave);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-logo-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: var(--azul-nexus);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      padding: 0.25rem 0.4rem;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover {
+      background-color: var(--gris-suave);
+      text-decoration: none;
+    }
+
+    /* LAYOUT GENERAL */
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      color: #111111;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 3vw, 2.6rem);
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 2.4vw, 2rem);
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      margin: 0 0 0.75rem;
+    }
+
+    .subtle {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.8fr);
+      gap: 2rem;
+      align-items: center;
+      padding: 2rem 1.5rem;
+      margin: 1rem 0 2.5rem;
+      background: linear-gradient(135deg, #f3f8ff, #ffffff);
+      border-radius: 14px;
+      border: 1px solid var(--borde-suave);
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background-color: #e8f3ff;
+      color: #155a9e;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      margin: 0.2rem 0 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: #444;
+      max-width: 34rem;
+    }
+
+    .hero-badges {
+      margin: 1rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .badge {
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--borde-suave);
+      background-color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background-color: var(--azul-nexus);
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border-radius: 999px;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--azul-nexus);
+      color: #fff;
+      border-color: var(--azul-nexus);
+    }
+
+    .btn-primary:hover {
+      background-color: #005ca0;
+      border-color: #005ca0;
+      text-decoration: none;
+    }
+
+    .btn-ghost {
+      background: #ffffff;
+      color: #333;
+      border-color: var(--borde-suave);
+    }
+
+    .btn-ghost:hover {
+      background-color: var(--gris-suave);
+      text-decoration: none;
+    }
+
+    .hero-right {
+      border-radius: 12px;
+      border: 1px dashed var(--borde-suave);
+      padding: 1rem;
+      background-color: #ffffffaa;
+      font-size: 0.85rem;
+    }
+
+    .hero-right h3 {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-list li {
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+
+    .hero-list li span {
+      font-weight: 600;
+    }
+
+    /* SECCIONES GENERALES */
+
+    .columns-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .card {
+      border-radius: 12px;
+      border: 1px solid var(--borde-suave);
+      padding: 1.1rem 1.2rem;
+      background-color: #fff;
+    }
+
+    .card-header-tag {
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .tag-asistix {
+      color: var(--verde-asistix);
+    }
+
+    .tag-notarix {
+      color: #b8860b;
+    }
+
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+    }
+
+    .chip {
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--gris-suave);
+      color: #444;
+    }
+
+    ul {
+      margin: 0.5rem 0 0.5rem 1.1rem;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    /* CÓMO TRABAJAMOS */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background-color: var(--azul-nexus);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    /* CASOS REALES */
+
+    .case {
+      border-left: 3px solid var(--azul-nexus);
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      background-color: #fafafa;
+      border-radius: 0 10px 10px 0;
+      border-top: 1px solid var(--borde-suave);
+      border-bottom: 1px solid var(--borde-suave);
+      border-right: 1px solid var(--borde-suave);
+    }
+
+    .case h3 {
+      margin-top: 0;
+      font-size: 1rem;
+    }
+
+    .case strong {
+      font-weight: 600;
+    }
+
+    /* CONTACTO */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin: 0.5rem 0 0;
+      padding: 0;
+      font-size: 0.95rem;
+    }
+
+    .contact-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--borde-suave);
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #666;
+      background-color: #fafafa;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .columns-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding-inline: 0.8rem;
+      }
+
+      .hero {
+        padding-inline: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <div class="nav-logo">
+        <div class="nav-logo-icon">N</div>
+        <span>Nexus Intelligence</span>
+      </div>
+      <div class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#soluciones">Soluciones</a>
+        <a href="#metodo">Cómo trabajamos</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#casos">Casos reales</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div>
+        <div class="hero-tag">
+          <span>Arquitectura sobre Microsoft 365 · Power Platform</span>
+        </div>
+        <h1 class="hero-title">Apps, automatización y analítica listas para usar</h1>
+        <p class="hero-subtitle">
+          Diseño soluciones plug-and-play sobre tu tenant de Microsoft: Power Apps, Power Automate y Power BI
+          para que dejes atrás hojas sueltas, correos perdidos y Excel dispersos.
+        </p>
+
+        <div class="hero-badges">
+          <div class="badge">
+            <div class="badge-dot"></div>
+            <span>Canvas & Model-driven Apps</span>
+          </div>
+          <div class="badge">
+            <div class="badge-dot"></div>
+            <span>Automatización de flujos críticos</span>
+          </div>
+          <div class="badge">
+            <div class="badge-dot"></div>
+            <span>Tableros ejecutivos en Power BI</span>
+          </div>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="#contacto" class="btn btn-primary">Agenda una llamada de 30 minutos</a>
+          <a href="#soluciones" class="btn btn-ghost">Ver soluciones Asistix y Notarix</a>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <h3>¿Qué hace Nexus Intelligence por tu operación?</h3>
+        <ul class="hero-list">
+          <li><span>1.</span> Estandariza tu proceso en una app clara para tu equipo.</li>
+          <li><span>2.</span> Automatiza aprobaciones, avisos y registros críticos.</li>
+          <li><span>3.</span> Deja trazabilidad para auditorías y dirección.</li>
+          <li><span>4.</span> Usa al máximo las licencias Microsoft que ya pagas.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- QUÉ HACEMOS -->
+    <section>
+      <h2>Qué hace Nexus Intelligence</h2>
+      <p>
+        En Nexus Intelligence convierto procesos complejos en soluciones digitales inteligentes y fáciles de usar.
+        Me especializo en el ecosistema Microsoft para que tu organización aproveche al máximo las licencias que ya tiene,
+        sin depender de desarrollos costosos desde cero.
+      </p>
+      <p>
+        No se trata solo de “hacer una app”. Diseño la arquitectura completa: modelo de datos, flujos automatizados,
+        seguridad, cumplimiento normativo y tableros de seguimiento para dirección. Entrego soluciones listas para usar,
+        adaptadas a tu realidad y preparadas para crecer.
+      </p>
+    </section>
+
+    <!-- SOLUCIONES -->
+    <section id="soluciones">
+      <h2>Soluciones</h2>
+      <div class="columns-2">
+        <!-- Asistix -->
+        <article class="card">
+          <div class="card-header-tag tag-asistix">ASISTIX · CONTROL DE JUSTIFICANTES Y ASISTENCIAS</div>
+          <h3>Centraliza solicitudes, aprobaciones y análisis de asistencias</h3>
+          <p class="subtle">
+            Un solo flujo para empleados, jefes y Recursos Humanos. Nada de correos perdidos ni Excel sueltos.
+          </p>
+          <ul>
+            <li>Solicitud de justificantes en un formulario estándar.</li>
+            <li>Aprobaciones formales y trazables para jefes y RH.</li>
+            <li>Bitácoras únicas y confiables en Excel Online / SharePoint.</li>
+            <li>Tableros ejecutivos en Power BI: faltas, retardos, tendencias.</li>
+            <li>Portal de consulta por empleado, jefe y directivo.</li>
+          </ul>
+          <p><strong>Resultado:</strong> menos tiempo de captura, menos errores en nómina y trazabilidad ante auditorías.</p>
+          <div class="chip-list">
+            <span class="chip">Power Apps</span>
+            <span class="chip">Power Automate</span>
+            <span class="chip">Excel Online</span>
+            <span class="chip">SharePoint</span>
+            <span class="chip">Power BI</span>
+          </div>
+        </article>
+
+        <!-- Notarix -->
+        <article class="card">
+          <div class="card-header-tag tag-notarix">NOTARIX · PLATAFORMA PARA NOTARÍAS CON LFPIORPI</div>
+          <h3>Trámites, LFPIORPI y documentos en una sola plataforma</h3>
+          <p class="subtle">
+            Un sistema diseñado para notarías de bienes raíces: control de trámites, clientes, pagos y cumplimiento LFPIORPI.
+          </p>
+          <ul>
+            <li>Trámites centralizados: clientes, montos, pagos, folios SAT, acuses.</li>
+            <li>Control LFPIORPI automático: umbrales, avisos y banderas por cliente.</li>
+            <li>Semáforos municipales configurables por localidad.</li>
+            <li>Expediente digital por trámite con todos los documentos clave.</li>
+            <li>Plantillas Word dinámicas para escrituras, oficios y avisos.</li>
+          </ul>
+          <p>
+            <strong>Resultado:</strong> LFPIORPI bajo control estructurado, con plazos y avisos claros, sin depender de hojas sueltas y cálculos manuales.
+          </p>
+          <div class="chip-list">
+            <span class="chip">Dataverse</span>
+            <span class="chip">Power Apps</span>
+            <span class="chip">Power Automate</span>
+            <span class="chip">Word Templates</span>
+            <span class="chip">Cumplimiento LFPIORPI</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CÓMO TRABAJAMOS -->
+    <section id="metodo">
+      <h2>Cómo trabajamos</h2>
+      <p class="subtle">
+        Sin rollo. Tres pasos claros para llegar de tu proceso actual a una solución viva sobre Microsoft 365.
+      </p>
+      <div class="steps">
+        <div class="card">
+          <div class="step-number">1</div>
+          <h3>Diagnóstico rápido</h3>
+          <p>
+            Sesión de 30–60 minutos para entender tu proceso actual, sistemas que usas y problemas principales:
+            errores, tiempos muertos, auditorías, cumplimiento.
+          </p>
+        </div>
+        <div class="card">
+          <div class="step-number">2</div>
+          <h3>Propuesta + prototipo</h3>
+          <p>
+            Diseño de una solución sobre Power Platform: modelo de datos, pantallas clave, flujos de aprobación y reportes.
+            Te presento un prototipo navegable y una propuesta con alcance, tiempos y costo fijo.
+          </p>
+        </div>
+        <div class="card">
+          <div class="step-number">3</div>
+          <h3>Implementación y acompañamiento</h3>
+          <p>
+            Instalamos la solución en tu tenant, configuramos roles y permisos, cargamos datos base y capacitamos a tu equipo.
+            Te entrego una plataforma estándar, trazable y lista para crecer.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi">
+      <h2>Sobre Nexus Intelligence</h2>
+      <div class="columns-2">
+        <div>
+          <p>
+            Nexus Intelligence es el estudio de soluciones de <strong>Iván Daniel Solórzano</strong>,
+            arquitecto de soluciones sobre Microsoft 365 y Power Platform.
+          </p>
+          <p>
+            He diseñado e implementado sistemas de control de asistencias y justificantes para dependencias de gobierno,
+            así como plataformas especializadas para notarías con cumplimiento LFPIORPI y generación automática de documentos.
+          </p>
+          <p>
+            Mi enfoque es simple: soluciones plug-and-play sobre tu propio tenant, con modelos de datos sólidos,
+            flujos automatizados y tableros de seguimiento que cualquier directivo puede entender.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Certificaciones y stack</h3>
+          <ul>
+            <li>Microsoft Certified: Azure Fundamentals (AZ-900).</li>
+            <li>Microsoft Certified: Data Analyst Associate (Power BI).</li>
+            <li>Microsoft Power Platform Functional Consultant (PL-200). <!-- Actualiza cuando lo apruebes --></li>
+            <li>Power Apps, Power Automate, Dataverse, SharePoint, Excel Online, Power BI.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASOS REALES -->
+    <section id="casos">
+      <h2>Casos reales</h2>
+
+      <article class="case">
+        <h3>Control de justificantes y asistencias en dependencia de gobierno (ASISTIX)</h3>
+        <p>
+          Implementación de Asistix para centralizar solicitudes de justificantes, aprobaciones y seguimiento de asistencias
+          del personal en una dependencia de gobierno.
+        </p>
+        <p>
+          <strong>Alcance:</strong> captura estandarizada, flujos de aprobación en Power Automate, bitácoras en Excel Online / SharePoint
+          y tableros ejecutivos en Power BI.
+        </p>
+        <p>
+          <strong>Impacto esperado:</strong> reducción de errores en nómina, menos tiempo invertido en captura manual y mejor trazabilidad
+          ante auditorías y órganos de control.
+        </p>
+      </article>
+
+      <article class="case">
+        <h3>Plataforma integral para notaría de bienes raíces (NOTARIX)</h3>
+        <p>
+          Diseño de una plataforma sobre Dataverse + Power Apps para centralizar trámites, clientes, pagos, folios SAT y control LFPIORPI,
+          con semáforos municipales y plantillas Word dinámicas.
+        </p>
+        <p>
+          <strong>Alcance:</strong> modelo de datos completo, pantallas de captura, semáforos de plazos, generación automática de documentos
+          y expediente digital por trámite.
+        </p>
+        <p>
+          <strong>Impacto esperado:</strong> control estructurado del riesgo LFPIORPI, menos errores de captura y ahorro de tiempo
+          en generación de documentos y reportes.
+        </p>
+      </article>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <div class="contact-grid">
+        <div>
+          <p>
+            Si quieres dejar atrás hojas sueltas, listas en Excel y procesos informales, agendemos una llamada de 30 minutos.
+            Revisamos tu caso y te digo con claridad si una solución sobre Power Platform hace sentido para ti y qué costo tendría.
+          </p>
+          <div class="hero-ctas" style="margin-top: 1rem;">
+            <a href="https://wa.me/5218112345678" target="_blank" class="btn btn-primary">
+              Escribir por WhatsApp
+            </a>
+            <a href="mailto:contacto@nexusintelligence.mx" class="btn btn-ghost">
+              Enviar correo
+            </a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Datos de contacto</h3>
+          <ul class="contact-list">
+            <li><strong>Nombre:</strong> Iván Daniel Solórzano</li>
+            <li><strong>Correo:</strong> <a href="mailto:contacto@nexusintelligence.mx">contacto@nexusintelligence.mx</a></li>
+            <li><strong>WhatsApp:</strong> <a href="https://wa.me/5218112345678" target="_blank">+52 81 1234 5678</a></li>
+            <li><strong>Ubicación:</strong> Monterrey, N.L. · México</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Nexus Intelligence · Arquitectura de soluciones sobre Microsoft 365 y Power Platform.
+  </footer>
+
+  <script>
+    // Año automático en el footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
