@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Case Study NOTARIX · Nexus Intelligence</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Case Study NOTARIX: plataforma Dataverse + Power Apps para operación notarial y cumplimiento LFPIORPI con automatización documental." />
+
+  <style>
+    :root{
+      --accent: #ffb900;   /* Notarix amber */
+      --nexus: #09be7a;    /* Nexus green */
+      --text: #222222;
+      --muted: #555;
+      --bg: #ffffff;
+      --soft: #f5f5f5;
+      --border: #e0e0e0;
+      --max: 1100px;
+    }
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.5;
+    }
+    a{ color: var(--nexus); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    header{
+      position: sticky;
+      top:0;
+      z-index: 10;
+      background:#ffffffcc;
+      backdrop-filter: blur(8px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{
+      max-width: var(--max);
+      margin:0 auto;
+      padding:0.6rem 1.5rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+    .nav-left{
+      display:flex;
+      align-items:center;
+      gap:0.8rem;
+      flex-wrap: wrap;
+    }
+    .brand{
+      font-weight:800;
+      color:#111;
+      white-space:nowrap;
+    }
+    .nav-links{
+      display:flex;
+      gap:0.8rem;
+      flex-wrap: wrap;
+      font-size:0.9rem;
+    }
+    .nav-links a{
+      padding:0.25rem 0.4rem;
+      border-radius:999px;
+      font-weight:600;
+      color:#333;
+    }
+    .nav-links a:hover{
+      background: var(--soft);
+      text-decoration:none;
+    }
+
+    main{
+      max-width: var(--max);
+      margin:0 auto;
+      padding:1.5rem 1rem 3rem;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: minmax(0,2.2fr) minmax(0,1.8fr);
+      gap:2rem;
+      align-items:start;
+      padding:2rem 1.5rem;
+      margin: 1rem 0 1.5rem;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background: linear-gradient(135deg, #fff4cc, #ffffff);
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:0.5rem;
+      padding:0.25rem 0.7rem;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-size:0.85rem;
+      font-weight:700;
+      color:#7a5a00;
+      margin-bottom:0.75rem;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--accent);
+    }
+    h1,h2,h3{ margin:0 0 0.6rem; color:#111; }
+    h1{ font-size: clamp(1.9rem, 3vw, 2.6rem); }
+    h2{ font-size: clamp(1.3rem, 2.1vw, 1.8rem); margin-top:1.8rem; }
+    p{ margin:0 0 0.8rem; }
+    .muted{ color: var(--muted); }
+
+    .hero-ctas{
+      display:flex;
+      gap:0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:0.45rem;
+      border-radius:999px;
+      padding:0.5rem 1.1rem;
+      font-size:0.9rem;
+      border:1px solid transparent;
+      cursor:pointer;
+      text-decoration:none;
+      white-space: nowrap;
+    }
+    .btn-primary{
+      background: var(--nexus);
+      color:#fff;
+      border-color: var(--nexus);
+    }
+    .btn-primary:hover{ background:#078a62; border-color:#078a62; text-decoration:none; }
+    .btn-ghost{
+      background:#fff;
+      color:#333;
+      border-color: var(--border);
+    }
+    .btn-ghost:hover{ background: var(--soft); text-decoration:none; }
+
+    .right-card{
+      border:1px dashed var(--border);
+      border-radius:12px;
+      padding:1rem;
+      background:#ffffffaa;
+      font-size:0.92rem;
+    }
+    .kvs{ list-style:none; padding:0; margin:0; }
+    .kvs li{ margin:0 0 0.5rem; }
+    .kvs strong{ font-weight:700; }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:1.2rem;
+      align-items:start;
+      margin-top: 0.75rem;
+    }
+    .card{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:1.1rem 1.2rem;
+      background:#fff;
+    }
+    ul{
+      margin: 0.35rem 0 0.35rem 1.1rem;
+      padding:0;
+      font-size:0.95rem;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.35rem;
+      margin-top: 0.5rem;
+    }
+    .chip{
+      padding:0.15rem 0.55rem;
+      border-radius:999px;
+      background: var(--soft);
+      color:#444;
+      font-size:0.82rem;
+    }
+
+    figure{
+      margin:0;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:#fff;
+      overflow:hidden;
+    }
+    figure img{
+      width:100%;
+      display:block;
+      height:auto;
+    }
+    figcaption{
+      padding:0.7rem 0.9rem;
+      font-size:0.9rem;
+      color:#444;
+      border-top:1px solid var(--border);
+      background:#fafafa;
+    }
+
+    details{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding: 0.8rem 1rem;
+      background:#fff;
+      margin-top: 0.75rem;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:700;
+      color:#111;
+    }
+
+    footer{
+      border-top:1px solid var(--border);
+      padding:1rem;
+      text-align:center;
+      font-size:0.85rem;
+      color:#666;
+      background:#fafafa;
+    }
+
+    @media(max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
+      .nav{ flex-direction:column; align-items:flex-start; gap:0.4rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <div class="nav-left">
+        <span class="brand">Nexus Intelligence</span>
+        <a href="index.html" class="muted">← Volver al inicio</a>
+      </div>
+      <div class="nav-links">
+        <a href="#context">Contexto</a>
+        <a href="#solution">Solución</a>
+        <a href="#architecture">Arquitectura</a>
+        <a href="#features">Funciones clave</a>
+        <a href="#metrics">Métricas</a>
+        <a href="#screens">Pantallas</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="pill"><span class="dot"></span> Case Study · Dataverse + Power Apps</div>
+        <h1>NOTARIX — Plataforma para operación notarial con LFPIORPI</h1>
+        <p class="muted">
+          Plataforma centrada en Dataverse para centralizar trámites, aplicar reglas LFPIORPI, gestionar evidencia,
+          dar seguimiento a plazos (semáforos municipales) y automatizar generación de documentos con plantillas Word tokenizadas.
+        </p>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">Pedir demo rápida</a>
+          <a class="btn btn-ghost" href="folleto-notarix.pdf" target="_blank" rel="noopener noreferrer">PDF anexo</a>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Dataverse</span>
+          <span class="chip">Power Apps</span>
+          <span class="chip">Power Automate</span>
+          <span class="chip">SharePoint / OneDrive</span>
+          <span class="chip">Automatización Word</span>
+        </div>
+      </div>
+
+      <aside class="right-card">
+        <h3 style="margin-top:0;">Datos rápidos</h3>
+        <ul class="kvs">
+          <li><strong>Objetivo principal:</strong> operación con cumplimiento primero + trazabilidad de evidencia</li>
+          <li><strong>Usuarios:</strong> [rellenar] (Notario / Admin / Operación)</li>
+          <li><strong>Trámites/mes:</strong> [rellenar]</li>
+          <li><strong>Pantallas:</strong> [rellenar]</li>
+          <li><strong>Flujos:</strong> [rellenar]</li>
+        </ul>
+        <p class="muted" style="margin-top:0.8rem;">
+          *Las cifras no se inventan. Rellena solo lo que sea real.
+        </p>
+      </aside>
+    </section>
+
+    <!-- 1) Context -->
+    <section id="context">
+      <h2>1) Contexto / Problema</h2>
+      <p>
+        La operación notarial estaba fragmentada entre hojas de cálculo y archivos dispersos, elevando el riesgo de incumplir plazos municipales,
+        debilitando el manejo de evidencia y haciendo que el cumplimiento LFPIORPI dependiera de cálculos manuales e interpretación individual.
+      </p>
+    </section>
+
+    <!-- 2) Solution -->
+    <section id="solution">
+      <h2>2) Solución (lo que entregué)</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Módulos entregados (core)</h3>
+          <ul>
+            <li><strong>Trámite 360</strong>: seguimiento central (clientes, montos, pagos, folios/acuse SAT).</li>
+            <li><strong>Automatización LFPIORPI</strong>: evaluación de umbrales, banderas y cálculos por políticas.</li>
+            <li><strong>Semáforos municipales</strong>: plazos configurables (Rojo/Ámbar/Verde) por municipio.</li>
+            <li><strong>Expediente digital</strong>: evidencia centralizada y vinculada a cada trámite.</li>
+            <li><strong>Automatización de documentos</strong>: plantillas Word con tokens dinámicos para salidas estandarizadas.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Estilo de entrega</h3>
+          <ul>
+            <li>Despliegue dentro del tenant Microsoft del cliente.</li>
+            <li>Diseño “model-first”: tablas normalizadas + catálogos para comportamiento escalable.</li>
+            <li>Auditabilidad como restricción de primera clase: evidencia, trazabilidad y salidas controladas.</li>
+          </ul>
+          <p class="muted" style="margin-top:0.6rem;">
+            NOTARIX reduce riesgo de cumplimiento y variabilidad operativa sin aumentar carga manual.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) Architecture -->
+    <section id="architecture">
+      <h2>3) Arquitectura (prueba de “arquitecto”)</h2>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Datos</h3>
+          <ul>
+            <li><strong>Modelo centrado en Dataverse</strong> con entidades normalizadas + catálogos (reglas parametrizadas).</li>
+            <li><strong>Lógica de cumplimiento</strong> soportada por campos estructurados (umbrales, banderas, plazos, punteros a evidencia).</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Automatización + Documentos + Reporteo</h3>
+          <ul>
+            <li><strong>Power Automate</strong>: orquestación para trazabilidad (avisos, bitácoras, salida documental).</li>
+            <li><strong>SharePoint/OneDrive</strong>: plantillas + evidencia + vínculos desde registros Dataverse.</li>
+            <li><strong>Reporteo</strong>: vistas de control operativo y salidas exportables (rellenar específicos).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) Key Features -->
+    <section id="features">
+      <h2>4) Funciones clave (alto valor)</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Semáforos por municipio</strong> con reglas de plazos configurables (por localidad).</li>
+          <li><strong>Lógica de acumulación 6 meses</strong> (agrupación por RFC + familia de acto, acumulado vs umbral).</li>
+          <li><strong>Versionado de UMA</strong> (valores parametrizados para cálculos por periodo).</li>
+          <li><strong>Control de avisos SAT</strong> (folios, sustituciones/cancelaciones, expiraciones).</li>
+          <li><strong>Flujo de Borrador → Oficialización</strong> (finaliza solo cuando evidencia y datos requeridos están completos).</li>
+          <li><strong>Automatización documental por tokens</strong> usando plantillas Word configurables por el cliente.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5) Metrics -->
+    <section id="metrics">
+      <h2>5) Métricas / Escala (rellena solo lo verdadero)</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Escala</h3>
+          <ul>
+            <li><strong>Usuarios:</strong> [__]</li>
+            <li><strong>Trámites/mes:</strong> [__]</li>
+            <li><strong>Pantallas:</strong> [__]</li>
+            <li><strong>Automatizaciones (flujos):</strong> [__]</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Objetivos de cumplimiento</h3>
+          <ul>
+            <li><strong>Tipos de plazos controlados:</strong> [municipal / SAT / interno] (rellenar)</li>
+            <li><strong>Regla de completitud de evidencia:</strong> [__] (rellenar)</li>
+            <li><strong>Riesgo principal reducido:</strong> variación por cálculo manual + evidencia incompleta + plazos vencidos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) Screens -->
+    <section id="screens">
+      <h2>6) Capturas (4–8 máximo)</h2>
+      <p class="muted">
+        Solo las pantallas más fuertes. Estas son las vistas que prueban que NOTARIX es “cumplimiento + operación en un solo lugar”.
+      </p>
+
+      <div class="grid-2">
+        <figure>
+          <img
+            src="notarix-01-resumen-360-semaforos-lfpiorpi.png"
+            alt="NOTARIX - Trámite 360 / vista Resumen con semáforos municipales y señales de cumplimiento LFPIORPI"
+          />
+          <figcaption>
+            1) Trámite 360 (“Resumen”): semáforos municipales + estatus LFPIORPI en la misma vista operativa.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="notarix-02-tramites-list.png"
+            alt="NOTARIX - Lista principal de trámites con filtros y campos de estatus"
+          />
+          <figcaption>
+            2) Lista de trámites: control centralizado con filtros y campos de estatus (fuente única de verdad).
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="notarix-03-padron-clientes-adjuntos.png"
+            alt="NOTARIX - Módulo Padrón mostrando datos maestros del cliente, historial y adjuntos vinculados"
+          />
+          <figcaption>
+            3) Padrón + Adjuntos: datos maestros del cliente con historial y evidencia/adjuntos ligados al registro.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="notarix-04-formularios-tokens-plantillas.png"
+            alt="NOTARIX - Módulo de formularios con tokens clave-valor y plantillas Word vinculadas para generación documental"
+          />
+          <figcaption>
+            4) Formularios + Tokens + Plantillas: captura clave-valor y enlace de plantillas Word para automatización documental.
+          </figcaption>
+        </figure>
+      </div>
+
+      <details>
+        <summary>Anexo</summary>
+        <p class="muted" style="margin-top:0.6rem;">
+          Capturas y diagramas adicionales se mantienen en el PDF anexo.
+        </p>
+        <div class="hero-ctas" style="margin-top:0.6rem;">
+          <a class="btn btn-ghost" href="folleto-notarix.pdf" target="_blank" rel="noopener noreferrer">Abrir PDF anexo</a>
+        </div>
+      </details>
+    </section>
+
+    <!-- 7) Improvements -->
+    <section id="next">
+      <h2>7) Siguientes mejoras (corto, senior)</h2>
+      <div class="card">
+        <ul>
+          <li>Agregar <strong>pruebas de regresión</strong> para reglas de cumplimiento (sets versionados + validaciones automatizadas).</li>
+          <li>Formalizar <strong>ALM</strong> (soluciones administradas, variables de entorno, pipelines de despliegue).</li>
+          <li>Agregar <strong>monitoreo + dashboards de auditoría</strong> (drift de reglas, evidencia faltante, plazos por vencer).</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Nexus Intelligence · Case Studies
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
