@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Case Study ASISTIX · Nexus Intelligence</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Case Study ASISTIX: gestión de asistencias y justificantes usando Microsoft 365, Power Automate, SharePoint y Power BI." />
+
+  <style>
+    :root{
+      --accent: #09be7a;   /* Nexus green */
+      --text: #222222;
+      --muted: #555;
+      --bg: #ffffff;
+      --soft: #f5f5f5;
+      --border: #e0e0e0;
+      --max: 1100px;
+    }
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.5;
+    }
+    a{ color:var(--accent); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    header{
+      position: sticky;
+      top:0;
+      z-index: 10;
+      background:#ffffffcc;
+      backdrop-filter: blur(8px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{
+      max-width: var(--max);
+      margin:0 auto;
+      padding:0.6rem 1.5rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+    .nav-left{
+      display:flex;
+      align-items:center;
+      gap:0.8rem;
+      flex-wrap: wrap;
+    }
+    .brand{
+      font-weight:800;
+      color:#111;
+      white-space:nowrap;
+    }
+    .nav-links{
+      display:flex;
+      gap:0.8rem;
+      flex-wrap: wrap;
+      font-size:0.9rem;
+    }
+    .nav-links a{
+      padding:0.25rem 0.4rem;
+      border-radius:999px;
+      font-weight:600;
+    }
+    .nav-links a:hover{
+      background: var(--soft);
+      text-decoration:none;
+    }
+
+    main{
+      max-width: var(--max);
+      margin:0 auto;
+      padding:1.5rem 1rem 3rem;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: minmax(0,2.2fr) minmax(0,1.8fr);
+      gap:2rem;
+      align-items:start;
+      padding:2rem 1.5rem;
+      margin: 1rem 0 1.5rem;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background: linear-gradient(135deg, #e6f9f2, #ffffff);
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:0.5rem;
+      padding:0.25rem 0.7rem;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-size:0.85rem;
+      font-weight:600;
+      color:#0b6b4b;
+      margin-bottom:0.75rem;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--accent);
+    }
+    h1,h2,h3{ margin:0 0 0.6rem; color:#111; }
+    h1{ font-size: clamp(1.9rem, 3vw, 2.6rem); }
+    h2{ font-size: clamp(1.3rem, 2.1vw, 1.8rem); margin-top:1.8rem; }
+    p{ margin:0 0 0.8rem; }
+    .muted{ color: var(--muted); }
+    .hero-ctas{
+      display:flex;
+      gap:0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:0.45rem;
+      border-radius:999px;
+      padding:0.5rem 1.1rem;
+      font-size:0.9rem;
+      border:1px solid transparent;
+      cursor:pointer;
+      text-decoration:none;
+      white-space: nowrap;
+    }
+    .btn-primary{
+      background: var(--accent);
+      color:#fff;
+      border-color: var(--accent);
+    }
+    .btn-primary:hover{ background:#078a62; border-color:#078a62; text-decoration:none; }
+    .btn-ghost{
+      background:#fff;
+      color:#333;
+      border-color: var(--border);
+    }
+    .btn-ghost:hover{ background: var(--soft); text-decoration:none; }
+
+    .right-card{
+      border:1px dashed var(--border);
+      border-radius:12px;
+      padding:1rem;
+      background:#ffffffaa;
+      font-size:0.92rem;
+    }
+    .kvs{ list-style:none; padding:0; margin:0; }
+    .kvs li{ margin:0 0 0.5rem; }
+    .kvs strong{ font-weight:700; }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:1.2rem;
+      align-items:start;
+      margin-top: 0.75rem;
+    }
+    .card{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:1.1rem 1.2rem;
+      background:#fff;
+    }
+    ul{
+      margin: 0.35rem 0 0.35rem 1.1rem;
+      padding:0;
+      font-size:0.95rem;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.35rem;
+      margin-top: 0.5rem;
+    }
+    .chip{
+      padding:0.15rem 0.55rem;
+      border-radius:999px;
+      background: var(--soft);
+      color:#444;
+      font-size:0.82rem;
+    }
+
+    figure{
+      margin:0;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:#fff;
+      overflow:hidden;
+    }
+    figure img{
+      width:100%;
+      display:block;
+      height:auto;
+    }
+    figcaption{
+      padding:0.7rem 0.9rem;
+      font-size:0.9rem;
+      color:#444;
+      border-top:1px solid var(--border);
+      background:#fafafa;
+    }
+
+    details{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding: 0.8rem 1rem;
+      background:#fff;
+      margin-top: 0.75rem;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:700;
+      color:#111;
+    }
+
+    footer{
+      border-top:1px solid var(--border);
+      padding:1rem;
+      text-align:center;
+      font-size:0.85rem;
+      color:#666;
+      background:#fafafa;
+    }
+
+    @media(max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
+      .nav{ flex-direction:column; align-items:flex-start; gap:0.4rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <div class="nav-left">
+        <span class="brand">Nexus Intelligence</span>
+        <a href="index.html" class="muted">← Volver al inicio</a>
+      </div>
+      <div class="nav-links">
+        <a href="#context">Contexto</a>
+        <a href="#solution">Solución</a>
+        <a href="#architecture">Arquitectura</a>
+        <a href="#features">Funciones clave</a>
+        <a href="#metrics">Métricas</a>
+        <a href="#screens">Pantallas</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="pill"><span class="dot"></span> Case Study · Microsoft 365</div>
+        <h1>ASISTIX — Gestión de asistencias y justificantes</h1>
+        <p class="muted">
+          Solución Microsoft 365 lista para operación real para estandarizar solicitudes de justificantes, aplicar reglas,
+          orquestar aprobaciones, centralizar evidencia y entregar reporteo listo para auditoría a RH y dirección.
+        </p>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">Pedir demo rápida</a>
+          <a class="btn btn-ghost" href="folleto-asistix.pdf" target="_blank" rel="noopener noreferrer">PDF anexo</a>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Microsoft Forms</span>
+          <span class="chip">Power Automate</span>
+          <span class="chip">SharePoint</span>
+          <span class="chip">Excel Online</span>
+          <span class="chip">Power BI</span>
+        </div>
+      </div>
+
+      <aside class="right-card">
+        <h3 style="margin-top:0;">Datos rápidos</h3>
+        <ul class="kvs">
+          <li><strong>Objetivo principal:</strong> auditabilidad + confiabilidad operativa (aprobaciones, evidencia, bitácoras)</li>
+          <li><strong>Usuarios:</strong> [rellenar] (Empleados / Jefaturas / RH / Dirección)</li>
+          <li><strong>Solicitudes/mes:</strong> [rellenar]</li>
+          <li><strong>Automatizaciones (flujos):</strong> [rellenar]</li>
+          <li><strong>Tableros:</strong> monitoreo operativo + ejecutivo</li>
+        </ul>
+        <p class="muted" style="margin-top:0.8rem;">
+          *Las cifras no se inventan. Rellena solo lo que sea real.
+        </p>
+      </aside>
+    </section>
+
+    <!-- 1) Context -->
+    <section id="context">
+      <h2>1) Contexto / Problema</h2>
+      <p>
+        El control de asistencias y justificantes estaba fragmentado entre canales informales (correos/chats), archivos sueltos y hojas de cálculo,
+        generando riesgo en nómina, huecos de auditoría y criterios inconsistentes entre jefaturas.
+      </p>
+    </section>
+
+    <!-- 2) Solution -->
+    <section id="solution">
+      <h2>2) Solución (lo que entregué)</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Entregables principales</h3>
+          <ul>
+            <li><strong>Captura centralizada</strong> vía Microsoft Forms con ramificación por tipo de solicitud.</li>
+            <li><strong>Reglas + aprobaciones</strong> en Power Automate (validación, ruteo, avisos, resultados).</li>
+            <li><strong>Trazabilidad con evidencia primero</strong> con almacenamiento controlado + vínculo por solicitud.</li>
+            <li><strong>Bitácora como fuente única de verdad</strong> para auditoría (solicitud + aprobador + timestamps + link de evidencia).</li>
+            <li><strong>Portal de reporteo</strong> con tableros Power BI embebidos en SharePoint.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Flujo de solicitud</h3>
+          <ul>
+            <li>Empleado envía solicitud → se aplican validaciones → se envía aprobación</li>
+            <li>Jefatura aprueba/rechaza → se notifica a empleado + RH (según aplique)</li>
+            <li>Se actualiza bitácora + se vincula evidencia → tableros actualizan por la cadencia definida</li>
+          </ul>
+          <p class="muted" style="margin-top:0.6rem;">
+            Este diseño estandariza criterios y produce artefactos listos para auditoría por defecto.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) Architecture -->
+    <section id="architecture">
+      <h2>3) Arquitectura (prueba de “arquitecto”)</h2>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Datos</h3>
+          <ul>
+            <li><strong>Eventos de checado</strong> como fuente factual (SQL o export del sistema de reloj checador).</li>
+            <li><strong>Calendario empleado-día</strong> (una fila por empleado/día) para reconstruir estatus final.</li>
+            <li><strong>Catálogos</strong> (empleados, horarios, tipos, días festivos, actividades especiales).</li>
+            <li><strong>Bitácoras de justificantes</strong> (aprobado / físico / externo) con campos consistentes.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Automatización + Evidencia + Reporteo</h3>
+          <ul>
+            <li><strong>Power Automate</strong>: validaciones, orquestación de aprobaciones, avisos, endurecimiento con run-after.</li>
+            <li><strong>SharePoint / Excel Online</strong>: bitácoras controladas + tablas de parámetros + links a evidencia.</li>
+            <li><strong>Power BI</strong>: modelo semántico + tableros operativos/ejecutivos embebidos en SharePoint.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) Key Features -->
+    <section id="features">
+      <h2>4) Funciones clave (alto valor)</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Ventana retroactiva</strong> aplicada por política (ej. “solo últimos N días hábiles”).</li>
+          <li><strong>Reconstrucción diaria de estatus</strong> (Normal / Retardo / Falta / Justificado) con contexto completo de auditoría.</li>
+          <li><strong>Salidas listas para nómina</strong> (registros limpios para exportar/cargar en rango de fechas configurable).</li>
+          <li><strong>Auditabilidad basada en evidencia</strong>: cada caso conserva aprobador, timestamps, link de evidencia y origen.</li>
+          <li><strong>Portal por rol</strong>: empleado vs vista de jefatura/equipo vs vista consolidada RH/dirección.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5) Metrics -->
+    <section id="metrics">
+      <h2>5) Métricas / Escala (rellena solo lo verdadero)</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Escala</h3>
+          <ul>
+            <li><strong>Empleados cubiertos:</strong> [__]</li>
+            <li><strong>Solicitudes/mes:</strong> [__]</li>
+            <li><strong>Automatizaciones (flujos):</strong> [__]</li>
+            <li><strong>Tableros:</strong> [__]</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Objetivos operativos</h3>
+          <ul>
+            <li><strong>SLA (tiempo de aprobación):</strong> [__]</li>
+            <li><strong>Cadencia de actualización:</strong> [diaria / semanal / mensual] (rellenar)</li>
+            <li><strong>Modos de falla eliminados:</strong> pérdida de correos, criterios inconsistentes, evidencia faltante</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) Screens -->
+    <section id="screens">
+      <h2>6) Capturas (4–8 máximo)</h2>
+      <p class="muted">
+        Agrega aquí solo tus pantallas más fuertes. Todo lo demás va en el PDF anexo.
+        Reemplaza los nombres de archivo por tus capturas exportadas reales.
+      </p>
+
+      <div class="grid-2">
+        <figure>
+          <img src="asistix-01-form.png" alt="ASISTIX - Formulario Microsoft Forms con ramificación" />
+          <figcaption>1) Formulario de captura (ramificación por tipo de solicitud + campos requeridos)</figcaption>
+        </figure>
+
+        <figure>
+          <img src="asistix-02-approval-email.png" alt="ASISTIX - Ejemplo de correo de aprobación" />
+          <figcaption>2) Correo de aprobación (resultado aprobar/rechazar + trazabilidad)</figcaption>
+        </figure>
+
+        <figure>
+          <img src="asistix-03-sharepoint-evidence.png" alt="ASISTIX - Evidencia en SharePoint" />
+          <figcaption>3) Evidencia en SharePoint (acceso controlado + vínculo por caso)</figcaption>
+        </figure>
+
+        <figure>
+          <img src="asistix-04-powerbi-kpis.png" alt="ASISTIX - KPIs en Power BI" />
+          <figcaption>4) KPIs en Power BI (indicadores operativos para el periodo definido)</figcaption>
+        </figure>
+      </div>
+
+      <details>
+        <summary>Anexo</summary>
+        <p class="muted" style="margin-top:0.6rem;">
+          Usa tu folleto / PDFs de preview como anexo compacto (pantallas, diagramas, extras).
+        </p>
+        <div class="hero-ctas" style="margin-top:0.6rem;">
+          <a class="btn btn-ghost" href="folleto-asistix.pdf" target="_blank" rel="noopener noreferrer">Abrir PDF anexo</a>
+        </div>
+      </details>
+    </section>
+
+    <!-- 7) Improvements -->
+    <section id="next">
+      <h2>7) Siguientes mejoras (corto, senior)</h2>
+      <div class="card">
+        <ul>
+          <li>Reemplazar almacenamiento de parámetros/bitácoras basado en Excel por <strong>Dataverse</strong> para mejor gobernanza, ALM y seguridad.</li>
+          <li>Agregar <strong>escalamientos/recordatorios por tiempo</strong> + tablero de “antigüedad de aprobaciones” para control gerencial.</li>
+          <li>Formalizar empaquetado <strong>Dev/Test/Prod</strong> (estructura de soluciones, connection references, variables de entorno).</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Nexus Intelligence · Case Studies
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
