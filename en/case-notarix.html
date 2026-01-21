@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>NOTARIX Case Study · Nexus Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="NOTARIX case study: Dataverse + Power Apps platform for notary operations and LFPIORPI compliance with document automation." />
+  <meta name="description" content="NOTARIX case study: a Dataverse + Power Apps platform for notary operations and LFPIORPI compliance with document automation." />
 
   <style>
     :root{
@@ -209,19 +209,6 @@
       background:#fafafa;
     }
 
-    details{
-      border:1px solid var(--border);
-      border-radius:12px;
-      padding: 0.8rem 1rem;
-      background:#fff;
-      margin-top: 0.75rem;
-    }
-    summary{
-      cursor:pointer;
-      font-weight:700;
-      color:#111;
-    }
-
     footer{
       border-top:1px solid var(--border);
       padding:1rem;
@@ -252,7 +239,7 @@
         <a href="#architecture">Architecture</a>
         <a href="#features">Key Features</a>
         <a href="#metrics">Metrics</a>
-        <a href="#screens">Screens</a>
+        <a href="#screens">Screenshots</a>
       </div>
     </nav>
   </header>
@@ -262,15 +249,14 @@
     <section class="hero">
       <div>
         <div class="pill"><span class="dot"></span> Case Study · Dataverse + Power Apps</div>
-        <h1>NOTARIX — Notary Operations Platform with LFPIORPI</h1>
+        <h1>NOTARIX — Notary Operations Platform with LFPIORPI Compliance</h1>
         <p class="muted">
-          A Dataverse-centered platform to centralize notary cases (trámites), enforce LFPIORPI rules, manage evidence,
-          track deadlines (municipal semaphores), and automate document generation using tokenized Word templates.
+          A Dataverse-centered platform that centralizes notary cases (trámites), enforces LFPIORPI rules, manages evidence,
+          tracks municipal deadlines (semaphores), and automates document generation using tokenized Word templates.
         </p>
 
         <div class="hero-ctas">
           <a class="btn btn-primary" href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">Request a quick demo</a>
-          <a class="btn btn-ghost" href="folleto-notarix.pdf" target="_blank" rel="noopener noreferrer">Appendix PDF</a>
         </div>
 
         <div class="chips">
@@ -283,17 +269,15 @@
       </div>
 
       <aside class="right-card">
-        <h3 style="margin-top:0;">Quick facts</h3>
+        <h3 style="margin-top:0;">Quick facts (target)</h3>
         <ul class="kvs">
           <li><strong>Primary goal:</strong> compliance-first operations + evidence traceability</li>
-          <li><strong>Users:</strong> [fill] (Notary / Admin / Ops)</li>
-          <li><strong>Cases/month:</strong> [fill]</li>
-          <li><strong>Screens:</strong> [fill]</li>
-          <li><strong>Flows:</strong> [fill]</li>
+          <li><strong>Users / roles:</strong> 2 (Notary / Accounting)</li>
+          <li><strong>Cases per month:</strong> 50</li>
+          <li><strong>Screens:</strong> 13</li>
+          <li><strong>Flows:</strong> 2</li>
         </ul>
-        <p class="muted" style="margin-top:0.8rem;">
-          *Numbers are intentionally not invented. Fill only what’s true.
-        </p>
+        <p class="muted" style="margin-top:0.8rem;"></p>
       </aside>
     </section>
 
@@ -313,10 +297,10 @@
         <div class="card">
           <h3>Core modules delivered</h3>
           <ul>
-            <li><strong>Trámite 360</strong>: central case tracking (clients, amounts, payments, SAT folios/receipts).</li>
+            <li><strong>Case 360 (Trámite 360)</strong>: centralized tracking (clients, amounts, payments, SAT folios/receipts).</li>
             <li><strong>LFPIORPI automation</strong>: threshold evaluation, flags, and policy-driven calculations.</li>
-            <li><strong>Municipality semaphores</strong>: configurable deadlines (Red/Amber/Green) per municipality.</li>
-            <li><strong>Digital case file</strong>: evidence centralized and linked to each trámite.</li>
+            <li><strong>Municipal semaphores</strong>: configurable deadlines (Red/Amber/Green) per municipality.</li>
+            <li><strong>Digital case file</strong>: evidence centralized and linked to each case.</li>
             <li><strong>Document automation</strong>: Word templates using dynamic tokens for standardized outputs.</li>
           </ul>
         </div>
@@ -329,7 +313,7 @@
             <li>Auditability as a first-class constraint: evidence, traceability, and controlled outputs.</li>
           </ul>
           <p class="muted" style="margin-top:0.6rem;">
-            NOTARIX is designed to reduce compliance risk and operational variance without increasing manual load.
+            NOTARIX reduces compliance risk and operational variance without increasing manual workload.
           </p>
         </div>
       </div>
@@ -337,7 +321,7 @@
 
     <!-- 3) Architecture -->
     <section id="architecture">
-      <h2>3) Architecture (proof of “architect”)</h2>
+      <h2>3) Architecture</h2>
 
       <div class="grid-2">
         <div class="card">
@@ -353,7 +337,7 @@
           <ul>
             <li><strong>Power Automate</strong>: orchestration for traceability (notifications, logging, document outputs).</li>
             <li><strong>SharePoint/OneDrive</strong>: templates + evidence storage + links from Dataverse records.</li>
-            <li><strong>Reporting</strong>: operational control views and export-ready outputs (fill specifics).</li>
+            <li><strong>Reporting</strong>: operational control views and export-ready outputs.</li>
           </ul>
         </div>
       </div>
@@ -361,13 +345,13 @@
 
     <!-- 4) Key Features -->
     <section id="features">
-      <h2>4) Key Features (high-signal)</h2>
+      <h2>4) Key Features</h2>
       <div class="card">
         <ul>
           <li><strong>Municipality-based semaphores</strong> with configurable deadline rules (per locality).</li>
-          <li><strong>6-month accumulation logic</strong> (lotting/grouping by RFC + act family, accumulated amounts vs threshold).</li>
+          <li><strong>6-month accumulation logic</strong> (grouping by RFC + act family; accumulated amounts vs threshold).</li>
           <li><strong>UMA versioning</strong> (parameter-driven values for calculations across periods).</li>
-          <li><strong>SAT notice control</strong> (folios, substitutions/cancellations, expirations tracking).</li>
+          <li><strong>SAT notice control</strong> (folios, substitutions/cancellations, and expiration tracking).</li>
           <li><strong>Draft → Officialization workflow</strong> (finalize only when evidence and required data are complete).</li>
           <li><strong>Token-based document automation</strong> using client-configurable Word templates.</li>
         </ul>
@@ -376,23 +360,23 @@
 
     <!-- 5) Metrics -->
     <section id="metrics">
-      <h2>5) Metrics / Scale (fill only what’s true)</h2>
+      <h2>5) Metrics / Scale (target)</h2>
       <div class="grid-2">
         <div class="card">
           <h3>Scale</h3>
           <ul>
-            <li><strong>Users:</strong> [__]</li>
-            <li><strong>Cases/month:</strong> [__]</li>
-            <li><strong>Screens:</strong> [__]</li>
-            <li><strong>Automations (flows):</strong> [__]</li>
+            <li><strong>Users / roles:</strong> 2 (Notary / Accounting)</li>
+            <li><strong>Cases per month:</strong> 50</li>
+            <li><strong>Screens:</strong> 13</li>
+            <li><strong>Automations (flows):</strong> 2</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Compliance targets</h3>
           <ul>
-            <li><strong>Deadline types tracked:</strong> [municipal / SAT / internal] (fill)</li>
-            <li><strong>Evidence completeness rule:</strong> [__] (fill)</li>
+            <li><strong>Deadline types tracked:</strong> municipal and federal</li>
+            <li><strong>Evidence completeness rule:</strong> SAT filing folio required</li>
             <li><strong>Primary risk reduced:</strong> manual calculation variance + missing evidence + missed deadlines</li>
           </ul>
         </div>
@@ -400,68 +384,62 @@
     </section>
 
     <!-- 6) Screens -->
-<section id="screens">
-  <h2>6) Screenshots (4–8 max)</h2>
-  <p class="muted">
-    Strongest screens only. These are the core views that prove NOTARIX is “compliance + operations in one place”.
-  </p>
+    <section id="screens">
+      <h2>6) Screenshots</h2>
+      <p class="muted">
+        Strongest screens only. These views prove “compliance + operations in one place”.
+      </p>
 
-  <div class="grid-2">
-    <figure>
-      <img
-        src="../notarix-01-resumen-360-semaforos-lfpiorpi.png"
-        alt="NOTARIX - Trámite 360 / Resumen view with municipal semaphores and LFPIORPI compliance signals"
-      />
-      <figcaption>
-        1) Trámite 360 (“Resumen”): municipal semaphores + LFPIORPI status in the same operational view.
-      </figcaption>
-    </figure>
+      <div class="grid-2">
+        <figure>
+          <img
+            src="../notarix-01-resumen-360-semaforos-lfpiorpi.png"
+            alt="NOTARIX - Case 360 / Summary view with municipal semaphores and LFPIORPI compliance signals"
+            loading="lazy"
+          />
+          <figcaption>
+            1) Case 360 (Summary): municipal semaphores + LFPIORPI status in the same operational view.
+          </figcaption>
+        </figure>
 
-    <figure>
-      <img
-        src="../notarix-02-tramites-list.png"
-        alt="NOTARIX - Main trámites list with filtering and status fields"
-      />
-      <figcaption>
-        2) Trámites list: centralized case tracking with filters and status fields (single source of truth).
-      </figcaption>
-    </figure>
+        <figure>
+          <img
+            src="../notarix-02-tramites-list.png"
+            alt="NOTARIX - Main cases list with filters and status fields"
+            loading="lazy"
+          />
+          <figcaption>
+            2) Cases list: centralized tracking with filters and status fields (single source of truth).
+          </figcaption>
+        </figure>
 
-    <figure>
-      <img
-        src="../notarix-03-padron-clientes-adjuntos.png"
-        alt="NOTARIX - Padrón module showing client master data, history and linked attachments"
-      />
-      <figcaption>
-        3) Padrón + Adjuntos: client master data with history and evidence/attachments linked to the record.
-      </figcaption>
-    </figure>
+        <figure>
+          <img
+            src="../notarix-03-padron-clientes-adjuntos.png"
+            alt="NOTARIX - Client registry module showing master data, history, and linked attachments"
+            loading="lazy"
+          />
+          <figcaption>
+            3) Client registry + Attachments: master data with history and evidence/attachments linked to the record.
+          </figcaption>
+        </figure>
 
-    <figure>
-      <img
-        src="../notarix-04-formularios-tokens-plantillas.png"
-        alt="NOTARIX - Forms module with key-value tokens and linked Word templates for document generation"
-      />
-      <figcaption>
-        4) Forms + Tokens + Templates: key-value capture and Word template binding for document automation.
-      </figcaption>
-    </figure>
-  </div>
-
-  <details>
-    <summary>Appendix</summary>
-    <p class="muted" style="margin-top:0.6rem;">
-      Extra screenshots and diagrams are kept in the PDF appendix.
-    </p>
-    <div class="hero-ctas" style="margin-top:0.6rem;">
-      <a class="btn btn-ghost" href="folleto-notarix.pdf" target="_blank" rel="noopener noreferrer">Open Appendix PDF</a>
-    </div>
-  </details>
-</section>
+        <figure>
+          <img
+            src="../notarix-04-formularios-tokens-plantillas.png"
+            alt="NOTARIX - Forms module with key-value tokens and linked Word templates"
+            loading="lazy"
+          />
+          <figcaption>
+            4) Forms + Tokens + Templates: key-value capture and Word template binding for document automation.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
 
     <!-- 7) Improvements -->
     <section id="next">
-      <h2>7) What I’d improve next (short, senior)</h2>
+      <h2>7) Next improvements</h2>
       <div class="card">
         <ul>
           <li>Add <strong>regression checks</strong> for compliance rules (versioned rule sets + automated validations).</li>
