@@ -324,4 +324,141 @@
         <div class="card">
           <h3>Delivery style</h3>
           <ul>
-            <li>Deployed inside the client’s Microsoft tenant
+            <li>Deployed inside the client’s Microsoft tenant.</li>
+            <li>Model-first design: normalized tables + catalogs for scalable behavior.</li>
+            <li>Auditability as a first-class constraint: evidence, traceability, and controlled outputs.</li>
+          </ul>
+          <p class="muted" style="margin-top:0.6rem;">
+            NOTARIX is designed to reduce compliance risk and operational variance without increasing manual load.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) Architecture -->
+    <section id="architecture">
+      <h2>3) Architecture (proof of “architect”)</h2>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Data</h3>
+          <ul>
+            <li><strong>Dataverse-centered model</strong> with normalized entities + catalogs (parameter-driven rules).</li>
+            <li><strong>Compliance logic</strong> supported by structured fields (thresholds, flags, timelines, evidence pointers).</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Automation + Docs + Reporting</h3>
+          <ul>
+            <li><strong>Power Automate</strong>: orchestration for traceability (notifications, logging, document outputs).</li>
+            <li><strong>SharePoint/OneDrive</strong>: templates + evidence storage + links from Dataverse records.</li>
+            <li><strong>Reporting</strong>: operational control views and export-ready outputs (fill specifics).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) Key Features -->
+    <section id="features">
+      <h2>4) Key Features (high-signal)</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Municipality-based semaphores</strong> with configurable deadline rules (per locality).</li>
+          <li><strong>6-month accumulation logic</strong> (lotting/grouping by RFC + act family, accumulated amounts vs threshold).</li>
+          <li><strong>UMA versioning</strong> (parameter-driven values for calculations across periods).</li>
+          <li><strong>SAT notice control</strong> (folios, substitutions/cancellations, expirations tracking).</li>
+          <li><strong>Draft → Officialization workflow</strong> (finalize only when evidence and required data are complete).</li>
+          <li><strong>Token-based document automation</strong> using client-configurable Word templates.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5) Metrics -->
+    <section id="metrics">
+      <h2>5) Metrics / Scale (fill only what’s true)</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Scale</h3>
+          <ul>
+            <li><strong>Users:</strong> [__]</li>
+            <li><strong>Cases/month:</strong> [__]</li>
+            <li><strong>Screens:</strong> [__]</li>
+            <li><strong>Automations (flows):</strong> [__]</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Compliance targets</h3>
+          <ul>
+            <li><strong>Deadline types tracked:</strong> [municipal / SAT / internal] (fill)</li>
+            <li><strong>Evidence completeness rule:</strong> [__] (fill)</li>
+            <li><strong>Primary risk reduced:</strong> manual calculation variance + missing evidence + missed deadlines</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) Screens -->
+    <section id="screens">
+      <h2>6) Screenshots (4–8 max)</h2>
+      <p class="muted">
+        Replace the image file names with your real exported screenshots.
+        Keep it tight: strongest screens only.
+      </p>
+
+      <div class="grid-2">
+        <figure>
+          <img src="notarix-01-tramite-360.png" alt="NOTARIX - Trámite 360 view" />
+          <figcaption>1) Trámite 360 view (flags, controls, and key case fields)</figcaption>
+        </figure>
+
+        <figure>
+          <img src="notarix-02-semaforos.png" alt="NOTARIX - Municipality semaphores" />
+          <figcaption>2) Municipality semaphores (Red/Amber/Green with configured rules)</figcaption>
+        </figure>
+
+        <figure>
+          <img src="notarix-03-lfpiopri.png" alt="NOTARIX - LFPIORPI logic" />
+          <figcaption>3) LFPIORPI evaluation (thresholds, accumulation, flags)</figcaption>
+        </figure>
+
+        <figure>
+          <img src="notarix-04-word-automation.png" alt="NOTARIX - Word document automation" />
+          <figcaption>4) Word automation (tokenized templates and standardized outputs)</figcaption>
+        </figure>
+      </div>
+
+      <details>
+        <summary>Appendix</summary>
+        <p class="muted" style="margin-top:0.6rem;">
+          Keep extra screens and diagrams in the PDF appendix.
+        </p>
+        <div class="hero-ctas" style="margin-top:0.6rem;">
+          <a class="btn btn-ghost" href="folleto-notarix.pdf" target="_blank" rel="noopener noreferrer">Open Appendix PDF</a>
+        </div>
+      </details>
+    </section>
+
+    <!-- 7) Improvements -->
+    <section id="next">
+      <h2>7) What I’d improve next (short, senior)</h2>
+      <div class="card">
+        <ul>
+          <li>Add <strong>regression checks</strong> for compliance rules (versioned rule sets + automated validations).</li>
+          <li>Formalize <strong>ALM</strong> (managed solutions, environment variables, deployment pipelines).</li>
+          <li>Add <strong>monitoring + audit dashboards</strong> (rule drift, missing evidence, approaching deadlines).</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Nexus Intelligence · Case Studies
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
