@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>NOTARIX Case Study · Nexus Intelligence</title>
+  <title>ASISTIX Case Study · Nexus Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="NOTARIX case study: Dataverse + Power Apps platform for notary operations and LFPIORPI compliance with document automation." />
+  <meta name="description" content="ASISTIX case study: attendance & justification management using Microsoft 365, Power Automate, SharePoint, and Power BI." />
 
   <style>
     :root{
-      --accent: #ffb900;   /* Notarix amber */
-      --nexus: #09be7a;    /* Nexus green */
+      --accent: #09be7a;   /* Nexus green */
       --text: #222222;
       --muted: #555;
       --bg: #ffffff;
@@ -25,7 +24,7 @@
       background:var(--bg);
       line-height:1.5;
     }
-    a{ color: var(--nexus); text-decoration:none; }
+    a{ color:var(--accent); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
     header{
@@ -66,7 +65,6 @@
       padding:0.25rem 0.4rem;
       border-radius:999px;
       font-weight:600;
-      color:#333;
     }
     .nav-links a:hover{
       background: var(--soft);
@@ -88,7 +86,7 @@
       margin: 1rem 0 1.5rem;
       border:1px solid var(--border);
       border-radius:14px;
-      background: linear-gradient(135deg, #fff4cc, #ffffff);
+      background: linear-gradient(135deg, #e6f9f2, #ffffff);
     }
     .pill{
       display:inline-flex;
@@ -99,8 +97,8 @@
       border:1px solid var(--border);
       background:#fff;
       font-size:0.85rem;
-      font-weight:700;
-      color:#7a5a00;
+      font-weight:600;
+      color:#0b6b4b;
       margin-bottom:0.75rem;
     }
     .dot{
@@ -112,7 +110,6 @@
     h2{ font-size: clamp(1.3rem, 2.1vw, 1.8rem); margin-top:1.8rem; }
     p{ margin:0 0 0.8rem; }
     .muted{ color: var(--muted); }
-
     .hero-ctas{
       display:flex;
       gap:0.75rem;
@@ -133,9 +130,9 @@
       white-space: nowrap;
     }
     .btn-primary{
-      background: var(--nexus);
+      background: var(--accent);
       color:#fff;
-      border-color: var(--nexus);
+      border-color: var(--accent);
     }
     .btn-primary:hover{ background:#078a62; border-color:#078a62; text-decoration:none; }
     .btn-ghost{
@@ -261,35 +258,35 @@
     <!-- HERO -->
     <section class="hero">
       <div>
-        <div class="pill"><span class="dot"></span> Case Study · Dataverse + Power Apps</div>
-        <h1>NOTARIX — Notary Operations Platform with LFPIORPI</h1>
+        <div class="pill"><span class="dot"></span> Case Study · Microsoft 365</div>
+        <h1>ASISTIX — Attendance & Justification Management</h1>
         <p class="muted">
-          A Dataverse-centered platform to centralize notary cases (trámites), enforce LFPIORPI rules, manage evidence,
-          track deadlines (municipal semaphores), and automate document generation using tokenized Word templates.
+          A production-grade Microsoft 365 solution to standardize justification requests, enforce rules, orchestrate approvals,
+          centralize evidence, and deliver audit-ready reporting for HR and leadership.
         </p>
 
         <div class="hero-ctas">
           <a class="btn btn-primary" href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">Request a quick demo</a>
-          <a class="btn btn-ghost" href="folleto-notarix.pdf" target="_blank" rel="noopener noreferrer">Appendix PDF</a>
+          <a class="btn btn-ghost" href="folleto-asistix.pdf" target="_blank" rel="noopener noreferrer">Appendix PDF</a>
         </div>
 
         <div class="chips">
-          <span class="chip">Dataverse</span>
-          <span class="chip">Power Apps</span>
+          <span class="chip">Microsoft Forms</span>
           <span class="chip">Power Automate</span>
-          <span class="chip">SharePoint / OneDrive</span>
-          <span class="chip">Word Automation</span>
+          <span class="chip">SharePoint</span>
+          <span class="chip">Excel Online</span>
+          <span class="chip">Power BI</span>
         </div>
       </div>
 
       <aside class="right-card">
         <h3 style="margin-top:0;">Quick facts</h3>
         <ul class="kvs">
-          <li><strong>Primary goal:</strong> compliance-first operations + evidence traceability</li>
-          <li><strong>Users:</strong> [fill] (Notary / Admin / Ops)</li>
-          <li><strong>Cases/month:</strong> [fill]</li>
-          <li><strong>Screens:</strong> [fill]</li>
-          <li><strong>Flows:</strong> [fill]</li>
+          <li><strong>Primary goal:</strong> auditability + operational reliability (approvals, evidence, logs)</li>
+          <li><strong>Users:</strong> [fill] (Employees / Managers / HR / Leadership)</li>
+          <li><strong>Requests/month:</strong> [fill]</li>
+          <li><strong>Automations (flows):</strong> [fill]</li>
+          <li><strong>Dashboards:</strong> Operational + Executive monitoring</li>
         </ul>
         <p class="muted" style="margin-top:0.8rem;">
           *Numbers are intentionally not invented. Fill only what’s true.
@@ -301,8 +298,8 @@
     <section id="context">
       <h2>1) Context / Problem</h2>
       <p>
-        Notary operations were fragmented across spreadsheets and scattered files, increasing the risk of missing municipal deadlines,
-        weakening evidence handling, and making LFPIORPI compliance dependent on manual calculations and individual interpretation.
+        Attendance and justification control was fragmented across informal channels (emails/chats), loose files and spreadsheets,
+        resulting in payroll risk, audit gaps, and inconsistent criteria across managers.
       </p>
     </section>
 
@@ -311,25 +308,25 @@
       <h2>2) Solution (what I delivered)</h2>
       <div class="grid-2">
         <div class="card">
-          <h3>Core modules delivered</h3>
+          <h3>Core deliverables</h3>
           <ul>
-            <li><strong>Trámite 360</strong>: central case tracking (clients, amounts, payments, SAT folios/receipts).</li>
-            <li><strong>LFPIORPI automation</strong>: threshold evaluation, flags, and policy-driven calculations.</li>
-            <li><strong>Municipality semaphores</strong>: configurable deadlines (Red/Amber/Green) per municipality.</li>
-            <li><strong>Digital case file</strong>: evidence centralized and linked to each trámite.</li>
-            <li><strong>Document automation</strong>: Word templates using dynamic tokens for standardized outputs.</li>
+            <li><strong>Centralized intake</strong> via Microsoft Forms with branching by request type.</li>
+            <li><strong>Rules + approvals</strong> in Power Automate (validation, routing, notifications, outcomes).</li>
+            <li><strong>Evidence-first traceability</strong> with controlled storage + link per request.</li>
+            <li><strong>Single source of truth logs</strong> for auditing (request + approver + timestamps + evidence link).</li>
+            <li><strong>Reporting portal</strong> with Power BI dashboards embedded in SharePoint.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Delivery style</h3>
+          <h3>Request flow</h3>
           <ul>
-            <li>Deployed inside the client’s Microsoft tenant.</li>
-            <li>Model-first design: normalized tables + catalogs for scalable behavior.</li>
-            <li>Auditability as a first-class constraint: evidence, traceability, and controlled outputs.</li>
+            <li>Employee submits request → validations applied → approval request sent</li>
+            <li>Manager approves/rejects → employee + HR notified (as applicable)</li>
+            <li>Log updated (bitácora) + evidence linked → dashboards update on refresh cadence</li>
           </ul>
           <p class="muted" style="margin-top:0.6rem;">
-            NOTARIX is designed to reduce compliance risk and operational variance without increasing manual load.
+            This design standardizes criteria and produces audit-ready artifacts by default.
           </p>
         </div>
       </div>
@@ -343,17 +340,19 @@
         <div class="card">
           <h3>Data</h3>
           <ul>
-            <li><strong>Dataverse-centered model</strong> with normalized entities + catalogs (parameter-driven rules).</li>
-            <li><strong>Compliance logic</strong> supported by structured fields (thresholds, flags, timelines, evidence pointers).</li>
+            <li><strong>Time-clock events</strong> as a fact source (SQL or clock system export).</li>
+            <li><strong>Employee-day calendar</strong> (one row per employee/day) to reconstruct final status.</li>
+            <li><strong>Catalogs</strong> (employees, schedules, types, holidays, special activities).</li>
+            <li><strong>Justification logs</strong> (approved / physical / external) with consistent fields.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Automation + Docs + Reporting</h3>
+          <h3>Automation + Evidence + Reporting</h3>
           <ul>
-            <li><strong>Power Automate</strong>: orchestration for traceability (notifications, logging, document outputs).</li>
-            <li><strong>SharePoint/OneDrive</strong>: templates + evidence storage + links from Dataverse records.</li>
-            <li><strong>Reporting</strong>: operational control views and export-ready outputs (fill specifics).</li>
+            <li><strong>Power Automate</strong>: validations, approval orchestration, notifications, run-after hardening.</li>
+            <li><strong>SharePoint / Excel Online</strong>: controlled logs + parameter tables + evidence links.</li>
+            <li><strong>Power BI</strong>: semantic model + operational/executive dashboards embedded in SharePoint.</li>
           </ul>
         </div>
       </div>
@@ -364,12 +363,11 @@
       <h2>4) Key Features (high-signal)</h2>
       <div class="card">
         <ul>
-          <li><strong>Municipality-based semaphores</strong> with configurable deadline rules (per locality).</li>
-          <li><strong>6-month accumulation logic</strong> (lotting/grouping by RFC + act family, accumulated amounts vs threshold).</li>
-          <li><strong>UMA versioning</strong> (parameter-driven values for calculations across periods).</li>
-          <li><strong>SAT notice control</strong> (folios, substitutions/cancellations, expirations tracking).</li>
-          <li><strong>Draft → Officialization workflow</strong> (finalize only when evidence and required data are complete).</li>
-          <li><strong>Token-based document automation</strong> using client-configurable Word templates.</li>
+          <li><strong>Retroactive window enforcement</strong> (policy-driven: “only last N business days”).</li>
+          <li><strong>Daily status reconstruction</strong> (Normal / Late / Absent / Justified) with full audit context.</li>
+          <li><strong>Payroll-ready outputs</strong> (clean records for export/upload within a configurable date range).</li>
+          <li><strong>Evidence-first auditability</strong>: each case retains approver, timestamps, evidence link, and origin.</li>
+          <li><strong>Role-aware portal behavior</strong>: employee vs manager team view vs HR/leadership consolidated view.</li>
         </ul>
       </div>
     </section>
@@ -381,19 +379,19 @@
         <div class="card">
           <h3>Scale</h3>
           <ul>
-            <li><strong>Users:</strong> [__]</li>
-            <li><strong>Cases/month:</strong> [__]</li>
-            <li><strong>Screens:</strong> [__]</li>
+            <li><strong>Employees covered:</strong> [__]</li>
+            <li><strong>Requests/month:</strong> [__]</li>
             <li><strong>Automations (flows):</strong> [__]</li>
+            <li><strong>Dashboards:</strong> [__]</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Compliance targets</h3>
+          <h3>Operational targets</h3>
           <ul>
-            <li><strong>Deadline types tracked:</strong> [municipal / SAT / internal] (fill)</li>
-            <li><strong>Evidence completeness rule:</strong> [__] (fill)</li>
-            <li><strong>Primary risk reduced:</strong> manual calculation variance + missing evidence + missed deadlines</li>
+            <li><strong>SLA (approval time):</strong> [__]</li>
+            <li><strong>Refresh cadence:</strong> [daily / weekly / monthly] (fill)</li>
+            <li><strong>Primary failure modes removed:</strong> email loss, inconsistent criteria, missing evidence</li>
           </ul>
         </div>
       </div>
@@ -403,39 +401,39 @@
     <section id="screens">
       <h2>6) Screenshots (4–8 max)</h2>
       <p class="muted">
+        Add only your strongest screens here. Put everything else in the PDF appendix.
         Replace the image file names with your real exported screenshots.
-        Keep it tight: strongest screens only.
       </p>
 
       <div class="grid-2">
         <figure>
-          <img src="notarix-01-tramite-360.png" alt="NOTARIX - Trámite 360 view" />
-          <figcaption>1) Trámite 360 view (flags, controls, and key case fields)</figcaption>
+          <img src="asistix-01-form.png" alt="ASISTIX - Microsoft Form branching" />
+          <figcaption>1) Intake form (branching by request type + required fields)</figcaption>
         </figure>
 
         <figure>
-          <img src="notarix-02-semaforos.png" alt="NOTARIX - Municipality semaphores" />
-          <figcaption>2) Municipality semaphores (Red/Amber/Green with configured rules)</figcaption>
+          <img src="asistix-02-approval-email.png" alt="ASISTIX - Approval email sample" />
+          <figcaption>2) Approval email (approve/reject outcome + traceability)</figcaption>
         </figure>
 
         <figure>
-          <img src="notarix-03-lfpiopri.png" alt="NOTARIX - LFPIORPI logic" />
-          <figcaption>3) LFPIORPI evaluation (thresholds, accumulation, flags)</figcaption>
+          <img src="asistix-03-sharepoint-evidence.png" alt="ASISTIX - Evidence in SharePoint" />
+          <figcaption>3) Evidence stored in SharePoint (controlled access + link per case)</figcaption>
         </figure>
 
         <figure>
-          <img src="notarix-04-word-automation.png" alt="NOTARIX - Word document automation" />
-          <figcaption>4) Word automation (tokenized templates and standardized outputs)</figcaption>
+          <img src="asistix-04-powerbi-kpis.png" alt="ASISTIX - Power BI KPIs" />
+          <figcaption>4) Power BI KPIs (operational indicators for defined period)</figcaption>
         </figure>
       </div>
 
       <details>
         <summary>Appendix</summary>
         <p class="muted" style="margin-top:0.6rem;">
-          Keep extra screens and diagrams in the PDF appendix.
+          Use your brochure / preview PDFs as a compact appendix (screens, diagrams, extras).
         </p>
         <div class="hero-ctas" style="margin-top:0.6rem;">
-          <a class="btn btn-ghost" href="folleto-notarix.pdf" target="_blank" rel="noopener noreferrer">Open Appendix PDF</a>
+          <a class="btn btn-ghost" href="folleto-asistix.pdf" target="_blank" rel="noopener noreferrer">Open Appendix PDF</a>
         </div>
       </details>
     </section>
@@ -445,9 +443,9 @@
       <h2>7) What I’d improve next (short, senior)</h2>
       <div class="card">
         <ul>
-          <li>Add <strong>regression checks</strong> for compliance rules (versioned rule sets + automated validations).</li>
-          <li>Formalize <strong>ALM</strong> (managed solutions, environment variables, deployment pipelines).</li>
-          <li>Add <strong>monitoring + audit dashboards</strong> (rule drift, missing evidence, approaching deadlines).</li>
+          <li>Replace Excel-based parameter/log storage with <strong>Dataverse</strong> for stronger governance, ALM, and security.</li>
+          <li>Add <strong>time-based escalations/reminders</strong> + “approval aging” dashboard for management control.</li>
+          <li>Formalize <strong>Dev/Test/Prod</strong> packaging (solution structure, connection refs, environment variables).</li>
         </ul>
       </div>
     </section>
