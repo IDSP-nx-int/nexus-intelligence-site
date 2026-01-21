@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Arquitectura de soluciones sobre Microsoft 365 y Power Platform. Apps, automatización y analítica listas para usar." />
 
+  <!-- Opcional: hreflang si vas a hospedar /es/ y /en/ -->
+  <!--
+  <link rel="alternate" hreflang="es" href="https://tudominio.com/es/" />
+  <link rel="alternate" hreflang="en" href="https://tudominio.com/en/" />
+  -->
+
   <style>
     :root {
       /* Color principal de la marca: verde del logo */
@@ -76,6 +82,7 @@
       flex-wrap: wrap;
       gap: 0.8rem;
       font-size: 0.9rem;
+      align-items: center; /* para el separador y el switch */
     }
 
     .nav-links a {
@@ -87,6 +94,17 @@
     .nav-links a:hover {
       background-color: var(--gris-suave);
       text-decoration: none;
+    }
+
+    .nav-sep {
+      opacity: 0.35;
+      margin: 0 0.15rem;
+      user-select: none;
+    }
+
+    .lang {
+      font-weight: 800;
+      letter-spacing: 0.02em;
     }
 
     /* LAYOUT GENERAL */
@@ -422,6 +440,10 @@
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#casos">En la práctica</a>
         <a href="#contacto">Contacto</a>
+
+        <span class="nav-sep">|</span>
+        <!-- Apunta a tu sitio en inglés (recomendado: /en/) -->
+        <a class="lang" href="/en/" title="English (US)" aria-label="Cambiar a inglés">EN</a>
       </div>
     </nav>
   </header>
