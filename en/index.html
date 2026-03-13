@@ -11,6 +11,7 @@
       --azul-nexus: #09be7a;        /* Nexus green */
       --verde-asistix: #09be7a;
       --ambar-notarix: #ffb900;
+      --gris-proto: #6b7280;        /* neutral for prototypes */
       --texto: #222222;
       --gris-suave: #f5f5f5;
       --borde-suave: #e0e0e0;
@@ -61,12 +62,6 @@
       font-size: 1.1rem;
       color: #111111;
       white-space: nowrap;
-    }
-
-    .nav-logo-img {
-      height: 32px;
-      width: auto;
-      display: block;
     }
 
     .nav-links {
@@ -306,6 +301,7 @@
 
     .tag-asistix { color: var(--verde-asistix); }
     .tag-notarix { color: #b8860b; }
+    .tag-proto { color: var(--gris-proto); }
 
     .chip-list {
       display: flex;
@@ -430,6 +426,7 @@
         <a href="#method">How I work</a>
         <a href="#about">About</a>
         <a href="#cases">In practice</a>
+        <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
 
         <span class="nav-sep">|</span>
@@ -525,9 +522,7 @@
           <p><strong>Outcome:</strong> less manual capture, fewer payroll errors, audit-ready traceability.</p>
 
           <div class="hero-ctas" style="margin-top:0.6rem;">
-            <!-- inside /en/, so relative works -->
             <a href="case-asistix.html" class="btn btn-primary btn-download">View Case Study</a>
-            <!-- pdf is in root -->
             <a href="../folleto-asistix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer" download>
               Download · Asistix Brochure (PDF)
             </a>
@@ -693,6 +688,47 @@
         <div class="hero-ctas" style="margin-top:0.75rem;">
           <a href="case-notarix.html" class="btn btn-primary btn-download">View Case Study</a>
           <a href="../folleto-notarix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer">Brochure PDF</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- PORTFOLIO PROTOTYPES -->
+    <section id="portfolio">
+      <h2>Portfolio prototypes</h2>
+      <p class="subtle">
+        Practice builds to showcase architecture and implementation patterns (not deployed in production).
+        Data is dummy and scoped for demonstration.
+      </p>
+
+      <article class="case" style="border-left-color: var(--gris-proto);">
+        <h3>Procurement &amp; inventory prototype (ADM) <span style="font-weight:600; color: var(--gris-proto);">(Portfolio)</span></h3>
+
+        <p>
+          Model-driven app prototype focused on Dataverse data modeling, BPF-driven process stages,
+          and approval orchestration flows for requisitions and purchase orders.
+        </p>
+
+        <p>
+          <strong>Scope:</strong> Requisitions → Approval → Purchasing / Receiving workflow (prototype).
+          Includes core entities, ERD, BPFs, and approval flows.
+        </p>
+
+        <p>
+          <strong>Status:</strong> portfolio prototype. No production deployment.
+        </p>
+
+        <div class="hero-ctas" style="margin-top:0.75rem;">
+          <a href="case-adm.html" class="btn btn-primary btn-download">View Portfolio</a>
+          <a href="../ADM_Brochure_Portfolio.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer">
+            Download · ADM Portfolio (PDF)
+          </a>
+        </div>
+
+        <div class="chip-list">
+          <span class="chip">Model-driven app</span>
+          <span class="chip">Dataverse</span>
+          <span class="chip">BPF</span>
+          <span class="chip">Power Automate Approvals</span>
         </div>
       </article>
     </section>
