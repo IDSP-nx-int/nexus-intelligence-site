@@ -2,22 +2,16 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Nexus Intelligence · Soluciones sobre Microsoft 365 y Power Platform</title>
+  <title>Nexus Intelligence · Soluciones Microsoft 365 &amp; Power Platform</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Arquitectura de soluciones sobre Microsoft 365 y Power Platform. Apps, automatización y analítica listas para usar." />
-
-  <!-- Opcional: hreflang si vas a hospedar /es/ y /en/ -->
-  <!--
-  <link rel="alternate" hreflang="es" href="https://idsp-nx-int.github.io/nexus-intelligence-site/es/index.html" />
-  <link rel="alternate" hreflang="en" href="https://idsp-nx-int.github.io/nexus-intelligence-site/en/index.html" />
-  -->
+  <meta name="description" content="Arquitectura de soluciones en Microsoft 365 y Power Platform. Apps, automatización y analítica plug-and-play desplegadas en tu tenant." />
 
   <style>
     :root {
-      /* Color principal de la marca: verde del logo */
-      --azul-nexus: #09be7a;        /* verde Nexus */
+      --azul-nexus: #09be7a;        /* Nexus green */
       --verde-asistix: #09be7a;
       --ambar-notarix: #ffb900;
+      --gris-proto: #6b7280;        /* neutral for portfolio */
       --texto: #222222;
       --gris-suave: #f5f5f5;
       --borde-suave: #e0e0e0;
@@ -70,19 +64,12 @@
       white-space: nowrap;
     }
 
-    /* (No usamos el logo en el header, pero dejamos la clase por si la quieres después) */
-    .nav-logo-img {
-      height: 32px;
-      width: auto;
-      display: block;
-    }
-
     .nav-links {
       display: flex;
       flex-wrap: wrap;
       gap: 0.8rem;
       font-size: 0.9rem;
-      align-items: center; /* para el separador y el switch */
+      align-items: center;
     }
 
     .nav-links a {
@@ -146,12 +133,11 @@
       align-items: center;
       padding: 2rem 1.5rem;
       margin: 1rem 0 2.5rem;
-      background: linear-gradient(135deg, #e6f9f2, #ffffff); /* degradado verdoso */
+      background: linear-gradient(135deg, #e6f9f2, #ffffff);
       border-radius: 14px;
       border: 1px solid var(--borde-suave);
     }
 
-    /* Nueva línea de marca en el hero: logo + texto arquitectura */
     .hero-brand {
       display: inline-flex;
       align-items: center;
@@ -256,7 +242,6 @@
       text-decoration: none;
     }
 
-    /* Botón pequeño para descargas dentro de las tarjetas */
     .btn-download {
       margin-top: 0.6rem;
       font-size: 0.85rem;
@@ -291,7 +276,7 @@
 
     .hero-list li span { font-weight: 600; }
 
-    /* SECCIONES GENERALES */
+    /* SECTIONS */
     .columns-2 {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -316,6 +301,7 @@
 
     .tag-asistix { color: var(--verde-asistix); }
     .tag-notarix { color: #b8860b; }
+    .tag-proto { color: var(--gris-proto); }
 
     .chip-list {
       display: flex;
@@ -338,7 +324,7 @@
       font-size: 0.9rem;
     }
 
-    /* CÓMO TRABAJO */
+    /* HOW I WORK */
     .steps {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -359,7 +345,7 @@
       margin-bottom: 0.4rem;
     }
 
-    /* CASOS / PROYECTOS */
+    /* CASES */
     .case {
       border-left: 3px solid var(--azul-nexus);
       padding: 0.75rem 1rem;
@@ -378,7 +364,7 @@
 
     .case strong { font-weight: 600; }
 
-    /* CONTACTO */
+    /* CONTACT */
     .contact-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
@@ -433,113 +419,110 @@
       <div class="nav-logo">
         <span class="nav-logo-text">Nexus Intelligence</span>
       </div>
+
       <div class="nav-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#soluciones">Soluciones</a>
-        <a href="#metodo">Cómo trabajo</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#casos">En la práctica</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#home">Inicio</a>
+        <a href="#solutions">Soluciones</a>
+        <a href="#method">Cómo trabajo</a>
+        <a href="#about">Acerca de</a>
+        <a href="#cases">En práctica</a>
+        <a href="#portfolio">Portafolio</a>
+        <a href="#contact">Contacto</a>
 
         <span class="nav-sep">|</span>
-        <!-- Desde /es/index.html -> /en/index.html -->
-        <a class="lang" href="../en/index.html" aria-label="Switch to English">EN</a>
+        <a class="lang" href="../en/index.html" aria-label="Cambiar a inglés">EN</a>
       </div>
     </nav>
   </header>
 
   <main>
     <!-- HERO -->
-    <section id="inicio" class="hero">
+    <section id="home" class="hero">
       <div>
         <div class="hero-brand">
-          <!-- Assets están fuera de /en y /es, por eso usamos ../ -->
           <img src="../logo-nexus.png" alt="Nexus Intelligence" class="hero-logo-img" />
           <div class="hero-tag">
-            <span>Arquitectura sobre Microsoft 365 · Power Platform</span>
+            <span>Microsoft 365 · Arquitectura de Soluciones en Power Platform</span>
           </div>
         </div>
 
-        <h1 class="hero-title">Apps, automatización y analítica listas para usar</h1>
+        <h1 class="hero-title">Apps, automatización y analítica plug-and-play</h1>
         <p class="hero-subtitle">
-          Diseño soluciones plug-and-play sobre tu tenant de Microsoft: Power Apps, Power Automate y Power BI
-          para que dejes atrás hojas sueltas, correos perdidos y Excel dispersos.
+          Diseño y despliego soluciones dentro de tu tenant de Microsoft—Power Apps, Power Automate y Power BI—
+          para reemplazar hojas sueltas, correos perdidos y flujos manuales inconsistentes.
         </p>
 
         <div class="hero-badges">
           <div class="badge">
             <div class="badge-dot"></div>
-            <span>Canvas &amp; Model-driven Apps</span>
+            <span>Apps canvas y model-driven</span>
           </div>
           <div class="badge">
             <div class="badge-dot"></div>
-            <span>Automatización de flujos críticos</span>
+            <span>Automatización de procesos críticos</span>
           </div>
           <div class="badge">
             <div class="badge-dot"></div>
-            <span>Tableros ejecutivos en Power BI</span>
+            <span>Dashboards ejecutivos en Power BI</span>
           </div>
         </div>
 
         <div class="hero-ctas">
-          <a href="#contacto" class="btn btn-primary">Agenda una llamada de 30 minutos</a>
-          <a href="#soluciones" class="btn btn-ghost">Ver soluciones Asistix y Notarix</a>
+          <a href="#contact" class="btn btn-primary">Agenda una llamada de 30 minutos</a>
+          <a href="#solutions" class="btn btn-ghost">Ver Asistix y Notarix</a>
         </div>
       </div>
 
       <aside class="hero-right">
-        <h3>¿Qué hace Nexus Intelligence por tu operación?</h3>
+        <h3>Qué entrega Nexus Intelligence</h3>
         <ul class="hero-list">
-          <li><span>1.</span> Estandariza tu proceso en una app clara para tu equipo.</li>
-          <li><span>2.</span> Automatiza aprobaciones, avisos, registros críticos y lógica de negocio.</li>
-          <li><span>3.</span> Deja trazabilidad para auditorías y dirección.</li>
-          <li><span>4.</span> Usa al máximo las licencias Microsoft que ya pagas.</li>
+          <li><span>1.</span> Estandarizar tu proceso en una app clara que el equipo pueda seguir.</li>
+          <li><span>2.</span> Automatizar aprobaciones, notificaciones, bitácoras y reglas de negocio.</li>
+          <li><span>3.</span> Trazabilidad para auditorías y reporteo directivo.</li>
+          <li><span>4.</span> Exprimir las licencias de Microsoft que ya pagas.</li>
         </ul>
       </aside>
     </section>
 
     <!-- QUÉ HAGO -->
     <section>
-      <h2>¿Qué hace Nexus Intelligence?</h2>
+      <h2>Qué hace Nexus Intelligence</h2>
       <p>
-        En Nexus Intelligence convierto procesos complejos en soluciones digitales inteligentes y fáciles de usar.
-        Me especializo en el ecosistema Microsoft para que tu organización aproveche al máximo las licencias que ya tiene,
-        sin depender de desarrollos costosos desde cero.
+        Nexus Intelligence convierte procesos complejos en soluciones digitales confiables, fáciles de usar y listas para escalar.
+        Me especializo en el ecosistema Microsoft para que las organizaciones aprovechen al máximo las licencias que ya tienen—
+        sin pagar desarrollo desde cero innecesario.
       </p>
       <p>
-        No se trata solo de “hacer una app”. Diseño la arquitectura completa: modelo de datos, flujos automatizados,
-        seguridad, cumplimiento normativo y tableros de seguimiento para dirección. Traduzco tu normativa y tu lógica
-        de negocio (por ejemplo, LFPIORPI) a reglas claras y automatizables, para que el sistema piense como tu operación,
-        pero sin errores ni interpretaciones distintas según la persona.
+        No es “solo hacer una app”. Diseño la arquitectura end-to-end: modelo de datos, automatización, seguridad,
+        lógica de cumplimiento y dashboards para dirección. Traduzco políticas y reglas (p. ej., LFPIORPI) a lógica clara y automatizable—
+        para que el sistema opere como tu proceso, sin errores ni interpretaciones inconsistentes.
       </p>
     </section>
 
     <!-- SOLUCIONES -->
-    <section id="soluciones">
+    <section id="solutions">
       <h2>Soluciones listas para desplegar en tu entorno Microsoft 365</h2>
       <div class="columns-2">
         <!-- Asistix -->
         <article class="card">
-          <div class="card-header-tag tag-asistix">ASISTIX · CONTROL DE JUSTIFICANTES Y ASISTENCIAS</div>
-          <h3>Centraliza solicitudes, aprobaciones y análisis de asistencias</h3>
+          <div class="card-header-tag tag-asistix">ASISTIX · ASISTENCIA Y JUSTIFICANTES</div>
+          <h3>Centraliza solicitudes, aprobaciones y analítica de asistencia</h3>
           <p class="subtle">
-            Un solo flujo para empleados, jefes y Recursos Humanos. Nada de correos perdidos ni Excel sueltos.
+            Un solo flujo para empleados, jefes y RH—sin correos perdidos ni hojas sueltas.
           </p>
           <ul>
-            <li>Solicitud de justificantes en un formulario estándar.</li>
+            <li>Captura estandarizada de solicitudes (punto único de entrada).</li>
             <li>Aprobaciones formales y trazables para jefes y RH.</li>
-            <li>Bitácoras únicas y confiables en Excel Online / SharePoint.</li>
-            <li>Tableros ejecutivos en Power BI: faltas, retardos, tendencias.</li>
-            <li>Portal de consulta por empleado, jefe y directivo.</li>
+            <li>Bitácora como fuente única en Excel Online / SharePoint.</li>
+            <li>Dashboards en Power BI: ausencias, retardos, tendencias, distribuciones.</li>
+            <li>Portal por rol: empleado / jefe / dirección.</li>
           </ul>
-          <p><strong>Resultado:</strong> menos tiempo de captura, menos errores en nómina y trazabilidad ante auditorías.</p>
+          <p><strong>Resultado:</strong> menos captura manual, menos errores de nómina, trazabilidad lista para auditoría.</p>
 
           <div class="hero-ctas" style="margin-top:0.6rem;">
-            <!-- case está dentro de /es -->
-            <a href="case-asistix.html" class="btn btn-primary btn-download">Ver Case Study</a>
-            <!-- pdf está en root -->
+            <a href="case-asistix.html" class="btn btn-primary btn-download">Ver caso</a>
             <a href="../folleto-asistix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer" download>
-              Descargar - Folleto Asistix (PDF)
+              Descargar · Folleto Asistix (PDF)
             </a>
           </div>
 
@@ -554,28 +537,27 @@
 
         <!-- Notarix -->
         <article class="card">
-          <div class="card-header-tag tag-notarix">NOTARIX · PLATAFORMA PARA NOTARÍAS CON LFPIORPI</div>
-          <h3>Trámites, LFPIORPI y documentos en una sola plataforma</h3>
+          <div class="card-header-tag tag-notarix">NOTARIX · PLATAFORMA NOTARIAL CON LFPIORPI</div>
+          <h3>Trámites, cumplimiento LFPIORPI y documentos en una sola plataforma</h3>
           <p class="subtle">
-            Un sistema diseñado para notarías con enfoque inmobiliario y patrimonial: control de trámites, clientes, pagos
-            y cumplimiento LFPIORPI con lógica de negocio parametrizada (UMAs, plazos, supuestos).
+            Sistema centrado en Dataverse para operación notarial: trámites, padrón, pagos,
+            y reglas de cumplimiento automatizadas (UMAs, plazos y escenarios).
           </p>
           <ul>
-            <li>Trámites centralizados: clientes, montos, pagos, folios SAT, acuses.</li>
-            <li>Control LFPIORPI automático: umbrales, avisos, banderas por cliente y cálculo automático de supuestos.</li>
+            <li>Trámites: clientes, montos, pagos, folios/recibos SAT.</li>
+            <li>Evaluación LFPIORPI: umbrales, banderas y lógica por escenarios.</li>
             <li>Semáforos municipales configurables por localidad.</li>
-            <li>Expediente digital por trámite con todos los documentos clave.</li>
-            <li>Plantillas Word dinámicas para escrituras, oficios y avisos.</li>
+            <li>Expediente digital con evidencia ligada a cada trámite.</li>
+            <li>Plantillas Word con tokens para documentos estandarizados.</li>
           </ul>
           <p>
-            <strong>Resultado:</strong> LFPIORPI bajo control estructurado, con plazos y avisos claros, sin depender de hojas sueltas,
-            interpretaciones dudosas ni cálculos manuales.
+            <strong>Resultado:</strong> cumplimiento bajo control estructurado, plazos claros y menos dependencia de cálculos manuales.
           </p>
 
           <div class="hero-ctas" style="margin-top:0.6rem;">
-            <a href="case-notarix.html" class="btn btn-primary btn-download">Ver Case Study</a>
+            <a href="case-notarix.html" class="btn btn-primary btn-download">Ver caso</a>
             <a href="../folleto-notarix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer" download>
-              Descargar - Folleto Notarix (PDF)
+              Descargar · Folleto Notarix (PDF)
             </a>
           </div>
 
@@ -583,71 +565,69 @@
             <span class="chip">Dataverse</span>
             <span class="chip">Power Apps</span>
             <span class="chip">Power Automate</span>
-            <span class="chip">Word Templates</span>
-            <span class="chip">Cumplimiento LFPIORPI</span>
+            <span class="chip">Plantillas Word</span>
+            <span class="chip">LFPIORPI</span>
           </div>
         </article>
       </div>
     </section>
 
     <!-- CÓMO TRABAJO -->
-    <section id="metodo">
+    <section id="method">
       <h2>Cómo trabajo</h2>
       <p class="subtle">
-        Tres pasos claros para llegar de tu proceso actual a una solución estructurada, inteligente y escalable sobre Microsoft 365.
+        Tres pasos claros para pasar de tu operación actual a una solución estructurada, confiable y escalable en Microsoft 365.
       </p>
       <div class="steps">
         <div class="card">
           <div class="step-number">1</div>
           <h3>Diagnóstico rápido</h3>
           <p>
-            Sesión de 30–60 minutos para entender tu proceso actual, sistemas que usas y problemas principales:
-            errores, tiempos muertos, auditorías, cumplimiento.
+            Sesión de 30–60 minutos para entender tu proceso actual, sistemas en uso y puntos de dolor:
+            errores, retrasos, auditorías, cumplimiento.
           </p>
         </div>
         <div class="card">
           <div class="step-number">2</div>
           <h3>Propuesta + prototipo</h3>
           <p>
-            Diseño una solución sobre Power Platform: modelo de datos, pantallas clave, flujos de aprobación y reportes.
-            Te presento un prototipo navegable y una propuesta con alcance, tiempos y costo fijo.
+            Diseño la solución en Power Platform: modelo de datos, pantallas clave, flujos de aprobación y dashboards.
+            Recibes un prototipo navegable y una propuesta de alcance fijo (tiempo + costo).
           </p>
         </div>
         <div class="card">
           <div class="step-number">3</div>
-          <h3>Implementación y acompañamiento</h3>
+          <h3>Implementación + entrega</h3>
           <p>
-            Instalo la solución en tu tenant, configuro roles y permisos, cargo datos base y capacito a tu equipo.
-            Te entrego una plataforma estándar, trazable y lista para crecer.
+            Despliego la solución en tu tenant, configuro roles y permisos, cargo datos base y capacito al equipo.
+            Queda una plataforma estandarizada, trazable y lista para evolucionar.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- SOBRE MÍ -->
-    <section id="sobre-mi">
-      <h2>Sobre Nexus Intelligence</h2>
+    <!-- ACERCA DE -->
+    <section id="about">
+      <h2>Acerca de Nexus Intelligence</h2>
       <div class="columns-2">
         <div>
           <p>
             Nexus Intelligence es la marca de soluciones de <strong>Iván Solórzano</strong>,
-            arquitecto de soluciones sobre Microsoft 365 y Power Platform.
+            Solutions Architect en Microsoft 365 &amp; Power Platform.
           </p>
           <p>
-            He diseñado e implementado sistemas de control de asistencias y justificantes para dependencias de gobierno,
-            así como plataformas especializadas para notarías con cumplimiento LFPIORPI y generación automática de documentos.
+            He diseñado y entregado sistemas de asistencia/justificantes para organizaciones de gobierno,
+            y plataformas especializadas para operación notarial con cumplimiento LFPIORPI y generación automática de documentos.
           </p>
           <p>
-            Mi enfoque es directo: soluciones plug-and-play dentro de tu propio tenant, con modelos de datos sólidos,
-            flujos automatizados y tableros de seguimiento que cualquier directivo puede entender. Soy el puente entre negocio,
-            normativa y tecnología (business translator): tomo procesos y lógicas de negocio —desde leyes y normativas internas
-            hasta la operación del día a día— y los traduzco en modelos de datos y flujos claros que luego se convierten
-            en apps, automatizaciones y reportes accionables.
+            Mi enfoque es directo: soluciones plug-and-play desplegadas dentro de tu tenant, soportadas por modelos de datos sólidos,
+            automatización y dashboards que dirección sí usa. Actúo como traductor de negocio—convirtiendo política y operación real
+            en estructuras y flujos claros que se vuelven apps, automatizaciones y reporteo accionable.
           </p>
         </div>
 
         <div class="card">
-          <h3>Certificaciones y stack</h3>
+          <h3>Certificaciones &amp; stack</h3>
           <ul>
             <li>Microsoft Certified: Power Platform Functional Consultant Associate (PL-200).</li>
             <li>Microsoft Certified: Power BI Data Analyst Associate (PL-300).</li>
@@ -655,78 +635,103 @@
             <li>Microsoft Certified: Azure Fundamentals (AZ-900).</li>
             <li>DataCamp Certified: Data Analyst Associate.</li>
             <li>
-              Stack: Power Apps (canvas y model-driven), Power Automate, Dataverse, Power BI (DAX y Power Query),
-              SharePoint Online, Excel / Excel Online, plantillas dinámicas en Word, Microsoft Forms, SQL y Python
-              para análisis de datos.
+              Stack: Power Apps (canvas &amp; model-driven), Power Automate, Dataverse, Power BI (DAX &amp; Power Query),
+              SharePoint Online, Excel / Excel Online, automatización de plantillas Word, Microsoft Forms, SQL y Python para analítica.
             </li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- EN LA PRÁCTICA -->
-    <section id="casos">
+    <!-- EN PRÁCTICA -->
+    <section id="cases">
       <h2>Cómo se ve en la práctica</h2>
       <p class="subtle">
-        Dos ejemplos concretos para que veas qué tipo de problemas resuelvo y cómo se traduce en una solución sobre Microsoft 365.
+        Dos ejemplos concretos del tipo de problemas que resuelvo y cómo se traducen a soluciones reales en Microsoft 365.
       </p>
 
       <article class="case">
-        <h3>Control de justificantes y asistencias en dependencia de gobierno (ASISTIX)</h3>
+        <h3>Control de asistencia y justificantes para una organización de gobierno (ASISTIX)</h3>
         <p>
-          Implementación de Asistix para centralizar solicitudes de justificantes, aprobaciones y seguimiento de asistencias
-          del personal en una dependencia de gobierno.
+          Implementación de Asistix para centralizar solicitudes de justificante, aprobaciones y control de asistencia.
         </p>
         <p>
-          <strong>Qué se resolvió:</strong> correos informales, criterios distintos por jefe, fallas en nómina y cero trazabilidad ante auditorías.
+          <strong>Qué corrigió:</strong> correos informales, criterios inconsistentes, errores de nómina y cero trazabilidad para auditoría.
         </p>
         <p>
-          <strong>Cómo se solucionó:</strong> formulario estándar, flujo de aprobación en Power Automate, bitácoras en Excel Online / SharePoint
-          y tableros ejecutivos en Power BI.
+          <strong>Cómo se resolvió:</strong> captura estandarizada, flujo de aprobación en Power Automate, bitácoras en Excel Online / SharePoint,
+          y dashboards ejecutivos en Power BI.
         </p>
 
         <div class="hero-ctas" style="margin-top:0.75rem;">
-          <a href="case-asistix.html" class="btn btn-primary btn-download">Ver Case Study</a>
-          <a href="../folleto-asistix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer">Folleto PDF</a>
+          <a href="case-asistix.html" class="btn btn-primary btn-download">Ver caso</a>
+          <a href="../folleto-asistix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer">PDF</a>
         </div>
       </article>
 
       <article class="case">
-        <h3>Plataforma integral para notaría con enfoque inmobiliario (NOTARIX)</h3>
+        <h3>Plataforma notarial end-to-end para operación inmobiliaria (NOTARIX)</h3>
         <p>
-          Plataforma sobre Dataverse + Power Apps para centralizar trámites, clientes, pagos, folios SAT y control LFPIORPI,
-          traduciendo la normativa a reglas de negocio automatizadas.
+          Plataforma Dataverse + Power Apps para centralizar trámites, clientes, pagos, folios SAT y controles LFPIORPI,
+          traduciendo cumplimiento a reglas automatizadas.
         </p>
         <p>
-          <strong>Qué se resolvió:</strong> controles dispersos en hojas sueltas y Excel, riesgo alto de incumplir LFPIORPI
-          y tiempos largos para generar documentos.
+          <strong>Qué corrigió:</strong> controles dispersos en papel/Excel, riesgo alto de cumplimiento y generación lenta de documentos.
         </p>
         <p>
-          <strong>Cómo se solucionó:</strong> modelo de datos completo, semáforos de plazos, cálculo automático de supuestos LFPIORPI,
-          plantillas Word dinámicas y expediente digital por trámite.
+          <strong>Cómo se resolvió:</strong> modelo de datos completo, semáforos configurables, cálculos LFPIORPI, plantillas Word con tokens,
+          y expediente digital por trámite.
         </p>
 
         <div class="hero-ctas" style="margin-top:0.75rem;">
-          <a href="case-notarix.html" class="btn btn-primary btn-download">Ver Case Study</a>
-          <a href="../folleto-notarix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer">Folleto PDF</a>
+          <a href="case-notarix.html" class="btn btn-primary btn-download">Ver caso</a>
+          <a href="../folleto-notarix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer">PDF</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- PORTAFOLIO -->
+    <section id="portfolio">
+      <h2>Portafolio</h2>
+      <p class="subtle">
+        Builds seleccionados para mostrar arquitectura en Dataverse, diseño de procesos y patrones de automatización.
+      </p>
+
+      <article class="case" style="border-left-color: var(--gris-proto);">
+        <h3>ADM — Compras &amp; Almacén (Model-driven)</h3>
+
+        <p>
+          App model-driven en Dataverse enfocada en flujos de compras y almacén, construida con entidades core,
+          Business Process Flows (BPF) y automatización de aprobaciones para Requisiciones (RQ) y Órdenes de Compra (OC).
+        </p>
+
+        <div class="hero-ctas" style="margin-top:0.75rem;">
+          <a href="case-adm.html" class="btn btn-primary btn-download">Ver</a>
+        </div>
+
+        <div class="chip-list">
+          <span class="chip">Model-driven app</span>
+          <span class="chip">Dataverse</span>
+          <span class="chip">BPF</span>
+          <span class="chip">Power Automate Approvals</span>
         </div>
       </article>
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto">
+    <section id="contact">
       <h2>Contacto</h2>
       <div class="contact-grid">
         <div>
           <p>
-            Si quieres dejar atrás hojas sueltas, listas en Excel y procesos informales, agenda una llamada de 30 minutos.
-            Reviso tu caso y te digo con claridad si una solución Nexus Intelligence hace sentido para ti, qué costo tendría
-            y cómo podríamos automatizar la lógica de tu negocio.
+            Si quieres salir de hojas sueltas y procesos informales, agenda una llamada de 30 minutos.
+            Te digo rápido si una solución de Nexus Intelligence hace sentido, cuánto costaría
+            y cómo podemos automatizar tu lógica de negocio.
           </p>
 
           <div class="hero-ctas" style="margin-top: 1rem;">
             <a href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              Escribir por WhatsApp
+              WhatsApp
             </a>
             <a href="mailto:ivan.solorzano@nxintel.onmicrosoft.com" class="btn btn-ghost">
               Enviar correo
@@ -738,7 +743,7 @@
           <h3>Datos de contacto</h3>
           <ul class="contact-list">
             <li><strong>Nombre:</strong> Iván Daniel Solórzano Pérez</li>
-            <li><strong>Correo:</strong> <a href="mailto:ivan.solorzano@nxintel.onmicrosoft.com">ivan.solorzano@nxintel.onmicrosoft.com</a></li>
+            <li><strong>Email:</strong> <a href="mailto:ivan.solorzano@nxintel.onmicrosoft.com">ivan.solorzano@nxintel.onmicrosoft.com</a></li>
             <li><strong>Tel / WhatsApp:</strong> <a href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">+52 844&nbsp;362&nbsp;3217</a></li>
             <li><strong>Ubicación:</strong> Saltillo, Coahuila · México</li>
           </ul>
@@ -748,11 +753,10 @@
   </main>
 
   <footer>
-    © <span id="year"></span> Nexus Intelligence · Arquitectura de soluciones sobre Microsoft 365 y Power Platform.
+    © <span id="year"></span> Nexus Intelligence · Arquitectura de Soluciones en Microsoft 365 &amp; Power Platform.
   </footer>
 
   <script>
-    // Año automático en el footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
