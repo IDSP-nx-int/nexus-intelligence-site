@@ -6,41 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="ADM case study (portfolio prototype): a Dataverse + model-driven app for procurement and inventory workflows with BPF + approvals."
+    content="ADM case study: a Dataverse model-driven app prototype for procurement and inventory workflows with Business Process Flows and approvals."
   />
 
   <style>
     :root{
-      --accent: #6b7280;   /* neutral accent for prototype */
-      --nexus: #09be7a;    /* Nexus green */
-      --text: #222222;
-      --muted: #555;
-      --bg: #ffffff;
-      --soft: #f5f5f5;
-      --border: #e0e0e0;
-      --max: 1100px;
+      --accent:#6b7280;
+      --nexus:#09be7a;
+      --text:#222222;
+      --muted:#555;
+      --bg:#ffffff;
+      --soft:#f5f5f5;
+      --border:#e0e0e0;
+      --max:1100px;
     }
-    *{ box-sizing: border-box; }
+    *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       color:var(--text);
       background:var(--bg);
       line-height:1.5;
     }
-    a{ color: var(--nexus); text-decoration:none; }
+    a{ color:var(--nexus); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
     header{
-      position: sticky;
+      position:sticky;
       top:0;
-      z-index: 10;
+      z-index:10;
       background:#ffffffcc;
-      backdrop-filter: blur(8px);
+      backdrop-filter:blur(8px);
       border-bottom:1px solid var(--border);
     }
     .nav{
-      max-width: var(--max);
+      max-width:var(--max);
       margin:0 auto;
       padding:0.6rem 1.5rem;
       display:flex;
@@ -52,7 +52,7 @@
       display:flex;
       align-items:center;
       gap:0.8rem;
-      flex-wrap: wrap;
+      flex-wrap:wrap;
     }
     .brand{
       font-weight:800;
@@ -62,7 +62,7 @@
     .nav-links{
       display:flex;
       gap:0.8rem;
-      flex-wrap: wrap;
+      flex-wrap:wrap;
       font-size:0.9rem;
     }
     .nav-links a{
@@ -72,26 +72,26 @@
       color:#333;
     }
     .nav-links a:hover{
-      background: var(--soft);
+      background:var(--soft);
       text-decoration:none;
     }
 
     main{
-      max-width: var(--max);
+      max-width:var(--max);
       margin:0 auto;
       padding:1.5rem 1rem 3rem;
     }
 
     .hero{
       display:grid;
-      grid-template-columns: minmax(0,2.2fr) minmax(0,1.8fr);
+      grid-template-columns:minmax(0,2.2fr) minmax(0,1.8fr);
       gap:2rem;
       align-items:start;
       padding:2rem 1.5rem;
-      margin: 1rem 0 1.5rem;
+      margin:1rem 0 1.5rem;
       border:1px solid var(--border);
       border-radius:14px;
-      background: linear-gradient(135deg, #eefaf6, #ffffff);
+      background:linear-gradient(135deg,#eefaf6,#ffffff);
     }
     .pill{
       display:inline-flex;
@@ -107,20 +107,21 @@
       margin-bottom:0.75rem;
     }
     .dot{
-      width:10px; height:10px; border-radius:999px;
-      background: var(--nexus);
+      width:10px; height:10px;
+      border-radius:999px;
+      background:var(--nexus);
     }
     h1,h2,h3{ margin:0 0 0.6rem; color:#111; }
-    h1{ font-size: clamp(1.9rem, 3vw, 2.6rem); }
-    h2{ font-size: clamp(1.3rem, 2.1vw, 1.8rem); margin-top:1.8rem; }
+    h1{ font-size:clamp(1.9rem,3vw,2.6rem); }
+    h2{ font-size:clamp(1.3rem,2.1vw,1.8rem); margin-top:1.8rem; }
     p{ margin:0 0 0.8rem; }
-    .muted{ color: var(--muted); }
+    .muted{ color:var(--muted); }
 
     .hero-ctas{
       display:flex;
       gap:0.75rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
+      flex-wrap:wrap;
+      margin-top:1rem;
     }
     .btn{
       display:inline-flex;
@@ -133,20 +134,14 @@
       border:1px solid transparent;
       cursor:pointer;
       text-decoration:none;
-      white-space: nowrap;
+      white-space:nowrap;
     }
     .btn-primary{
-      background: var(--nexus);
+      background:var(--nexus);
       color:#fff;
-      border-color: var(--nexus);
+      border-color:var(--nexus);
     }
     .btn-primary:hover{ background:#078a62; border-color:#078a62; text-decoration:none; }
-    .btn-ghost{
-      background:#fff;
-      color:#333;
-      border-color: var(--border);
-    }
-    .btn-ghost:hover{ background: var(--soft); text-decoration:none; }
 
     .right-card{
       border:1px dashed var(--border);
@@ -161,10 +156,10 @@
 
     .grid-2{
       display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
+      grid-template-columns:repeat(2,minmax(0,1fr));
       gap:1.2rem;
       align-items:start;
-      margin-top: 0.75rem;
+      margin-top:0.75rem;
     }
     .card{
       border:1px solid var(--border);
@@ -173,7 +168,7 @@
       background:#fff;
     }
     ul{
-      margin: 0.35rem 0 0.35rem 1.1rem;
+      margin:0.35rem 0 0.35rem 1.1rem;
       padding:0;
       font-size:0.95rem;
     }
@@ -182,12 +177,12 @@
       display:flex;
       flex-wrap:wrap;
       gap:0.35rem;
-      margin-top: 0.5rem;
+      margin-top:0.5rem;
     }
     .chip{
       padding:0.15rem 0.55rem;
       border-radius:999px;
-      background: var(--soft);
+      background:var(--soft);
       color:#444;
       font-size:0.82rem;
     }
@@ -212,17 +207,6 @@
       background:#fafafa;
     }
 
-    .note{
-      border-left: 3px solid var(--nexus);
-      padding:0.75rem 1rem;
-      border-radius:0 10px 10px 0;
-      background:#fafafa;
-      border-top:1px solid var(--border);
-      border-right:1px solid var(--border);
-      border-bottom:1px solid var(--border);
-      margin-top: 0.75rem;
-    }
-
     footer{
       border-top:1px solid var(--border);
       padding:1rem;
@@ -232,9 +216,9 @@
       background:#fafafa;
     }
 
-    @media(max-width: 900px){
-      .hero{ grid-template-columns: 1fr; }
-      .grid-2{ grid-template-columns: 1fr; }
+    @media(max-width:900px){
+      .hero{ grid-template-columns:1fr; }
+      .grid-2{ grid-template-columns:1fr; }
       .nav{ flex-direction:column; align-items:flex-start; gap:0.4rem; }
     }
   </style>
@@ -259,26 +243,19 @@
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div>
         <div class="pill"><span class="dot"></span> Portfolio Prototype · Model-driven (Dataverse)</div>
         <h1>ADM — Almacén &amp; Compras (Procurement + Inventory)</h1>
         <p class="muted">
-          A model-driven Dataverse prototype built to practice end-to-end enterprise patterns:
+          A model-driven Dataverse prototype built to practice enterprise patterns:
           normalized schema, core procurement entities, Business Process Flows (BPF), and approval automations
           for Requisitions (RQ) and Purchase Orders (OC).
         </p>
 
         <div class="hero-ctas">
-          <!-- Optional: if you want a CTA, keep WhatsApp like your other case studies -->
           <a class="btn btn-primary" href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">
             Request a quick demo
-          </a>
-
-          <!-- Put the PDF in repo root and keep the link like other brochures -->
-          <a class="btn btn-ghost" href="../ADM_Brochure_Portfolio.pdf" target="_blank" rel="noopener noreferrer">
-            Download · ADM Brochure (PDF)
           </a>
         </div>
 
@@ -289,18 +266,12 @@
           <span class="chip">Power Automate</span>
           <span class="chip">Approvals</span>
         </div>
-
-        <div class="note">
-          <strong>Note:</strong> This is a portfolio prototype (practice project). It is not a client deployment and uses demo data.
-        </div>
       </div>
 
       <aside class="right-card">
-        <h3 style="margin-top:0;">Quick facts (current)</h3>
+        <h3 style="margin-top:0;">Quick facts</h3>
         <ul class="kvs">
-          <li><strong>Status:</strong> Portfolio prototype (navigable core)</li>
-          <li><strong>Core modules:</strong> Requisitions, Purchase Orders, Inventory (Movements/Saldo), Catalogs</li>
-          <li><strong>Tables (core):</strong> 12 (excluding some “Line/Detail” tables from portfolio scope)</li>
+          <li><strong>Core modules:</strong> Requisitions, Purchase Orders, Inventory, Catalogs</li>
           <li><strong>BPFs:</strong> 2 (RQ + OC)</li>
           <li><strong>Approval flows:</strong> 2 (RQ + OC)</li>
           <li><strong>Dashboards:</strong> not included</li>
@@ -308,21 +279,15 @@
       </aside>
     </section>
 
-    <!-- 1) Context -->
     <section id="context">
       <h2>1) Context / Problem</h2>
       <p>
-        This prototype exists to practice model-driven app design and Dataverse architecture in a realistic domain:
-        procurement and inventory. The goal is to structure an end-to-end process flow (RQ → OC → receiving/stock),
-        with a schema that scales and process enforcement through BPF + approvals.
-      </p>
-      <p>
-        The focus is not UI polish—it’s repeatable architecture: clean relationships, clear ownership of entities,
-        and workflow gates that reduce ambiguity.
+        This prototype focuses on model-driven app design and Dataverse architecture in a realistic domain:
+        procurement and inventory. The goal is an end-to-end process flow (RQ → OC → receiving/stock),
+        with process enforcement through BPF and approvals.
       </p>
     </section>
 
-    <!-- 2) Solution -->
     <section id="solution">
       <h2>2) Solution (what is implemented)</h2>
 
@@ -339,21 +304,17 @@
         </div>
 
         <div class="card">
-          <h3>What this project is optimized for</h3>
+          <h3>Design focus</h3>
           <ul>
             <li>Dataverse table design: lookups, choices, ownership, and consistent naming.</li>
-            <li>Process enforcement: BPF stages + controlled status transitions.</li>
-            <li>Automation wiring: approval requests + update actions + traceability fields.</li>
-            <li>Portfolio-ready evidence: ERD, schema screenshots, BPF diagrams, flow screenshots.</li>
+            <li>Process enforcement: BPF stages and controlled status transitions.</li>
+            <li>Automation wiring: approval requests and Dataverse updates.</li>
+            <li>Documentation artifacts: ERD, schema screenshots, BPF diagrams, flow screenshots.</li>
           </ul>
-          <p class="muted" style="margin-top:0.6rem;">
-            The deliverable is a clean, explainable “systems prototype” that demonstrates architecture—not a production rollout.
-          </p>
         </div>
       </div>
     </section>
 
-    <!-- 3) Architecture -->
     <section id="architecture">
       <h2>3) Architecture</h2>
 
@@ -361,9 +322,9 @@
         <div class="card">
           <h3>Data model</h3>
           <ul>
-            <li><strong>Dataverse-centered</strong> schema for procurement + inventory.</li>
+            <li><strong>Dataverse-centered</strong> schema for procurement and inventory.</li>
             <li><strong>Core entities</strong> cover requisitions, purchase orders, inventory movements, and catalogs.</li>
-            <li><strong>Relationships</strong> designed to support reporting and process automation without hardcoding.</li>
+            <li><strong>Relationships</strong> support automation and reporting without hardcoding.</li>
           </ul>
 
           <div class="chips">
@@ -379,7 +340,7 @@
           <ul>
             <li><strong>BPF</strong> defines stage gates and guides user actions.</li>
             <li><strong>Power Automate approvals</strong> orchestrate approve/reject outcomes.</li>
-            <li><strong>Status updates</strong> write back to Dataverse records (approved/rejected/pending).</li>
+            <li><strong>Status updates</strong> write back to Dataverse records.</li>
           </ul>
 
           <div class="chips">
@@ -390,155 +351,128 @@
           </div>
         </div>
       </div>
-
-      <div class="note">
-        <strong>Status fields note:</strong> the “Estatus” in approvals follows the connector outcomes (Approve/Reject/Pending),
-        and can be null where the stage does not apply.
-      </div>
     </section>
 
-    <!-- 4) Key Features -->
     <section id="features">
       <h2>4) Key Features</h2>
       <div class="card">
         <ul>
-          <li><strong>Process-driven UX:</strong> users follow the BPF rather than improvising steps.</li>
-          <li><strong>Normalized schema:</strong> catalogs (Cliente/Proveedor/Producto/Proyecto) referenced by lookups.</li>
-          <li><strong>Approval outcomes:</strong> flow updates status fields to reflect decision (approve/reject/pending).</li>
-          <li><strong>Inventory trace:</strong> movements linked back to requisition/purchase-order lines where applicable.</li>
-          <li><strong>Portfolio documentation:</strong> ERD + “what exists in the solution” + BPF + flow evidence.</li>
+          <li><strong>Process-driven UX:</strong> users follow the BPF stages.</li>
+          <li><strong>Normalized schema:</strong> catalogs referenced by lookups.</li>
+          <li><strong>Approval outcomes:</strong> flows update status fields to reflect decision.</li>
+          <li><strong>Inventory trace:</strong> movements linked back to requisitions and purchase orders where applicable.</li>
+          <li><strong>Documentation:</strong> ERD, schema, BPFs, and automation screenshots.</li>
         </ul>
       </div>
     </section>
 
-    <!-- 5) Scope -->
     <section id="metrics">
       <h2>5) Scope snapshot</h2>
       <div class="grid-2">
         <div class="card">
-          <h3>What’s included</h3>
+          <h3>Included</h3>
           <ul>
             <li><strong>Core tables:</strong> Clientes, Proveedores, Productos, Proyectos, Requisición, Orden de Compra, Inventario (Mov/Saldos).</li>
             <li><strong>BPFs:</strong> 2 (RQ + OC).</li>
             <li><strong>Approval flows:</strong> 2 (RQ + OC).</li>
-            <li><strong>Navigation:</strong> Almacén / Compras / Proyectos / Catálogos.</li>
+            <li><strong>Navigation:</strong> Almacén, Compras, Proyectos, Catálogos.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>What’s intentionally not included</h3>
+          <h3>Not included</h3>
           <ul>
-            <li><strong>Dashboards:</strong> none (model-driven charts or Power BI).</li>
-            <li><strong>Production hardening:</strong> full role matrix, ALM pipelines, monitoring, and load testing are out of scope for this prototype.</li>
-            <li><strong>Extended line-level modules:</strong> some “Line/Detail” tables are present but not positioned as core portfolio flow.</li>
+            <li><strong>Dashboards:</strong> none.</li>
+            <li><strong>Production hardening:</strong> role matrix, ALM pipelines, monitoring, and load testing.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- 6) Screens -->
     <section id="screens">
       <h2>6) Screenshots</h2>
-      <p class="muted">
-        These are the “portfolio proof” screenshots. Keep file names stable and replace images as you refine the prototype.
-      </p>
 
       <div class="grid-2">
-        <!-- 01 -->
         <figure>
           <img src="../adm-01-landing-navigation.png" alt="ADM - Landing / navigation overview" loading="lazy" />
           <figcaption>1) App landing / navigation: modules (Almacén, Compras, Proyectos, Catálogos).</figcaption>
         </figure>
 
-        <!-- 02 -->
         <figure>
           <img src="../adm-02-solution-objects-overview.png" alt="ADM - Solution objects overview" loading="lazy" />
-          <figcaption>2) Solution overview: tables + processes + flows inside the solution.</figcaption>
+          <figcaption>2) Solution overview: tables, processes, and flows inside the solution.</figcaption>
         </figure>
 
-        <!-- 03 -->
         <figure>
           <img src="../ADM_ERD_Dataverse.png" alt="ADM - ERD / Relationships diagram" loading="lazy" />
-          <figcaption>3) ERD: relationships across core tables (single diagram replacing per-table relationship screenshots).</figcaption>
+          <figcaption>3) ERD: relationships across core tables.</figcaption>
         </figure>
 
-        <!-- 04 -->
         <figure>
           <img src="../adm-04-tables-list.png" alt="ADM - Tables list" loading="lazy" />
           <figcaption>4) Tables inventory: list of ADM tables included in the solution.</figcaption>
         </figure>
 
-        <!-- 05 -->
         <figure>
           <img src="../adm-05-requisicion-columns.png" alt="ADM - Requisición table columns" loading="lazy" />
-          <figcaption>5) Requisición columns: key fields + lookups/choices (schema proof).</figcaption>
+          <figcaption>5) Requisición columns: key fields and lookups/choices.</figcaption>
         </figure>
 
-        <!-- 06 -->
         <figure>
           <img src="../adm-06-ordencompra-columns.png" alt="ADM - Orden de Compra columns" loading="lazy" />
-          <figcaption>6) Orden de Compra columns: key fields + lookups/choices (schema proof).</figcaption>
+          <figcaption>6) Orden de Compra columns: key fields and lookups/choices.</figcaption>
         </figure>
 
-        <!-- 07 -->
         <figure>
           <img src="../adm-07-inventariomovimiento-columns.png" alt="ADM - Inventario Movimiento columns" loading="lazy" />
-          <figcaption>7) Inventario Movimiento columns: movement fields + links to product/lines (where applicable).</figcaption>
+          <figcaption>7) Inventario Movimiento columns: movement fields and references.</figcaption>
         </figure>
 
-        <!-- 08 -->
         <figure>
           <img src="../adm-08-pages-sitemap.png" alt="ADM - App pages / sitemap" loading="lazy" />
-          <figcaption>8) Pages / Sitemap: how entities, views, and forms are structured by module.</figcaption>
+          <figcaption>8) Pages / Sitemap: entities, views, and forms structured by module.</figcaption>
         </figure>
 
-        <!-- 09 -->
         <figure>
-          <img src="../adm-09-ordencompra-form-bpf.png" alt="ADM - Requisiciones main view" loading="lazy" />
-          <figcaption>9) Main view: “Requisiciones pendientes” with demo records.</figcaption>
+          <img src="../adm-09-ordencompra-form-bpf.png" alt="ADM - Orden de Compra main form with BPF bar" loading="lazy" />
+          <figcaption>9) Main form: Orden de Compra with BPF stage bar visible.</figcaption>
         </figure>
 
-        <!-- 10 -->
         <figure>
           <img src="../adm-10-requisicion-form-bpf.png" alt="ADM - Requisición main form with BPF bar" loading="lazy" />
           <figcaption>10) Main form: Requisición with BPF stage bar visible.</figcaption>
         </figure>
 
-        <!-- 11 -->
         <figure>
           <img src="../adm-11-bpf-requisicion.png" alt="ADM - BPF Requisición (Aprobación)" loading="lazy" />
           <figcaption>11) BPF diagram: Requisición approval process flow.</figcaption>
         </figure>
 
-        <!-- 12 -->
         <figure>
           <img src="../adm-12-flow-aprobacion-rq.png" alt="ADM - Flow Solicitar aprobación RQ" loading="lazy" />
-          <figcaption>12) Approval flow (RQ): request approval → condition → update Dataverse record.</figcaption>
+          <figcaption>12) Approval flow (RQ): request approval, decision condition, and Dataverse update.</figcaption>
         </figure>
 
-        <!-- 13 -->
         <figure>
           <img src="../adm-13-bpf-ordencompra.png" alt="ADM - BPF Orden de Compra (Aprobación)" loading="lazy" />
           <figcaption>13) BPF diagram: Orden de Compra approval process flow.</figcaption>
         </figure>
 
-        <!-- 14 -->
         <figure>
           <img src="../adm-14-flow-aprobacion-oc.png" alt="ADM - Flow Solicitar aprobación OC" loading="lazy" />
-          <figcaption>14) Approval flow (OC): request approval → condition → update Dataverse record.</figcaption>
+          <figcaption>14) Approval flow (OC): request approval, decision condition, and Dataverse update.</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- 7) Next -->
     <section id="next">
       <h2>7) Next improvements</h2>
       <div class="card">
         <ul>
-          <li>Add <strong>role matrix</strong> (Requester / Approver / Buyer / Warehouse) with least-privilege permissions.</li>
-          <li>Add <strong>inventory validation rules</strong> (no negative stock, controlled movement types, movement auditing).</li>
-          <li>Add <strong>operational dashboards</strong> (model-driven charts or Power BI) for cycle time, backlog, approvals aging.</li>
-          <li>Formalize <strong>ALM</strong> (managed solution, connection references, environment variables, Dev/Test/Prod packaging).</li>
+          <li>Add role matrix (Requester, Approver, Buyer, Warehouse) with least-privilege permissions.</li>
+          <li>Add inventory validation rules (no negative stock, controlled movement types, auditing).</li>
+          <li>Add operational dashboards for cycle time, backlog, and approvals aging.</li>
+          <li>Formalize ALM (managed solution, connection references, environment variables, Dev/Test/Prod packaging).</li>
         </ul>
       </div>
     </section>
