@@ -2,14 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Case Study NOTARIX · Nexus Intelligence</title>
+  <title>NOTARIX · Caso de Power Apps y Dataverse · Nexus Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Case Study NOTARIX: plataforma Dataverse + Power Apps para operación notarial y cumplimiento LFPIORPI con automatización documental." />
+  <meta
+    name="description"
+    content="Caso NOTARIX: aplicación con Power Apps y Dataverse para gestión notarial, trámites, expedientes digitales, pagos, alertas operativas y automatización documental."
+  />
 
   <style>
     :root{
-      --accent: #ffb900;   /* Notarix amber */
-      --nexus: #09be7a;    /* Nexus green */
+      --accent: #ffb900;
+      --nexus: #09be7a;
       --text: #222222;
       --muted: #555;
       --bg: #ffffff;
@@ -138,12 +141,6 @@
       border-color: var(--nexus);
     }
     .btn-primary:hover{ background:#078a62; border-color:#078a62; text-decoration:none; }
-    .btn-ghost{
-      background:#fff;
-      color:#333;
-      border-color: var(--border);
-    }
-    .btn-ghost:hover{ background: var(--soft); text-decoration:none; }
 
     .right-card{
       border:1px dashed var(--border);
@@ -236,220 +233,223 @@
       <div class="nav-links">
         <a href="#context">Contexto</a>
         <a href="#solution">Solución</a>
-        <a href="#architecture">Arquitectura</a>
-        <a href="#features">Funciones clave</a>
-        <a href="#metrics">Métricas</a>
+        <a href="#architecture">Modelo</a>
+        <a href="#features">Funciones</a>
+        <a href="#metrics">Alcance</a>
         <a href="#screens">Pantallas</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div>
-        <div class="pill"><span class="dot"></span> Case Study · Dataverse + Power Apps</div>
-        <h1>NOTARIX — Plataforma para operación notarial con LFPIORPI</h1>
+        <div class="pill"><span class="dot"></span> Caso · Dataverse + Power Apps</div>
+        <h1>NOTARIX — Gestión notarial con Power Apps y Dataverse</h1>
         <p class="muted">
-          Plataforma centrada en Dataverse para centralizar trámites, aplicar reglas LFPIORPI, gestionar evidencia,
-          dar seguimiento a plazos (semáforos municipales) y automatizar generación de documentos con plantillas Word tokenizadas.
+          Aplicación para centralizar trámites notariales, clientes, pagos, roles, expedientes digitales,
+          alertas operativas y generación de documentos usando Power Apps, Dataverse, Power Automate y SharePoint.
         </p>
 
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">Pedir demo rápida</a>
+          <a class="btn btn-primary" href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">
+            Contacto
+          </a>
         </div>
 
         <div class="chips">
-          <span class="chip">Dataverse</span>
           <span class="chip">Power Apps</span>
+          <span class="chip">Dataverse</span>
           <span class="chip">Power Automate</span>
           <span class="chip">SharePoint</span>
-          <span class="chip">Automatización Word</span>
+          <span class="chip">Word Templates</span>
         </div>
       </div>
 
       <aside class="right-card">
-        <h3 style="margin-top:0;">Datos rápidos (objetivo)</h3>
+        <h3 style="margin-top:0;">Datos rápidos</h3>
         <ul class="kvs">
-          <li><strong>Objetivo principal:</strong> operación con cumplimiento primero + trazabilidad de evidencia</li>
-          <li><strong>Usuarios/Cuentas:</strong> 2, Notario / Contabilidad</li>
-          <li><strong>Trámites/mes:</strong> 50</li>
-          <li><strong>Pantallas:</strong> 13</li>
-          <li><strong>Flujos:</strong> 2</li>
+          <li><strong>Tipo:</strong> proyecto independiente</li>
+          <li><strong>Dominio:</strong> gestión notarial y documentación</li>
+          <li><strong>Usuarios objetivo:</strong> notaría pequeña</li>
+          <li><strong>Pantallas:</strong> múltiples módulos operativos</li>
+          <li><strong>Enfoque:</strong> trazabilidad, captura estructurada y generación documental</li>
         </ul>
-        <p class="muted" style="margin-top:0.8rem;"></p>
       </aside>
     </section>
 
-    <!-- 1) Context -->
     <section id="context">
-      <h2>1) Contexto / Problema</h2>
+      <h2>1) Contexto / problema</h2>
       <p>
-        La operación notarial estaba fragmentada entre hojas de cálculo y archivos dispersos, elevando el riesgo de incumplir plazos municipales,
-        debilitando el manejo de evidencia y haciendo que el cumplimiento LFPIORPI dependiera de cálculos manuales e interpretación individual.
+        La operación notarial puede depender de hojas de cálculo, documentos dispersos, cálculos manuales,
+        control de pagos separado y seguimiento informal de trámites. Esto dificulta tener una vista clara del avance,
+        la documentación, los roles de personas involucradas y los pendientes operativos.
       </p>
     </section>
 
-    <!-- 2) Solution -->
     <section id="solution">
-      <h2>2) Solución (lo que entregué)</h2>
+      <h2>2) Solución</h2>
       <div class="grid-2">
         <div class="card">
-          <h3>Módulos entregados (core)</h3>
+          <h3>Módulos principales</h3>
           <ul>
-            <li><strong>Trámite 360</strong>: seguimiento central (clientes, montos, pagos, folios/acuse SAT).</li>
-            <li><strong>Automatización LFPIORPI</strong>: evaluación de umbrales, banderas y cálculos por políticas.</li>
-            <li><strong>Semáforos municipales</strong>: plazos configurables (Rojo/Ámbar/Verde) por municipio.</li>
-            <li><strong>Expediente digital</strong>: evidencia centralizada y vinculada a cada trámite.</li>
-            <li><strong>Automatización de documentos</strong>: plantillas Word con tokens dinámicos para salidas estandarizadas.</li>
+            <li><strong>Trámites:</strong> registro y seguimiento de operaciones notariales.</li>
+            <li><strong>Padrón de personas:</strong> clientes, roles y datos maestros.</li>
+            <li><strong>Pagos:</strong> montos, conceptos, recibos y relación con trámites.</li>
+            <li><strong>Expediente digital:</strong> documentos, evidencias y archivos asociados.</li>
+            <li><strong>Generación documental:</strong> plantillas Word con tokens dinámicos.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Estilo de entrega</h3>
+          <h3>Enfoque de entrega</h3>
           <ul>
-            <li>Despliegue dentro del tenant Microsoft del cliente.</li>
-            <li>Diseño “model-first”: tablas normalizadas + catálogos para comportamiento escalable.</li>
-            <li>Auditabilidad como restricción de primera clase: evidencia, trazabilidad y salidas controladas.</li>
+            <li>Aplicación desarrollada con Power Apps Canvas y Dataverse.</li>
+            <li>Modelo de datos con tablas, relaciones, catálogos y reglas de negocio.</li>
+            <li>Flujos con Power Automate para generación documental y procesos auxiliares.</li>
+            <li>SharePoint / OneDrive para almacenamiento de documentos y evidencias.</li>
           </ul>
           <p class="muted" style="margin-top:0.6rem;">
-            NOTARIX reduce riesgo de cumplimiento y variabilidad operativa sin aumentar carga manual.
+            El objetivo es reducir recaptura, ordenar expedientes y dar mayor visibilidad al proceso.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- 3) Architecture -->
     <section id="architecture">
-      <h2>3) Arquitectura </h2>
+      <h2>3) Modelo y estructura</h2>
 
       <div class="grid-2">
         <div class="card">
           <h3>Datos</h3>
           <ul>
-            <li><strong>Modelo centrado en Dataverse</strong> con entidades normalizadas + catálogos (reglas parametrizadas).</li>
-            <li><strong>Lógica de cumplimiento</strong> soportada por campos estructurados (umbrales, banderas, plazos, punteros a evidencia).</li>
+            <li><strong>Dataverse</strong> como base para trámites, personas, roles, pagos, catálogos y expedientes.</li>
+            <li><strong>Relaciones</strong> entre personas, trámites, roles, pagos y documentos.</li>
+            <li><strong>Catálogos</strong> para estatus, tipos de escritura, actos, roles y parámetros operativos.</li>
+            <li><strong>Campos estructurados</strong> para reducir captura libre y mejorar reporteo futuro.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Automatización + Documentos + Reporteo</h3>
+          <h3>Automatización y documentos</h3>
           <ul>
-            <li><strong>Power Automate</strong>: orquestación para trazabilidad (avisos, bitácoras, salida documental).</li>
-            <li><strong>SharePoint</strong>: plantillas + evidencia + vínculos desde registros Dataverse.</li>
-            <li><strong>Reporteo</strong>: vistas de control operativo y salidas exportables (rellenar específicos).</li>
+            <li><strong>Power Automate</strong> para orquestar generación de documentos y manejo de archivos.</li>
+            <li><strong>SharePoint / OneDrive</strong> para plantillas, documentos generados y expedientes.</li>
+            <li><strong>Plantillas Word</strong> con tokens reemplazables desde datos capturados en la app.</li>
+            <li><strong>Vistas operativas</strong> para seguimiento de pendientes y estatus.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- 4) Key Features -->
     <section id="features">
-      <h2>4) Funciones clave </h2>
+      <h2>4) Funciones clave</h2>
       <div class="card">
         <ul>
-          <li><strong>Semáforos por municipio</strong> con reglas de plazos configurables (por localidad).</li>
-          <li><strong>Lógica de acumulación 6 meses</strong> (agrupación por RFC + familia de acto, acumulado vs umbral).</li>
-          <li><strong>Versionado de UMA</strong> (valores parametrizados para cálculos por periodo).</li>
-          <li><strong>Control de avisos SAT</strong> (folios, sustituciones/cancelaciones, expiraciones).</li>
-          <li><strong>Flujo de Borrador → Oficialización</strong> (finaliza solo cuando evidencia y datos requeridos están completos).</li>
-          <li><strong>Automatización documental por tokens</strong> usando plantillas Word configurables por el cliente.</li>
+          <li><strong>Vista 360 del trámite:</strong> datos, personas, roles, pagos, documentos y estatus en un solo flujo.</li>
+          <li><strong>Expediente digital:</strong> documentación vinculada al trámite y al cliente correspondiente.</li>
+          <li><strong>Alertas operativas:</strong> semáforos y señales de seguimiento para pendientes relevantes.</li>
+          <li><strong>Roles por persona:</strong> comprador, vendedor, acreditado u otros roles según el trámite.</li>
+          <li><strong>Generación documental:</strong> plantillas Word con campos dinámicos para reducir recaptura.</li>
+          <li><strong>Base para reporteo:</strong> datos estructurados listos para KPIs y seguimiento posterior.</li>
         </ul>
       </div>
     </section>
 
-    <!-- 5) Metrics -->
     <section id="metrics">
-      <h2>5) Métricas / Escala (objetivo)</h2>
+      <h2>5) Alcance</h2>
       <div class="grid-2">
         <div class="card">
-          <h3>Escala</h3>
+          <h3>Incluye</h3>
           <ul>
-            <li><strong>Usuarios/Cuentas:</strong> 2, Notario / Contabilidad</li>
-            <li><strong>Trámites/mes:</strong> 50</li>
-            <li><strong>Pantallas:</strong> 13</li>
-            <li><strong>Automatizaciones (flujos):</strong> 2</li>
+            <li>Aplicación Power Apps Canvas.</li>
+            <li>Modelo Dataverse con tablas y relaciones principales.</li>
+            <li>Módulos para trámites, padrón, pagos, roles y expedientes.</li>
+            <li>Flujos auxiliares con Power Automate.</li>
+            <li>Plantillas Word para generación documental.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Objetivos de cumplimiento</h3>
+          <h3>Base futura</h3>
           <ul>
-            <li><strong>Tipos de plazos controlados:</strong> Municipales y Federales</li>
-            <li><strong>Regla de completitud de evidencia:</strong> Folio de Aviso en SAT</li>
-            <li><strong>Riesgo principal reducido:</strong> variación por cálculo manual + evidencia incompleta + plazos vencidos</li>
+            <li>Dashboards Power BI para seguimiento de trámites y cumplimiento operativo.</li>
+            <li>Mayor formalización de seguridad por roles.</li>
+            <li>ALM con ambientes Dev/Test/Prod.</li>
+            <li>Pruebas automatizadas de reglas críticas.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- 6) Screens -->
     <section id="screens">
-      <h2>6) Capturas </h2>
-      <p class="muted"></p>
+      <h2>6) Capturas</h2>
+      <p class="muted">
+        Capturas representativas de la vista de trámite, listado principal, padrón, adjuntos y generación documental.
+      </p>
 
       <div class="grid-2">
         <figure>
           <img
             src="../notarix-01-resumen-360-semaforos-lfpiorpi.png"
-            alt="NOTARIX - Trámite 360 / vista Resumen con semáforos municipales y señales de cumplimiento LFPIORPI"
+            alt="NOTARIX - Vista resumen con semáforos y seguimiento operativo"
             loading="lazy"
           />
           <figcaption>
-            1) Trámite 360 (“Resumen”): semáforos municipales + estatus LFPIORPI en la misma vista operativa.
+            1) Resumen 360 del trámite: estatus, alertas operativas y datos clave en una sola vista.
           </figcaption>
         </figure>
 
         <figure>
           <img
             src="../notarix-02-tramites-list.png"
-            alt="NOTARIX - Lista principal de trámites con filtros y campos de estatus"
+            alt="NOTARIX - Lista principal de trámites"
             loading="lazy"
           />
           <figcaption>
-            2) Lista de trámites: control centralizado con filtros y campos de estatus (fuente única de verdad).
+            2) Lista de trámites: control centralizado con filtros y campos de estatus.
           </figcaption>
         </figure>
 
         <figure>
           <img
             src="../notarix-03-padron-clientes-adjuntos.png"
-            alt="NOTARIX - Módulo Padrón mostrando datos maestros del cliente, historial y adjuntos vinculados"
+            alt="NOTARIX - Padrón de clientes y adjuntos"
             loading="lazy"
           />
           <figcaption>
-            3) Padrón + Adjuntos: datos maestros del cliente con historial y evidencia/adjuntos ligados al registro.
+            3) Padrón y adjuntos: datos del cliente, historial y evidencia vinculada.
           </figcaption>
         </figure>
 
         <figure>
           <img
             src="../notarix-04-formularios-tokens-plantillas.png"
-            alt="NOTARIX - Módulo de formularios con tokens clave-valor y plantillas Word vinculadas para generación documental"
+            alt="NOTARIX - Formularios con tokens y plantillas Word"
             loading="lazy"
           />
           <figcaption>
-            4) Formularios + Tokens + Plantillas: captura clave-valor y enlace de plantillas Word para automatización documental.
+            4) Formularios, tokens y plantillas: captura clave-valor para generación documental.
           </figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- 7) Improvements -->
     <section id="next">
-      <h2>7) Siguientes mejoras </h2>
+      <h2>7) Siguientes mejoras</h2>
       <div class="card">
         <ul>
-          <li>Agregar <strong>pruebas de regresión</strong> para reglas de cumplimiento (sets versionados + validaciones automatizadas).</li>
-          <li>Formalizar <strong>ALM</strong> (soluciones administradas, variables de entorno, pipelines de despliegue).</li>
-          <li>Agregar <strong>monitoreo + dashboards de auditoría</strong> (drift de reglas, evidencia faltante, plazos por vencer).</li>
+          <li>Formalizar ALM con soluciones administradas, variables de entorno y connection references.</li>
+          <li>Agregar pruebas de regresión para reglas críticas y cálculos operativos.</li>
+          <li>Construir dashboards Power BI para seguimiento de trámites, documentos, tiempos y pendientes.</li>
+          <li>Fortalecer seguridad por roles y permisos sobre datos sensibles.</li>
         </ul>
       </div>
     </section>
   </main>
 
   <footer>
-    © <span id="year"></span> Nexus Intelligence · Case Studies
+    © <span id="year"></span> Nexus Intelligence · Casos y portafolio
   </footer>
 
   <script>
