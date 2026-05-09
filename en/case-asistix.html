@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>NOTARIX · Power Apps and Dataverse Case · Nexus Intelligence</title>
+  <title>ASISTIX · Operational Case · Nexus Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="NOTARIX case: Power Apps and Dataverse application for notary management, cases, digital files, payments, operational alerts, and document automation." />
+  <meta name="description" content="ASISTIX operational case: analytics and automation for attendance and justification control using Microsoft 365, Power Automate, SharePoint, Excel Online, and Power BI." />
   <style>
     :root{
-      --accent:#ffb900;
+      --accent:#09be7a;
       --nexus:#09be7a;
       --text:#222222;
       --muted:#555;
@@ -102,8 +102,7 @@
       .grid-2{ grid-template-columns:1fr; }
       .nav{ flex-direction:column; align-items:flex-start; gap:0.4rem; }
     }
-
-.hero{background:linear-gradient(135deg,#fff4cc,#ffffff)} .pill{color:#7a5a00} .dot{background:var(--accent)}</style>
+</style>
 </head>
 <body>
   <header>
@@ -125,54 +124,54 @@
   <main>
     <section class="hero">
       <div>
-        <div class="pill"><span class="dot"></span> Case · Dataverse + Power Apps</div>
-        <h1>NOTARIX — Notary management with Power Apps and Dataverse</h1>
-        <p class="muted">Application to centralize notary cases, clients, payments, roles, digital files, operational alerts, and document generation using Power Apps, Dataverse, Power Automate, and SharePoint.</p>
+        <div class="pill"><span class="dot"></span> Operational case · Microsoft 365</div>
+        <h1>ASISTIX — Attendance analytics and automation</h1>
+        <p class="muted">Real operational case for attendance control, justification requests, approvals, evidence, and dashboards for HR and leadership using Microsoft 365 tools.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">Contact</a>
         </div>
       </div>
       <aside class="right-card">
         <h3 style="margin-top:0;">Quick facts</h3>
-        <ul class="kvs"><li><strong>Type:</strong> independent project</li>
-<li><strong>Domain:</strong> notary management and documentation</li>
-<li><strong>Target users:</strong> small notary office</li>
-<li><strong>Screens:</strong> multiple operational modules</li>
-<li><strong>Focus:</strong> traceability, structured capture, and document generation</li></ul>
+        <ul class="kvs"><li><strong>Context:</strong> internal solution for a public organization</li>
+<li><strong>Approx. users:</strong> 100</li>
+<li><strong>Monthly requests:</strong> approx. 450</li>
+<li><strong>User area:</strong> HR / Leadership / Managers</li>
+<li><strong>Focus:</strong> traceability, reporting, and operational control</li></ul>
       </aside>
     </section>
     <section id="context">
 <h2>1) Context / problem</h2>
-<p>Notary operations can depend on spreadsheets, scattered documents, manual calculations, separate payment tracking, and informal case follow-up. This makes it difficult to maintain a clear view of progress, documentation, people involved, and operational pending items.</p>
+<p>Attendance and justification control was distributed across emails, files, manual records, and operational queries. This created risk of lost information, inconsistent criteria, low traceability, and difficulty consolidating reports for HR and leadership.</p>
 </section>
 <section id="solution">
 <h2>2) Solution</h2>
-<div class='grid-2'><div class='card'><h3>Main modules</h3><ul><li><strong>Cases:</strong> registration and follow-up of notary operations.</li><li><strong>People registry:</strong> clients, roles, and master data.</li><li><strong>Payments:</strong> amounts, concepts, receipts, and relationship to cases.</li><li><strong>Digital file:</strong> documents, evidence, and related files.</li><li><strong>Document generation:</strong> Word templates with dynamic tokens.</li></ul></div><div class='card'><h3>Delivery approach</h3><ul><li>Application built with Power Apps Canvas and Dataverse.</li><li>Data model with tables, relationships, catalogs, and business rules.</li><li>Power Automate flows for document generation and auxiliary processes.</li><li>SharePoint / OneDrive for documents, evidence, and generated files.</li></ul><p class='muted'>The goal is to reduce recapture, organize digital files, and improve process visibility.</p></div></div>
+<div class='grid-2'><div class='card'><h3>Main deliverables</h3><ul><li><strong>Centralized request intake</strong> through Microsoft Forms.</li><li><strong>Approval flows</strong> with Power Automate, Outlook, and request-type rules.</li><li><strong>Document evidence</strong> stored and linked through SharePoint.</li><li><strong>Structured logs</strong> in Excel Online as an operational source for query and reporting.</li><li><strong>Power BI dashboards</strong> for absences, lateness, justifications, and incidents.</li></ul></div><div class='card'><h3>Operational flow</h3><ul><li>Employee submits a request with required fields.</li><li>Power Automate applies validations and sends approval.</li><li>Manager approves or rejects.</li><li>Outcome is notified and registered in the log.</li><li>Power BI consumes the information for operational and executive reporting.</li></ul><p class='muted'>The solution helped turn a manual process into a more structured, traceable, and measurable workflow.</p></div></div>
 </section>
 <section id="architecture">
-<h2>3) Model and structure</h2>
-<div class='grid-2'><div class='card'><h3>Data</h3><ul><li><strong>Dataverse</strong> as the base for cases, people, roles, payments, catalogs, and files.</li><li><strong>Relationships</strong> between people, cases, roles, payments, and documents.</li><li><strong>Catalogs</strong> for statuses, deed types, legal acts, roles, and operational parameters.</li><li><strong>Structured fields</strong> to reduce free-text capture and improve future reporting.</li></ul></div><div class='card'><h3>Automation and documents</h3><ul><li><strong>Power Automate</strong> to orchestrate document generation and file handling.</li><li><strong>SharePoint / OneDrive</strong> for templates, generated documents, and digital case files.</li><li><strong>Word templates</strong> with replaceable tokens from app-captured data.</li><li><strong>Operational views</strong> for pending items and status follow-up.</li></ul></div></div>
+<h2>3) Analytical model and architecture</h2>
+<div class='grid-2'><div class='card'><h3>Data model</h3><ul><li><strong>Employee-day labor calendar</strong> as the analytical backbone.</li><li><strong>Biometric records</strong> as the source of clock-in/clock-out events.</li><li><strong>Catalogs</strong> for employees, schedules, holidays, and justification types.</li><li><strong>Justification logs</strong> from forms and operational records.</li></ul></div><div class='card'><h3>Automation and reporting</h3><ul><li><strong>Power Automate</strong> for validations, approvals, notifications, and result logging.</li><li><strong>SharePoint</strong> for evidence and related files.</li><li><strong>Excel Online</strong> as an operational log and structured source.</li><li><strong>Power BI</strong> for models, DAX measures, dashboards, and monthly analysis.</li></ul></div></div>
 </section>
 <section id="features">
 <h2>4) Key features</h2>
-<div class='card'><ul><li><strong>Case 360 view:</strong> data, people, roles, payments, documents, and status in one flow.</li><li><strong>Digital file:</strong> documentation linked to the case and the corresponding client.</li><li><strong>Operational alerts:</strong> semaphores and follow-up signals for relevant pending items.</li><li><strong>Person roles:</strong> buyer, seller, borrower, or other roles depending on the case.</li><li><strong>Document generation:</strong> Word templates with dynamic fields to reduce recapture.</li><li><strong>Reporting foundation:</strong> structured data ready for KPIs and later follow-up.</li></ul></div>
+<div class='card'><ul><li><strong>Incident classification:</strong> normal, late, absent, justified, or pending.</li><li><strong>Request windows:</strong> control of allowed periods and rules by justification type.</li><li><strong>Traceability:</strong> requester, approver, date, outcome, evidence, and status.</li><li><strong>Operational reporting:</strong> follow-up by employee, area, month, incident type, and status.</li><li><strong>Employee-day model:</strong> analyzes what should have happened and what actually happened.</li></ul></div>
 </section>
 <section id="metrics">
-<h2>5) Scope</h2>
-<div class='grid-2'><div class='card'><h3>Includes</h3><ul><li>Power Apps Canvas application.</li><li>Dataverse model with main tables and relationships.</li><li>Modules for cases, registry, payments, roles, and files.</li><li>Auxiliary flows with Power Automate.</li><li>Word templates for document generation.</li></ul></div><div class='card'><h3>Future foundation</h3><ul><li>Power BI dashboards for case and operational follow-up.</li><li>Stronger role-based security formalization.</li><li>ALM with Dev/Test/Prod environments.</li><li>Automated tests for critical rules.</li></ul></div></div>
+<h2>5) Metrics and scope</h2>
+<div class='grid-2'><div class='card'><h3>Approximate scale</h3><ul><li><strong>Users:</strong> approx. 100</li><li><strong>Monthly requests:</strong> approx. 450</li><li><strong>Sources:</strong> Forms, Excel Online, SharePoint, SQL/MySQL, biometric system.</li><li><strong>Reports:</strong> operational and executive Power BI reporting.</li></ul></div><div class='card'><h3>Indicators worked on</h3><ul><li>Absences and lateness.</li><li>Approved, rejected, or pending justifications.</li><li>Incidents by area, employee, and period.</li><li>Employees with recurring incidents.</li><li>Monthly follow-up for HR and leadership.</li></ul></div></div>
 </section>
 <section id="next">
-<h2>7) Next improvements</h2>
-<div class='card'><ul><li>Formalize ALM with managed solutions, environment variables, and connection references.</li><li>Add regression tests for critical rules and operational calculations.</li><li>Build Power BI dashboards for cases, documents, timelines, and pending items.</li><li>Strengthen role-based security and permissions over sensitive data.</li></ul></div>
+<h2>7) Future improvements</h2>
+<div class='card'><ul><li>Migrate operational logs from Excel Online to Dataverse for stronger governance.</li><li>Add automatic reminders and escalation for pending approvals.</li><li>Formalize Dev/Test/Prod environments for controlled packaging and deployment.</li><li>Expand dashboards with trend, recurrence, and response-time metrics.</li></ul></div>
 </section>
 
     <section id="screens">
       <h2>Screens</h2>
       <p class="muted">Representative screenshots of the solution.</p>
-      <div class="grid-2"><figure><img src="../notarix-01-resumen-360-semaforos-lfpiorpi.png" alt="NOTARIX - summary view with semaphores and operational follow-up" loading="lazy" /><figcaption>1) Case 360 summary: status, operational alerts, and key data in one view.</figcaption></figure>
-<figure><img src="../notarix-02-tramites-list.png" alt="NOTARIX - main cases list" loading="lazy" /><figcaption>2) Cases list: centralized control with filters and status fields.</figcaption></figure>
-<figure><img src="../notarix-03-padron-clientes-adjuntos.png" alt="NOTARIX - client registry and attachments" loading="lazy" /><figcaption>3) Registry and attachments: client data, history, and linked evidence.</figcaption></figure>
-<figure><img src="../notarix-04-formularios-tokens-plantillas.png" alt="NOTARIX - forms with tokens and Word templates" loading="lazy" /><figcaption>4) Forms, tokens, and templates: key-value capture for document generation.</figcaption></figure></div>
+      <div class="grid-2"><figure><img src="../asistix-01-form.png" alt="ASISTIX - Microsoft Form with branching" loading="lazy" /><figcaption>1) Request intake form with required fields and request-type logic.</figcaption></figure>
+<figure><img src="../asistix-02-approval-email.png" alt="ASISTIX - Approval email example" loading="lazy" /><figcaption>2) Approval email with approve/reject outcome and traceability.</figcaption></figure>
+<figure><img src="../asistix-03-sharepoint-evidence.png" alt="ASISTIX - Evidence in SharePoint" loading="lazy" /><figcaption>3) Evidence stored in SharePoint and linked to the record.</figcaption></figure>
+<figure><img src="../asistix-04-powerbi-kpis.png" alt="ASISTIX - Power BI KPIs" loading="lazy" /><figcaption>4) Power BI KPIs for operational follow-up during the selected period.</figcaption></figure></div>
     </section>
   </main>
   <footer>© <span id="year"></span> Nexus Intelligence · Cases and portfolio</footer>
