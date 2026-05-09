@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Procurement & Inventory MVP · Nexus Intelligence</title>
+  <title>MVP Compras & Inventario · Nexus Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio MVP in Dataverse and Power Apps Model-Driven for procurement, requisitions, purchase orders, inventory, and approvals." />
+  <meta
+    name="description"
+    content="MVP de portafolio en Dataverse y Power Apps Model-Driven para procesos de compras, requisiciones, órdenes de compra, inventario y aprobaciones."
+  />
+
   <style>
     :root{
-      --accent:#09be7a;
+      --accent:#6b7280;
       --nexus:#09be7a;
       --text:#222222;
       --muted:#555;
@@ -26,6 +30,7 @@
     }
     a{ color:var(--nexus); text-decoration:none; }
     a:hover{ text-decoration:underline; }
+
     header{
       position:sticky;
       top:0;
@@ -49,11 +54,34 @@
       gap:0.8rem;
       flex-wrap:wrap;
     }
-    .brand{ font-weight:800; color:#111; white-space:nowrap; }
-    .nav-links{ display:flex; gap:0.8rem; flex-wrap:wrap; font-size:0.9rem; }
-    .nav-links a{ padding:0.25rem 0.4rem; border-radius:999px; font-weight:600; color:#333; }
-    .nav-links a:hover{ background:var(--soft); text-decoration:none; }
-    main{ max-width:var(--max); margin:0 auto; padding:1.5rem 1rem 3rem; }
+    .brand{
+      font-weight:800;
+      color:#111;
+      white-space:nowrap;
+    }
+    .nav-links{
+      display:flex;
+      gap:0.8rem;
+      flex-wrap:wrap;
+      font-size:0.9rem;
+    }
+    .nav-links a{
+      padding:0.25rem 0.4rem;
+      border-radius:999px;
+      font-weight:600;
+      color:#333;
+    }
+    .nav-links a:hover{
+      background:var(--soft);
+      text-decoration:none;
+    }
+
+    main{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:1.5rem 1rem 3rem;
+    }
+
     .hero{
       display:grid;
       grid-template-columns:minmax(0,2.2fr) minmax(0,1.8fr);
@@ -66,125 +94,404 @@
       background:linear-gradient(135deg,#eefaf6,#ffffff);
     }
     .pill{
-      display:inline-flex; align-items:center; gap:0.5rem;
-      padding:0.25rem 0.7rem; border-radius:999px; border:1px solid var(--border);
-      background:#fff; font-size:0.85rem; font-weight:800; color:#0b6b4b; margin-bottom:0.75rem;
+      display:inline-flex;
+      align-items:center;
+      gap:0.5rem;
+      padding:0.25rem 0.7rem;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-size:0.85rem;
+      font-weight:800;
+      color:#0b6b4b;
+      margin-bottom:0.75rem;
     }
-    .dot{ width:10px; height:10px; border-radius:999px; background:var(--nexus); }
+    .dot{
+      width:10px; height:10px;
+      border-radius:999px;
+      background:var(--nexus);
+    }
     h1,h2,h3{ margin:0 0 0.6rem; color:#111; }
     h1{ font-size:clamp(1.9rem,3vw,2.6rem); }
     h2{ font-size:clamp(1.3rem,2.1vw,1.8rem); margin-top:1.8rem; }
     p{ margin:0 0 0.8rem; }
     .muted{ color:var(--muted); }
-    .hero-ctas{ display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem; }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:0.45rem;
-      border-radius:999px; padding:0.5rem 1.1rem; font-size:0.9rem;
-      border:1px solid transparent; cursor:pointer; text-decoration:none; white-space:nowrap;
+
+    .hero-ctas{
+      display:flex;
+      gap:0.75rem;
+      flex-wrap:wrap;
+      margin-top:1rem;
     }
-    .btn-primary{ background:var(--nexus); color:#fff; border-color:var(--nexus); }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:0.45rem;
+      border-radius:999px;
+      padding:0.5rem 1.1rem;
+      font-size:0.9rem;
+      border:1px solid transparent;
+      cursor:pointer;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      background:var(--nexus);
+      color:#fff;
+      border-color:var(--nexus);
+    }
     .btn-primary:hover{ background:#078a62; border-color:#078a62; text-decoration:none; }
-    .right-card{ border:1px dashed var(--border); border-radius:12px; padding:1rem; background:#ffffffaa; font-size:0.92rem; }
+
+    .right-card{
+      border:1px dashed var(--border);
+      border-radius:12px;
+      padding:1rem;
+      background:#ffffffaa;
+      font-size:0.92rem;
+    }
     .kvs{ list-style:none; padding:0; margin:0; }
     .kvs li{ margin:0 0 0.5rem; }
     .kvs strong{ font-weight:800; }
-    .grid-2{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.2rem; align-items:start; margin-top:0.75rem; }
-    .card{ border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.2rem; background:#fff; }
-    ul{ margin:0.35rem 0 0.35rem 1.1rem; padding:0; font-size:0.95rem; }
-    .chips{ display:flex; flex-wrap:wrap; gap:0.35rem; margin-top:0.5rem; }
-    .chip{ padding:0.15rem 0.55rem; border-radius:999px; background:var(--soft); color:#444; font-size:0.82rem; }
-    figure{ margin:0; border:1px solid var(--border); border-radius:12px; background:#fff; overflow:hidden; }
-    figure img{ width:100%; display:block; height:auto; }
-    figcaption{ padding:0.7rem 0.9rem; font-size:0.9rem; color:#444; border-top:1px solid var(--border); background:#fafafa; }
-    footer{ border-top:1px solid var(--border); padding:1rem; text-align:center; font-size:0.85rem; color:#666; background:#fafafa; }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:1.2rem;
+      align-items:start;
+      margin-top:0.75rem;
+    }
+    .card{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:1.1rem 1.2rem;
+      background:#fff;
+    }
+    ul{
+      margin:0.35rem 0 0.35rem 1.1rem;
+      padding:0;
+      font-size:0.95rem;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.35rem;
+      margin-top:0.5rem;
+    }
+    .chip{
+      padding:0.15rem 0.55rem;
+      border-radius:999px;
+      background:var(--soft);
+      color:#444;
+      font-size:0.82rem;
+    }
+
+    figure{
+      margin:0;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:#fff;
+      overflow:hidden;
+    }
+    figure img{
+      width:100%;
+      display:block;
+      height:auto;
+    }
+    figcaption{
+      padding:0.7rem 0.9rem;
+      font-size:0.9rem;
+      color:#444;
+      border-top:1px solid var(--border);
+      background:#fafafa;
+    }
+
+    footer{
+      border-top:1px solid var(--border);
+      padding:1rem;
+      text-align:center;
+      font-size:0.85rem;
+      color:#666;
+      background:#fafafa;
+    }
+
     @media(max-width:900px){
       .hero{ grid-template-columns:1fr; }
       .grid-2{ grid-template-columns:1fr; }
       .nav{ flex-direction:column; align-items:flex-start; gap:0.4rem; }
     }
-</style>
+  </style>
 </head>
+
 <body>
   <header>
     <nav class="nav">
       <div class="nav-left">
         <span class="brand">Nexus Intelligence</span>
-        <a href="index.html" class="muted">← Back to Home</a>
+        <a href="index.html" class="muted">← Volver al inicio</a>
       </div>
       <div class="nav-links">
-        <a href="#context">Context</a>
-        <a href="#solution">Solution</a>
-        <a href="#architecture">Model</a>
-        <a href="#features">Features</a>
-        <a href="#metrics">Scope</a>
-        <a href="#screens">Screens</a>
+        <a href="#context">Contexto</a>
+        <a href="#solution">Solución</a>
+        <a href="#architecture">Modelo</a>
+        <a href="#features">Funciones</a>
+        <a href="#scope">Alcance</a>
+        <a href="#screens">Capturas</a>
       </div>
     </nav>
   </header>
+
   <main>
     <section class="hero">
       <div>
-        <div class="pill"><span class="dot"></span> Portfolio · Dataverse · Model-driven App</div>
-        <h1>Procurement & Inventory MVP</h1>
-        <p class="muted">Portfolio MVP developed in Dataverse and Power Apps Model-Driven to practice procurement, requisitions, purchase orders, inventory, Business Process Flows, and approval patterns with Power Automate.</p>
+        <div class="pill"><span class="dot"></span> Portafolio · Dataverse · Model-driven App</div>
+        <h1>MVP Compras &amp; Inventario</h1>
+        <p class="muted">
+          MVP de portafolio desarrollado en Dataverse y Power Apps Model-Driven para practicar patrones de compras,
+          requisiciones, órdenes de compra, inventario, Business Process Flows y aprobaciones con Power Automate.
+        </p>
+
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">Contact</a>
+          <a class="btn btn-primary" href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">
+            Contacto
+          </a>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Dataverse</span>
+          <span class="chip">Model-driven App</span>
+          <span class="chip">BPF</span>
+          <span class="chip">Power Automate</span>
+          <span class="chip">Approvals</span>
         </div>
       </div>
+
       <aside class="right-card">
-        <h3 style="margin-top:0;">Quick facts</h3>
-        <ul class="kvs"><li><strong>Type:</strong> portfolio MVP</li>
-<li><strong>Modules:</strong> Requisitions, Purchase Orders, Inventory, Catalogs</li>
-<li><strong>BPFs:</strong> 2, Requisition and Purchase Order</li>
-<li><strong>Flows:</strong> basic approvals with Power Automate</li>
-<li><strong>Dashboards:</strong> not included in this version</li></ul>
+        <h3 style="margin-top:0;">Resumen</h3>
+        <ul class="kvs">
+          <li><strong>Tipo:</strong> MVP de portafolio</li>
+          <li><strong>Módulos:</strong> Requisiciones, Órdenes de Compra, Inventario, Catálogos</li>
+          <li><strong>BPFs:</strong> 2, Requisición y Orden de Compra</li>
+          <li><strong>Flujos:</strong> aprobaciones básicas con Power Automate</li>
+          <li><strong>Dashboards:</strong> no incluidos en esta versión</li>
+        </ul>
       </aside>
     </section>
+
     <section id="context">
-<h2>1) Context / objective</h2>
-<p>This MVP was built as a portfolio project to practice Dataverse data modeling, model-driven apps, process guidance with Business Process Flows, and approval automation.</p><p>Procurement and inventory was selected because it represents real relationships between products, suppliers, projects, requisitions, purchase orders, and inventory movements.</p>
-</section>
-<section id="solution">
-<h2>2) Implemented solution</h2>
-<div class='grid-2'><div class='card'><h3>MVP core</h3><ul><li><strong>Model-driven app</strong> organized by procurement, inventory, projects, and catalogs.</li><li><strong>Dataverse model</strong> with related operational and catalog tables.</li><li><strong>Requisition BPF</strong>: capture, approval request, resolution, and closing.</li><li><strong>Purchase Order BPF</strong>: capture, approval, issuing, and follow-up.</li><li><strong>Approval flows</strong> with Power Automate and Dataverse status updates.</li></ul></div><div class='card'><h3>Design approach</h3><ul><li>Separation between operational entities and catalogs.</li><li>Use of lookups, choices, and relationships to reduce free-text capture.</li><li>Stage-based process guidance to organize user execution.</li><li>Foundation prepared for future business rules, validations, and reporting.</li></ul></div></div>
-</section>
-<section id="architecture">
-<h2>3) Model and structure</h2>
-<div class='grid-2'><div class='card'><h3>Data model</h3><ul><li>Products, suppliers, customers, and projects as base entities.</li><li>Requisitions and purchase orders as transactional entities.</li><li>Inventory movements and balances for operational tracking.</li><li>Relationships designed to support forms, views, BPFs, and flows.</li></ul></div><div class='card'><h3>Automation</h3><ul><li>Business Process Flows to guide requisition and purchase order stages.</li><li>Power Automate Approvals to approve or reject requests.</li><li>Status fields updated in Dataverse based on the approval outcome.</li><li>Foundation to incorporate inventory validations and authorization rules.</li></ul></div></div>
-</section>
-<section id="features">
-<h2>4) Key features</h2>
-<div class='card'><ul><li><strong>Process-guided UX:</strong> visible stages through Business Process Flows.</li><li><strong>Relational model:</strong> catalogs referenced by lookups instead of free text.</li><li><strong>Basic approvals:</strong> approved/rejected result reflected in Dataverse.</li><li><strong>Inventory structure:</strong> movements and balances ready to evolve into stronger rules.</li><li><strong>Visual documentation:</strong> screenshots of tables, columns, BPFs, flows, and sitemap.</li></ul></div>
-</section>
-<section id="metrics">
-<h2>5) Scope</h2>
-<div class='grid-2'><div class='card'><h3>Included</h3><ul><li>Main tables for products, suppliers, customers, and projects.</li><li>Requisitions, purchase orders, and detail lines.</li><li>Inventory: movements and balances.</li><li>Two Business Process Flows.</li><li>Basic approval flows.</li></ul></div><div class='card'><h3>Not included in this version</h3><ul><li>Power BI dashboards.</li><li>Complete role and permission matrix.</li><li>Formal Dev/Test/Prod ALM.</li><li>Load testing or production hardening.</li></ul></div></div>
-</section>
-<section id="next">
-<h2>7) Next improvements</h2>
-<div class='card'><ul><li>Add role matrix: requester, approver, procurement, and warehouse.</li><li>Add inventory rules: no negative stock, movement types, and audit trail.</li><li>Add operational dashboards: backlog, cycle time, and aging approvals.</li><li>Formalize ALM: managed solution, environment variables, and connection references.</li></ul></div>
-</section>
+      <h2>1) Contexto / objetivo</h2>
+      <p>
+        Este MVP fue construido como proyecto de portafolio para practicar modelado de datos en Dataverse,
+        aplicaciones model-driven, procesos guiados con Business Process Flows y automatización de aprobaciones.
+      </p>
+      <p>
+        El dominio elegido fue compras e inventario porque permite representar relaciones reales entre productos,
+        proveedores, proyectos, requisiciones, órdenes de compra y movimientos de inventario.
+      </p>
+    </section>
+
+    <section id="solution">
+      <h2>2) Solución implementada</h2>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Núcleo del MVP</h3>
+          <ul>
+            <li><strong>App model-driven</strong> organizada por módulos: compras, inventario, proyectos y catálogos.</li>
+            <li><strong>Modelo Dataverse</strong> con tablas relacionadas para entidades operativas y catálogos.</li>
+            <li><strong>BPF para Requisición</strong>: captura, solicitud de aprobación, resolución y cierre.</li>
+            <li><strong>BPF para Orden de Compra</strong>: captura, aprobación, emisión y seguimiento.</li>
+            <li><strong>Flujos de aprobación</strong> con Power Automate y actualización de estatus en Dataverse.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Enfoque de diseño</h3>
+          <ul>
+            <li>Separación entre entidades operativas y catálogos.</li>
+            <li>Uso de lookups, choices y relaciones para reducir captura libre.</li>
+            <li>Proceso guiado por etapas para ordenar la operación del usuario.</li>
+            <li>Base preparada para futuras reglas de negocio, validaciones y reporteo.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture">
+      <h2>3) Modelo y estructura</h2>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Modelo de datos</h3>
+          <ul>
+            <li>Productos, proveedores, clientes y proyectos como entidades base.</li>
+            <li>Requisiciones y órdenes de compra como entidades transaccionales.</li>
+            <li>Movimientos y saldos de inventario para seguimiento operativo.</li>
+            <li>Relaciones diseñadas para soportar formularios, vistas, BPFs y flujos.</li>
+          </ul>
+
+          <div class="chips">
+            <span class="chip">Lookups</span>
+            <span class="chip">Choices</span>
+            <span class="chip">1:N</span>
+            <span class="chip">N:1</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Automatización</h3>
+          <ul>
+            <li>Business Process Flows para guiar etapas de requisición y orden de compra.</li>
+            <li>Power Automate Approvals para aprobar o rechazar solicitudes.</li>
+            <li>Actualización de campos de estatus en Dataverse según resultado.</li>
+            <li>Base para incorporar validaciones de inventario y reglas de autorización.</li>
+          </ul>
+
+          <div class="chips">
+            <span class="chip">Approvals</span>
+            <span class="chip">Dataverse actions</span>
+            <span class="chip">Conditions</span>
+            <span class="chip">Status fields</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2>4) Funciones clave</h2>
+      <div class="card">
+        <ul>
+          <li><strong>UX guiada por proceso:</strong> etapas visibles mediante Business Process Flows.</li>
+          <li><strong>Modelo relacional:</strong> catálogos referenciados por lookups en lugar de texto libre.</li>
+          <li><strong>Aprobaciones básicas:</strong> resultado aprobado/rechazado reflejado en Dataverse.</li>
+          <li><strong>Estructura de inventario:</strong> movimientos y saldos listos para evolucionar a reglas más robustas.</li>
+          <li><strong>Documentación visual:</strong> capturas de tablas, columnas, BPFs, flujos y sitemap.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="scope">
+      <h2>5) Alcance</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Incluye</h3>
+          <ul>
+            <li>Tablas principales para productos, proveedores, clientes y proyectos.</li>
+            <li>Requisiciones, órdenes de compra y líneas de detalle.</li>
+            <li>Inventario: movimientos y saldos.</li>
+            <li>Dos Business Process Flows.</li>
+            <li>Flujos básicos de aprobación.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>No incluye en esta versión</h3>
+          <ul>
+            <li>Dashboards Power BI.</li>
+            <li>Matriz completa de roles y permisos.</li>
+            <li>ALM formal Dev/Test/Prod.</li>
+            <li>Pruebas de carga o endurecimiento productivo.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
     <section id="screens">
-      <h2>Screens</h2>
-      <p class="muted">Representative screenshots of the solution.</p>
-      <div class="grid-2"><figure><img src="../adm-01-landing-navigation.png" alt="Procurement and Inventory MVP - module navigation" loading="lazy" /><figcaption>1) Module navigation inside the model-driven app.</figcaption></figure>
-<figure><img src="../adm-02-solution-objects-overview.png" alt="Procurement and Inventory MVP - solution objects" loading="lazy" /><figcaption>2) Solution objects overview: tables, processes, and flows.</figcaption></figure>
-<figure><img src="../ADM_ERD_Dataverse.png" alt="Procurement and Inventory MVP - Dataverse ERD" loading="lazy" /><figcaption>3) ERD: relationships between main tables.</figcaption></figure>
-<figure><img src="../adm-04-tables-list.png" alt="Procurement and Inventory MVP - tables list" loading="lazy" /><figcaption>4) Table inventory included in the MVP.</figcaption></figure>
-<figure><img src="../adm-05-requisicion-columns.png" alt="Procurement and Inventory MVP - requisition columns" loading="lazy" /><figcaption>5) Requisition: key columns, lookups, and choices.</figcaption></figure>
-<figure><img src="../adm-06-ordencompra-columns.png" alt="Procurement and Inventory MVP - purchase order columns" loading="lazy" /><figcaption>6) Purchase Order: key columns and relationships.</figcaption></figure>
-<figure><img src="../adm-07-inventariomovimiento-columns.png" alt="Procurement and Inventory MVP - inventory movement columns" loading="lazy" /><figcaption>7) Inventory Movement: movement fields and references.</figcaption></figure>
-<figure><img src="../adm-08-pages-sitemap.png" alt="Procurement and Inventory MVP - sitemap" loading="lazy" /><figcaption>8) Sitemap: navigation structure by module.</figcaption></figure>
-<figure><img src="../adm-09-ordencompra-form-bpf.png" alt="Procurement and Inventory MVP - purchase order form with BPF" loading="lazy" /><figcaption>9) Purchase Order: form with process bar.</figcaption></figure>
-<figure><img src="../adm-10-requisicion-form-bpf.png" alt="Procurement and Inventory MVP - requisition form with BPF" loading="lazy" /><figcaption>10) Requisition: form with process bar.</figcaption></figure>
-<figure><img src="../adm-11-bpf-requisicion.png" alt="Procurement and Inventory MVP - requisition BPF" loading="lazy" /><figcaption>11) BPF: requisition process.</figcaption></figure>
-<figure><img src="../adm-12-flow-aprobacion-rq.png" alt="Procurement and Inventory MVP - requisition approval flow" loading="lazy" /><figcaption>12) RQ flow: approval and status update.</figcaption></figure>
-<figure><img src="../adm-13-bpf-ordencompra.png" alt="Procurement and Inventory MVP - purchase order BPF" loading="lazy" /><figcaption>13) BPF: purchase order process.</figcaption></figure>
-<figure><img src="../adm-14-flow-aprobacion-oc.png" alt="Procurement and Inventory MVP - purchase order approval flow" loading="lazy" /><figcaption>14) OC flow: approval and status update.</figcaption></figure></div>
+      <h2>6) Capturas</h2>
+
+      <div class="grid-2">
+        <figure>
+          <img src="../adm-01-landing-navigation.png" alt="MVP Compras e Inventario - navegación por módulos" loading="lazy" />
+          <figcaption>1) Navegación por módulos dentro de la app model-driven.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../adm-02-solution-objects-overview.png" alt="MVP Compras e Inventario - objetos de la solución" loading="lazy" />
+          <figcaption>2) Vista general de objetos de solución: tablas, procesos y flujos.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../ADM_ERD_Dataverse.png" alt="MVP Compras e Inventario - ERD Dataverse" loading="lazy" />
+          <figcaption>3) ERD: relaciones entre tablas principales.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../adm-04-tables-list.png" alt="MVP Compras e Inventario - lista de tablas" loading="lazy" />
+          <figcaption>4) Inventario de tablas incluidas en el MVP.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../adm-05-requisicion-columns.png" alt="MVP Compras e Inventario - columnas de requisición" loading="lazy" />
+          <figcaption>5) Requisición: columnas clave, lookups y choices.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../adm-06-ordencompra-columns.png" alt="MVP Compras e Inventario - columnas de orden de compra" loading="lazy" />
+          <figcaption>6) Orden de Compra: columnas clave y relaciones.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../adm-07-inventariomovimiento-columns.png" alt="MVP Compras e Inventario - inventario movimiento" loading="lazy" />
+          <figcaption>7) Inventario Movimiento: campos de movimiento y referencias.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../adm-08-pages-sitemap.png" alt="MVP Compras e Inventario - sitemap" loading="lazy" />
+          <figcaption>8) Sitemap: estructura de navegación por módulos.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../adm-09-ordencompra-form-bpf.png" alt="MVP Compras e Inventario - formulario OC con BPF" loading="lazy" />
+          <figcaption>9) Orden de Compra: formulario con barra de proceso.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../adm-10-requisicion-form-bpf.png" alt="MVP Compras e Inventario - formulario RQ con BPF" loading="lazy" />
+          <figcaption>10) Requisición: formulario con barra de proceso.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../adm-11-bpf-requisicion.png" alt="MVP Compras e Inventario - BPF requisición" loading="lazy" />
+          <figcaption>11) BPF: proceso de requisición.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../adm-12-flow-aprobacion-rq.png" alt="MVP Compras e Inventario - flujo aprobación RQ" loading="lazy" />
+          <figcaption>12) Flujo RQ: aprobación y actualización de estatus.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../adm-13-bpf-ordencompra.png" alt="MVP Compras e Inventario - BPF OC" loading="lazy" />
+          <figcaption>13) BPF: proceso de orden de compra.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="../adm-14-flow-aprobacion-oc.png" alt="MVP Compras e Inventario - flujo aprobación OC" loading="lazy" />
+          <figcaption>14) Flujo OC: aprobación y actualización de estatus.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="next">
+      <h2>7) Próximas mejoras</h2>
+      <div class="card">
+        <ul>
+          <li>Agregar matriz de roles: solicitante, aprobador, compras y almacén.</li>
+          <li>Agregar reglas de inventario: sin negativos, tipos de movimiento y auditoría.</li>
+          <li>Agregar dashboards operativos: backlog, cycle time y antigüedad de aprobaciones.</li>
+          <li>Formalizar ALM: solución administrada, variables de entorno y connection references.</li>
+        </ul>
+      </div>
     </section>
   </main>
-  <footer>© <span id="year"></span> Nexus Intelligence · Portfolio</footer>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+  <footer>
+    © <span id="year"></span> Nexus Intelligence · Portafolio
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
