@@ -2,41 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ASISTIX Case Study · Nexus Intelligence</title>
+  <title>ASISTIX · Operational Case · Nexus Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="ASISTIX case study: attendance & justification management using Microsoft 365, Power Automate, SharePoint, and Power BI." />
-
+  <meta name="description" content="ASISTIX operational case: analytics and automation for attendance and justification control using Microsoft 365, Power Automate, SharePoint, Excel Online, and Power BI." />
   <style>
     :root{
-      --accent: #09be7a;   /* Nexus green */
-      --text: #222222;
-      --muted: #555;
-      --bg: #ffffff;
-      --soft: #f5f5f5;
-      --border: #e0e0e0;
-      --max: 1100px;
+      --accent:#09be7a;
+      --nexus:#09be7a;
+      --text:#222222;
+      --muted:#555;
+      --bg:#ffffff;
+      --soft:#f5f5f5;
+      --border:#e0e0e0;
+      --max:1100px;
     }
-    *{ box-sizing: border-box; }
+    *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       color:var(--text);
       background:var(--bg);
       line-height:1.5;
     }
-    a{ color:var(--accent); text-decoration:none; }
+    a{ color:var(--nexus); text-decoration:none; }
     a:hover{ text-decoration:underline; }
-
     header{
-      position: sticky;
+      position:sticky;
       top:0;
-      z-index: 10;
+      z-index:10;
       background:#ffffffcc;
-      backdrop-filter: blur(8px);
+      backdrop-filter:blur(8px);
       border-bottom:1px solid var(--border);
     }
     .nav{
-      max-width: var(--max);
+      max-width:var(--max);
       margin:0 auto;
       padding:0.6rem 1.5rem;
       display:flex;
@@ -48,181 +47,63 @@
       display:flex;
       align-items:center;
       gap:0.8rem;
-      flex-wrap: wrap;
+      flex-wrap:wrap;
     }
-    .brand{
-      font-weight:800;
-      color:#111;
-      white-space:nowrap;
-    }
-    .nav-links{
-      display:flex;
-      gap:0.8rem;
-      flex-wrap: wrap;
-      font-size:0.9rem;
-    }
-    .nav-links a{
-      padding:0.25rem 0.4rem;
-      border-radius:999px;
-      font-weight:600;
-    }
-    .nav-links a:hover{
-      background: var(--soft);
-      text-decoration:none;
-    }
-
-    main{
-      max-width: var(--max);
-      margin:0 auto;
-      padding:1.5rem 1rem 3rem;
-    }
-
+    .brand{ font-weight:800; color:#111; white-space:nowrap; }
+    .nav-links{ display:flex; gap:0.8rem; flex-wrap:wrap; font-size:0.9rem; }
+    .nav-links a{ padding:0.25rem 0.4rem; border-radius:999px; font-weight:600; color:#333; }
+    .nav-links a:hover{ background:var(--soft); text-decoration:none; }
+    main{ max-width:var(--max); margin:0 auto; padding:1.5rem 1rem 3rem; }
     .hero{
       display:grid;
-      grid-template-columns: minmax(0,2.2fr) minmax(0,1.8fr);
+      grid-template-columns:minmax(0,2.2fr) minmax(0,1.8fr);
       gap:2rem;
       align-items:start;
       padding:2rem 1.5rem;
-      margin: 1rem 0 1.5rem;
+      margin:1rem 0 1.5rem;
       border:1px solid var(--border);
       border-radius:14px;
-      background: linear-gradient(135deg, #e6f9f2, #ffffff);
+      background:linear-gradient(135deg,#eefaf6,#ffffff);
     }
     .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:0.5rem;
-      padding:0.25rem 0.7rem;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background:#fff;
-      font-size:0.85rem;
-      font-weight:600;
-      color:#0b6b4b;
-      margin-bottom:0.75rem;
+      display:inline-flex; align-items:center; gap:0.5rem;
+      padding:0.25rem 0.7rem; border-radius:999px; border:1px solid var(--border);
+      background:#fff; font-size:0.85rem; font-weight:800; color:#0b6b4b; margin-bottom:0.75rem;
     }
-    .dot{
-      width:10px; height:10px; border-radius:999px;
-      background: var(--accent);
-    }
+    .dot{ width:10px; height:10px; border-radius:999px; background:var(--nexus); }
     h1,h2,h3{ margin:0 0 0.6rem; color:#111; }
-    h1{ font-size: clamp(1.9rem, 3vw, 2.6rem); }
-    h2{ font-size: clamp(1.3rem, 2.1vw, 1.8rem); margin-top:1.8rem; }
+    h1{ font-size:clamp(1.9rem,3vw,2.6rem); }
+    h2{ font-size:clamp(1.3rem,2.1vw,1.8rem); margin-top:1.8rem; }
     p{ margin:0 0 0.8rem; }
-    .muted{ color: var(--muted); }
-    .hero-ctas{
-      display:flex;
-      gap:0.75rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
+    .muted{ color:var(--muted); }
+    .hero-ctas{ display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem; }
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:0.45rem;
-      border-radius:999px;
-      padding:0.5rem 1.1rem;
-      font-size:0.9rem;
-      border:1px solid transparent;
-      cursor:pointer;
-      text-decoration:none;
-      white-space: nowrap;
+      display:inline-flex; align-items:center; justify-content:center; gap:0.45rem;
+      border-radius:999px; padding:0.5rem 1.1rem; font-size:0.9rem;
+      border:1px solid transparent; cursor:pointer; text-decoration:none; white-space:nowrap;
     }
-    .btn-primary{
-      background: var(--accent);
-      color:#fff;
-      border-color: var(--accent);
-    }
+    .btn-primary{ background:var(--nexus); color:#fff; border-color:var(--nexus); }
     .btn-primary:hover{ background:#078a62; border-color:#078a62; text-decoration:none; }
-    .btn-ghost{
-      background:#fff;
-      color:#333;
-      border-color: var(--border);
-    }
-    .btn-ghost:hover{ background: var(--soft); text-decoration:none; }
-
-    .right-card{
-      border:1px dashed var(--border);
-      border-radius:12px;
-      padding:1rem;
-      background:#ffffffaa;
-      font-size:0.92rem;
-    }
+    .right-card{ border:1px dashed var(--border); border-radius:12px; padding:1rem; background:#ffffffaa; font-size:0.92rem; }
     .kvs{ list-style:none; padding:0; margin:0; }
     .kvs li{ margin:0 0 0.5rem; }
-    .kvs strong{ font-weight:700; }
-
-    .grid-2{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap:1.2rem;
-      align-items:start;
-      margin-top: 0.75rem;
-    }
-    .card{
-      border:1px solid var(--border);
-      border-radius:12px;
-      padding:1.1rem 1.2rem;
-      background:#fff;
-    }
-    ul{
-      margin: 0.35rem 0 0.35rem 1.1rem;
-      padding:0;
-      font-size:0.95rem;
-    }
-
-    .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:0.35rem;
-      margin-top: 0.5rem;
-    }
-    .chip{
-      padding:0.15rem 0.55rem;
-      border-radius:999px;
-      background: var(--soft);
-      color:#444;
-      font-size:0.82rem;
-    }
-
-    figure{
-      margin:0;
-      border:1px solid var(--border);
-      border-radius:12px;
-      background:#fff;
-      overflow:hidden;
-    }
-    figure img{
-      width:100%;
-      display:block;
-      height:auto;
-    }
-    figcaption{
-      padding:0.7rem 0.9rem;
-      font-size:0.9rem;
-      color:#444;
-      border-top:1px solid var(--border);
-      background:#fafafa;
-    }
-
-    footer{
-      border-top:1px solid var(--border);
-      padding:1rem;
-      text-align:center;
-      font-size:0.85rem;
-      color:#666;
-      background:#fafafa;
-    }
-
-    @media(max-width: 900px){
-      .hero{ grid-template-columns: 1fr; }
-      .grid-2{ grid-template-columns: 1fr; }
+    .kvs strong{ font-weight:800; }
+    .grid-2{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.2rem; align-items:start; margin-top:0.75rem; }
+    .card{ border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.2rem; background:#fff; }
+    ul{ margin:0.35rem 0 0.35rem 1.1rem; padding:0; font-size:0.95rem; }
+    .chips{ display:flex; flex-wrap:wrap; gap:0.35rem; margin-top:0.5rem; }
+    .chip{ padding:0.15rem 0.55rem; border-radius:999px; background:var(--soft); color:#444; font-size:0.82rem; }
+    figure{ margin:0; border:1px solid var(--border); border-radius:12px; background:#fff; overflow:hidden; }
+    figure img{ width:100%; display:block; height:auto; }
+    figcaption{ padding:0.7rem 0.9rem; font-size:0.9rem; color:#444; border-top:1px solid var(--border); background:#fafafa; }
+    footer{ border-top:1px solid var(--border); padding:1rem; text-align:center; font-size:0.85rem; color:#666; background:#fafafa; }
+    @media(max-width:900px){
+      .hero{ grid-template-columns:1fr; }
+      .grid-2{ grid-template-columns:1fr; }
       .nav{ flex-direction:column; align-items:flex-start; gap:0.4rem; }
     }
-  </style>
+</style>
 </head>
-
 <body>
   <header>
     <nav class="nav">
@@ -233,201 +114,67 @@
       <div class="nav-links">
         <a href="#context">Context</a>
         <a href="#solution">Solution</a>
-        <a href="#architecture">Architecture</a>
-        <a href="#features">Key Features</a>
-        <a href="#metrics">Metrics</a>
+        <a href="#architecture">Model</a>
+        <a href="#features">Features</a>
+        <a href="#metrics">Scope</a>
         <a href="#screens">Screens</a>
       </div>
     </nav>
   </header>
-
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div>
-        <div class="pill"><span class="dot"></span> Case Study · Microsoft 365</div>
-        <h1>ASISTIX — Attendance & Justification Management</h1>
-        <p class="muted">
-          A production-grade Microsoft 365 solution to standardize justification requests, enforce rules, orchestrate approvals,
-          centralize evidence, and deliver audit-ready reporting for HR and leadership.
-        </p>
-
+        <div class="pill"><span class="dot"></span> Operational case · Microsoft 365</div>
+        <h1>ASISTIX — Attendance analytics and automation</h1>
+        <p class="muted">Real operational case for attendance control, justification requests, approvals, evidence, and dashboards for HR and leadership using Microsoft 365 tools.</p>
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">Request a quick demo</a>
-        </div>
-
-        <div class="chips">
-          <span class="chip">Microsoft Forms</span>
-          <span class="chip">Power Automate</span>
-          <span class="chip">SharePoint</span>
-          <span class="chip">Excel Online</span>
-          <span class="chip">Power BI</span>
+          <a class="btn btn-primary" href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">Contact</a>
         </div>
       </div>
-
       <aside class="right-card">
         <h3 style="margin-top:0;">Quick facts</h3>
-        <ul class="kvs">
-          <li><strong>Primary goal:</strong> auditability + operational reliability (approvals, evidence, logs)</li>
-          <li><strong>Users:</strong> 120 (Employees / Managers / HR / Leadership)</li>
-          <li><strong>Requests/month:</strong> 400+</li>
-          <li><strong>Automations (flows):</strong> 1</li>
-          <li><strong>Dashboards:</strong> 4 (Operational + Executive monitoring)</li>
-        </ul>
+        <ul class="kvs"><li><strong>Context:</strong> internal solution for a public organization</li>
+<li><strong>Approx. users:</strong> 100</li>
+<li><strong>Monthly requests:</strong> approx. 450</li>
+<li><strong>User area:</strong> HR / Leadership / Managers</li>
+<li><strong>Focus:</strong> traceability, reporting, and operational control</li></ul>
       </aside>
     </section>
-
-    <!-- 1) Context -->
     <section id="context">
-      <h2>1) Context / Problem</h2>
-      <p>
-        Attendance and justification control was fragmented across informal channels (emails/chats), loose files and spreadsheets,
-        resulting in payroll risk, audit gaps, and inconsistent criteria across managers.
-      </p>
-    </section>
+<h2>1) Context / problem</h2>
+<p>Attendance and justification control was distributed across emails, files, manual records, and operational queries. This created risk of lost information, inconsistent criteria, low traceability, and difficulty consolidating reports for HR and leadership.</p>
+</section>
+<section id="solution">
+<h2>2) Solution</h2>
+<div class='grid-2'><div class='card'><h3>Main deliverables</h3><ul><li><strong>Centralized request intake</strong> through Microsoft Forms.</li><li><strong>Approval flows</strong> with Power Automate, Outlook, and request-type rules.</li><li><strong>Document evidence</strong> stored and linked through SharePoint.</li><li><strong>Structured logs</strong> in Excel Online as an operational source for query and reporting.</li><li><strong>Power BI dashboards</strong> for absences, lateness, justifications, and incidents.</li></ul></div><div class='card'><h3>Operational flow</h3><ul><li>Employee submits a request with required fields.</li><li>Power Automate applies validations and sends approval.</li><li>Manager approves or rejects.</li><li>Outcome is notified and registered in the log.</li><li>Power BI consumes the information for operational and executive reporting.</li></ul><p class='muted'>The solution helped turn a manual process into a more structured, traceable, and measurable workflow.</p></div></div>
+</section>
+<section id="architecture">
+<h2>3) Analytical model and architecture</h2>
+<div class='grid-2'><div class='card'><h3>Data model</h3><ul><li><strong>Employee-day labor calendar</strong> as the analytical backbone.</li><li><strong>Biometric records</strong> as the source of clock-in/clock-out events.</li><li><strong>Catalogs</strong> for employees, schedules, holidays, and justification types.</li><li><strong>Justification logs</strong> from forms and operational records.</li></ul></div><div class='card'><h3>Automation and reporting</h3><ul><li><strong>Power Automate</strong> for validations, approvals, notifications, and result logging.</li><li><strong>SharePoint</strong> for evidence and related files.</li><li><strong>Excel Online</strong> as an operational log and structured source.</li><li><strong>Power BI</strong> for models, DAX measures, dashboards, and monthly analysis.</li></ul></div></div>
+</section>
+<section id="features">
+<h2>4) Key features</h2>
+<div class='card'><ul><li><strong>Incident classification:</strong> normal, late, absent, justified, or pending.</li><li><strong>Request windows:</strong> control of allowed periods and rules by justification type.</li><li><strong>Traceability:</strong> requester, approver, date, outcome, evidence, and status.</li><li><strong>Operational reporting:</strong> follow-up by employee, area, month, incident type, and status.</li><li><strong>Employee-day model:</strong> analyzes what should have happened and what actually happened.</li></ul></div>
+</section>
+<section id="metrics">
+<h2>5) Metrics and scope</h2>
+<div class='grid-2'><div class='card'><h3>Approximate scale</h3><ul><li><strong>Users:</strong> approx. 100</li><li><strong>Monthly requests:</strong> approx. 450</li><li><strong>Sources:</strong> Forms, Excel Online, SharePoint, SQL/MySQL, biometric system.</li><li><strong>Reports:</strong> operational and executive Power BI reporting.</li></ul></div><div class='card'><h3>Indicators worked on</h3><ul><li>Absences and lateness.</li><li>Approved, rejected, or pending justifications.</li><li>Incidents by area, employee, and period.</li><li>Employees with recurring incidents.</li><li>Monthly follow-up for HR and leadership.</li></ul></div></div>
+</section>
+<section id="next">
+<h2>7) Future improvements</h2>
+<div class='card'><ul><li>Migrate operational logs from Excel Online to Dataverse for stronger governance.</li><li>Add automatic reminders and escalation for pending approvals.</li><li>Formalize Dev/Test/Prod environments for controlled packaging and deployment.</li><li>Expand dashboards with trend, recurrence, and response-time metrics.</li></ul></div>
+</section>
 
-    <!-- 2) Solution -->
-    <section id="solution">
-      <h2>2) Solution (what I delivered)</h2>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Core deliverables</h3>
-          <ul>
-            <li><strong>Centralized intake</strong> via Microsoft Forms with branching by request type.</li>
-            <li><strong>Rules + approvals</strong> in Power Automate (validation, routing, notifications, outcomes).</li>
-            <li><strong>Evidence-first traceability</strong> with controlled storage + link per request.</li>
-            <li><strong>Single source of truth logs</strong> for auditing (request + approver + timestamps + evidence link).</li>
-            <li><strong>Reporting portal</strong> with Power BI dashboards embedded in SharePoint.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Request flow</h3>
-          <ul>
-            <li>Employee submits request → validations applied → approval request sent</li>
-            <li>Manager approves/rejects → employee + HR notified (as applicable)</li>
-            <li>Log updated (bitácora) + evidence linked → dashboards update on refresh cadence</li>
-          </ul>
-          <p class="muted" style="margin-top:0.6rem;">
-            This design standardizes criteria and produces audit-ready artifacts by default.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3) Architecture -->
-    <section id="architecture">
-      <h2>3) Architecture</h2>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>Data</h3>
-          <ul>
-            <li><strong>Time-clock events</strong> as a fact source (SQL or clock system export).</li>
-            <li><strong>Employee-day calendar</strong> (one row per employee/day) to reconstruct final status.</li>
-            <li><strong>Catalogs</strong> (employees, schedules, types, holidays, special activities).</li>
-            <li><strong>Justification logs</strong> (approved / physical / external) with consistent fields.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Automation + Evidence + Reporting</h3>
-          <ul>
-            <li><strong>Power Automate</strong>: validations, approval orchestration, notifications, run-after hardening.</li>
-            <li><strong>SharePoint / Excel Online</strong>: controlled logs + parameter tables + evidence links.</li>
-            <li><strong>Power BI</strong>: semantic model + operational/executive dashboards embedded in SharePoint.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4) Key Features -->
-    <section id="features">
-      <h2>4) Key Features</h2>
-      <div class="card">
-        <ul>
-          <li><strong>Retroactive window enforcement</strong> (policy-driven: “only last N business days”).</li>
-          <li><strong>Daily status reconstruction</strong> (Normal / Late / Absent / Justified) with full audit context.</li>
-          <li><strong>Payroll-ready outputs</strong> (clean records for export/upload within a configurable date range).</li>
-          <li><strong>Evidence-first auditability</strong>: each case retains approver, timestamps, evidence link, and origin.</li>
-          <li><strong>Role-aware portal behavior</strong>: employee vs manager team view vs HR/leadership consolidated view.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 5) Metrics -->
-    <section id="metrics">
-      <h2>5) Metrics / Scale</h2>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Scale</h3>
-          <ul>
-            <li><strong>Employees covered:</strong> 120</li>
-            <li><strong>Requests/month:</strong> 400+</li>
-            <li><strong>Automations (flows):</strong> 1</li>
-            <li><strong>Dashboards:</strong> 4</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Operational targets</h3>
-          <ul>
-            <li><strong>Refresh cadence:</strong> daily</li>
-            <li><strong>Primary failure modes removed:</strong> email loss, inconsistent criteria, missing evidence</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6) Screens -->
     <section id="screens">
-      <h2>6) Screenshots</h2>
-      <p class="muted">
-       
-      </p>
-
-      <div class="grid-2">
-        <figure>
-          <img src="../asistix-01-form.png" alt="ASISTIX - Microsoft Form branching" loading="lazy" />
-          <figcaption>1) Intake form (branching by request type + required fields)</figcaption>
-        </figure>
-
-        <figure>
-          <img src="../asistix-02-approval-email.png" alt="ASISTIX - Approval email sample" loading="lazy" />
-          <figcaption>2) Approval email (approve/reject outcome + traceability)</figcaption>
-        </figure>
-
-        <figure>
-          <img src="../asistix-03-sharepoint-evidence.png" alt="ASISTIX - Evidence in SharePoint" loading="lazy" />
-          <figcaption>3) Evidence stored in SharePoint (controlled access + link per case)</figcaption>
-        </figure>
-
-        <figure>
-          <img src="../asistix-04-powerbi-kpis.png" alt="ASISTIX - Power BI KPIs" loading="lazy" />
-          <figcaption>4) Power BI KPIs (operational indicators for defined period)</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- 7) Improvements -->
-    <section id="next">
-      <h2>7) What I’d improve next</h2>
-      <div class="card">
-        <ul>
-          <li>Replace Excel-based parameter/log storage with <strong>Dataverse</strong> for stronger governance, ALM, and security.</li>
-          <li>Add <strong>time-based escalations/reminders</strong> + “approval aging” dashboard for management control.</li>
-          <li>Formalize <strong>Dev/Test/Prod</strong> packaging (solution structure, connection refs, environment variables).</li>
-        </ul>
-      </div>
+      <h2>Screens</h2>
+      <p class="muted">Representative screenshots of the solution.</p>
+      <div class="grid-2"><figure><img src="../asistix-01-form.png" alt="ASISTIX - Microsoft Form with branching" loading="lazy" /><figcaption>1) Request intake form with required fields and request-type logic.</figcaption></figure>
+<figure><img src="../asistix-02-approval-email.png" alt="ASISTIX - Approval email example" loading="lazy" /><figcaption>2) Approval email with approve/reject outcome and traceability.</figcaption></figure>
+<figure><img src="../asistix-03-sharepoint-evidence.png" alt="ASISTIX - Evidence in SharePoint" loading="lazy" /><figcaption>3) Evidence stored in SharePoint and linked to the record.</figcaption></figure>
+<figure><img src="../asistix-04-powerbi-kpis.png" alt="ASISTIX - Power BI KPIs" loading="lazy" /><figcaption>4) Power BI KPIs for operational follow-up during the selected period.</figcaption></figure></div>
     </section>
   </main>
-
-  <footer>
-    © <span id="year"></span> Nexus Intelligence · Case Studies
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <footer>© <span id="year"></span> Nexus Intelligence · Cases and portfolio</footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
