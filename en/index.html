@@ -2,424 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Nexus Intelligence · Microsoft 365 &amp; Power Platform Solutions</title>
+  <title>Nexus Intelligence · Power BI &amp; Power Platform</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Solution architecture on Microsoft 365 and Power Platform. Plug-and-play apps, automation, and analytics deployed in your tenant." />
-
+  <meta name="description" content="Digital solutions with Microsoft 365, Power BI, and Power Platform: dashboards, internal apps, process automation, and operational documentation." />
   <style>
     :root {
-      --azul-nexus: #09be7a;        /* Nexus green */
+      --azul-nexus: #09be7a;
       --verde-asistix: #09be7a;
       --ambar-notarix: #ffb900;
-      --gris-proto: #6b7280;        /* neutral for portfolio */
+      --gris-proto: #6b7280;
       --texto: #222222;
       --gris-suave: #f5f5f5;
       --borde-suave: #e0e0e0;
       --max-width: 1100px;
     }
-
     * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--texto);
-      background-color: #ffffff;
-      line-height: 1.5;
-    }
-
+    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--texto); background-color: #ffffff; line-height: 1.5; }
     a { color: var(--azul-nexus); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    /* NAVBAR */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: #ffffffcc;
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--borde-suave);
-    }
-
-    .nav {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0.6rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .nav-logo-text {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #111111;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      font-size: 0.9rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      padding: 0.25rem 0.4rem;
-      border-radius: 999px;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover {
-      background-color: var(--gris-suave);
-      text-decoration: none;
-    }
-
-    .nav-sep {
-      opacity: 0.35;
-      margin: 0 0.15rem;
-      user-select: none;
-    }
-
-    .lang {
-      font-weight: 800;
-      letter-spacing: 0.02em;
-    }
-
-    /* LAYOUT GENERAL */
-    main {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 1.5rem 1rem 3rem;
-    }
-
+    header { position: sticky; top: 0; z-index: 10; background: #ffffffcc; backdrop-filter: blur(8px); border-bottom: 1px solid var(--borde-suave); }
+    .nav { max-width: var(--max-width); margin: 0 auto; padding: 0.6rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; }
+    .nav-logo-text { font-weight: 700; font-size: 1.1rem; color: #111111; white-space: nowrap; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.8rem; font-size: 0.9rem; align-items: center; }
+    .nav-links a { padding: 0.25rem 0.4rem; border-radius: 999px; font-weight: 600; }
+    .nav-links a:hover { background-color: var(--gris-suave); text-decoration: none; }
+    .nav-sep { opacity: 0.35; margin: 0 0.15rem; user-select: none; }
+    .lang { font-weight: 800; letter-spacing: 0.02em; }
+    main { max-width: var(--max-width); margin: 0 auto; padding: 1.5rem 1rem 3rem; }
     section { margin-bottom: 3rem; }
-
-    h1, h2, h3 {
-      margin-top: 0;
-      color: #111111;
-    }
-
+    h1, h2, h3 { margin-top: 0; color: #111111; }
     h1 { font-size: clamp(2rem, 3vw, 2.6rem); }
-    h2 {
-      font-size: clamp(1.6rem, 2.4vw, 2rem);
-      margin-bottom: 0.75rem;
-    }
-    h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.4rem;
-    }
-
+    h2 { font-size: clamp(1.6rem, 2.4vw, 2rem); margin-bottom: 0.75rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.4rem; }
     p { margin: 0 0 0.75rem; }
-
-    .subtle {
-      color: #555;
-      font-size: 0.95rem;
-    }
-
-    /* HERO */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.8fr);
-      gap: 2rem;
-      align-items: center;
-      padding: 2rem 1.5rem;
-      margin: 1rem 0 2.5rem;
-      background: linear-gradient(135deg, #e6f9f2, #ffffff);
-      border-radius: 14px;
-      border: 1px solid var(--borde-suave);
-    }
-
-    .hero-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .hero-logo-img {
-      height: 100px;
-      width: auto;
-      display: block;
-      border-radius: 10px;
-    }
-
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      background-color: #e6f9f2;
-      color: #0b6b4b;
-      font-size: 0.8rem;
-      font-weight: 500;
-      margin-bottom: 0;
-    }
-
+    .subtle { color: #555; font-size: 0.95rem; }
+    .hero { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.8fr); gap: 2rem; align-items: center; padding: 2rem 1.5rem; margin: 1rem 0 2.5rem; background: linear-gradient(135deg, #e6f9f2, #ffffff); border-radius: 14px; border: 1px solid var(--borde-suave); }
+    .hero-brand { display: inline-flex; align-items: center; gap: 0.75rem; margin-bottom: 0.6rem; }
+    .hero-logo-img { height: 100px; width: auto; display: block; border-radius: 10px; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.2rem 0.6rem; border-radius: 999px; background-color: #e6f9f2; color: #0b6b4b; font-size: 0.8rem; font-weight: 500; margin-bottom: 0; }
     .hero-title { margin: 0.4rem 0 0.75rem; }
-
-    .hero-subtitle {
-      font-size: 0.98rem;
-      color: #444;
-      max-width: 34rem;
-    }
-
-    .hero-badges {
-      margin: 1rem 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-    }
-
-    .badge {
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid var(--borde-suave);
-      background-color: #fff;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .badge-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background-color: var(--azul-nexus);
-    }
-
-    .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      border-radius: 999px;
-      padding: 0.5rem 1.1rem;
-      font-size: 0.9rem;
-      border: 1px solid transparent;
-      cursor: pointer;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background-color: var(--azul-nexus);
-      color: #fff;
-      border-color: var(--azul-nexus);
-    }
-
-    .btn-primary:hover {
-      background-color: #078a62;
-      border-color: #078a62;
-      text-decoration: none;
-    }
-
-    .btn-ghost {
-      background: #ffffff;
-      color: #333;
-      border-color: var(--borde-suave);
-    }
-
-    .btn-ghost:hover {
-      background-color: var(--gris-suave);
-      text-decoration: none;
-    }
-
-    .btn-download {
-      margin-top: 0.6rem;
-      font-size: 0.85rem;
-      padding: 0.4rem 0.9rem;
-    }
-
-    .hero-right {
-      border-radius: 12px;
-      border: 1px dashed var(--borde-suave);
-      padding: 1rem;
-      background-color: #ffffffaa;
-      font-size: 0.85rem;
-    }
-
-    .hero-right h3 {
-      font-size: 1rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .hero-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .hero-list li {
-      margin-bottom: 0.4rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.4rem;
-    }
-
+    .hero-subtitle { font-size: 0.98rem; color: #444; max-width: 34rem; }
+    .hero-badges { margin: 1rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; }
+    .badge { padding: 0.2rem 0.6rem; border-radius: 999px; border: 1px solid var(--borde-suave); background-color: #fff; display: inline-flex; align-items: center; gap: 0.3rem; }
+    .badge-dot { width: 8px; height: 8px; border-radius: 999px; background-color: var(--azul-nexus); }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; border-radius: 999px; padding: 0.5rem 1.1rem; font-size: 0.9rem; border: 1px solid transparent; cursor: pointer; text-decoration: none; white-space: nowrap; }
+    .btn-primary { background-color: var(--azul-nexus); color: #fff; border-color: var(--azul-nexus); }
+    .btn-primary:hover { background-color: #078a62; border-color: #078a62; text-decoration: none; }
+    .btn-ghost { background: #ffffff; color: #333; border-color: var(--borde-suave); }
+    .btn-ghost:hover { background-color: var(--gris-suave); text-decoration: none; }
+    .btn-download { margin-top: 0.6rem; font-size: 0.85rem; padding: 0.4rem 0.9rem; }
+    .hero-right { border-radius: 12px; border: 1px dashed var(--borde-suave); padding: 1rem; background-color: #ffffffaa; font-size: 0.85rem; }
+    .hero-right h3 { font-size: 1rem; margin-bottom: 0.6rem; }
+    .hero-list { list-style: none; margin: 0; padding: 0; }
+    .hero-list li { margin-bottom: 0.4rem; display: flex; align-items: flex-start; gap: 0.4rem; }
     .hero-list li span { font-weight: 600; }
-
-    /* SECTIONS */
-    .columns-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.5rem;
-      align-items: flex-start;
-    }
-
-    .card {
-      border-radius: 12px;
-      border: 1px solid var(--borde-suave);
-      padding: 1.1rem 1.2rem;
-      background-color: #fff;
-    }
-
-    .card-header-tag {
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-bottom: 0.15rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
+    .columns-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; align-items: flex-start; }
+    .card { border-radius: 12px; border: 1px solid var(--borde-suave); padding: 1.1rem 1.2rem; background-color: #fff; }
+    .card-header-tag { font-size: 0.8rem; font-weight: 600; margin-bottom: 0.15rem; text-transform: uppercase; letter-spacing: 0.04em; }
     .tag-asistix { color: var(--verde-asistix); }
     .tag-notarix { color: #b8860b; }
     .tag-proto { color: var(--gris-proto); }
-
-    .chip-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.3rem;
-      margin-top: 0.4rem;
-      font-size: 0.8rem;
-    }
-
-    .chip {
-      padding: 0.15rem 0.55rem;
-      border-radius: 999px;
-      background-color: var(--gris-suave);
-      color: #444;
-    }
-
-    ul {
-      margin: 0.5rem 0 0.5rem 1.1rem;
-      padding: 0;
-      font-size: 0.9rem;
-    }
-
-    /* HOW I WORK */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .step-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      background-color: var(--azul-nexus);
-      color: #fff;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-
-    /* CASES */
-    .case {
-      border-left: 3px solid var(--azul-nexus);
-      padding: 0.75rem 1rem;
-      margin-bottom: 1rem;
-      background-color: #fafafa;
-      border-radius: 0 10px 10px 0;
-      border-top: 1px solid var(--borde-suave);
-      border-bottom: 1px solid var(--borde-suave);
-      border-right: 1px solid var(--borde-suave);
-    }
-
-    .case h3 {
-      margin-top: 0;
-      font-size: 1rem;
-    }
-
+    .chip-list { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.4rem; font-size: 0.8rem; }
+    .chip { padding: 0.15rem 0.55rem; border-radius: 999px; background-color: var(--gris-suave); color: #444; }
+    ul { margin: 0.5rem 0 0.5rem 1.1rem; padding: 0; font-size: 0.9rem; }
+    .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .step-number { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 999px; background-color: var(--azul-nexus); color: #fff; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .case { border-left: 3px solid var(--azul-nexus); padding: 0.75rem 1rem; margin-bottom: 1rem; background-color: #fafafa; border-radius: 0 10px 10px 0; border-top: 1px solid var(--borde-suave); border-bottom: 1px solid var(--borde-suave); border-right: 1px solid var(--borde-suave); }
+    .case h3 { margin-top: 0; font-size: 1rem; }
     .case strong { font-weight: 600; }
-
-    /* CONTACT */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-      gap: 1.5rem;
-      align-items: flex-start;
-    }
-
-    .contact-list {
-      list-style: none;
-      margin: 0.5rem 0 0;
-      padding: 0;
-      font-size: 0.95rem;
-    }
-
+    .contact-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 1.5rem; align-items: flex-start; }
+    .contact-list { list-style: none; margin: 0.5rem 0 0; padding: 0; font-size: 0.95rem; }
     .contact-list li { margin-bottom: 0.4rem; }
-
-    footer {
-      border-top: 1px solid var(--borde-suave);
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #666;
-      background-color: #fafafa;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: minmax(0, 1fr); }
-      .columns-2 { grid-template-columns: minmax(0, 1fr); }
-      .steps { grid-template-columns: minmax(0, 1fr); }
-      .contact-grid { grid-template-columns: minmax(0, 1fr); }
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.4rem;
-      }
-      .hero-logo-img { height: 46px; }
-    }
-
-    @media (max-width: 600px) {
-      main { padding-inline: 0.8rem; }
-      .hero { padding-inline: 1rem; }
-      .hero-brand { align-items: flex-start; }
-      .hero-logo-img { height: 42px; }
-    }
+    footer { border-top: 1px solid var(--borde-suave); padding: 1rem; text-align: center; font-size: 0.8rem; color: #666; background-color: #fafafa; }
+    @media (max-width: 900px) { .hero { grid-template-columns: minmax(0, 1fr); } .columns-2 { grid-template-columns: minmax(0, 1fr); } .steps { grid-template-columns: minmax(0, 1fr); } .contact-grid { grid-template-columns: minmax(0, 1fr); } .nav { flex-direction: column; align-items: flex-start; gap: 0.4rem; } .hero-logo-img { height: 46px; } }
+    @media (max-width: 600px) { main { padding-inline: 0.8rem; } .hero { padding-inline: 1rem; } .hero-brand { align-items: flex-start; } .hero-logo-img { height: 42px; } }
   </style>
 </head>
-
 <body>
   <header>
     <nav class="nav">
-      <div class="nav-logo">
-        <span class="nav-logo-text">Nexus Intelligence</span>
-      </div>
-
+      <div class="nav-logo"><span class="nav-logo-text">Nexus Intelligence</span></div>
       <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#solutions">Solutions</a>
@@ -428,204 +92,95 @@
         <a href="#cases">In practice</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
-
         <span class="nav-sep">|</span>
         <a class="lang" href="../es/index.html" aria-label="Switch to Spanish">ES</a>
       </div>
     </nav>
   </header>
-
   <main>
-    <!-- HERO -->
     <section id="home" class="hero">
       <div>
         <div class="hero-brand">
           <img src="../logo-nexus.png" alt="Nexus Intelligence" class="hero-logo-img" />
-          <div class="hero-tag">
-            <span>Microsoft 365 · Power Platform Solution Architecture</span>
-          </div>
+          <div class="hero-tag"><span>Microsoft 365 · Power BI · Power Apps · Power Automate</span></div>
         </div>
-
-        <h1 class="hero-title">Plug-and-play apps, automation, and analytics</h1>
-        <p class="hero-subtitle">
-          I design and deploy solutions inside your Microsoft tenant—Power Apps, Power Automate, and Power BI—
-          so you can replace scattered spreadsheets, lost emails, and inconsistent manual workflows.
-        </p>
-
+        <h1 class="hero-title">Dashboards, internal apps, and process automation</h1>
+        <p class="hero-subtitle">I build digital solutions with Microsoft 365, Power BI, and Power Platform to organize business processes, reduce manual follow-up, and turn operational data into useful reporting for decision-making.</p>
         <div class="hero-badges">
-          <div class="badge">
-            <div class="badge-dot"></div>
-            <span>Canvas &amp; model-driven apps</span>
-          </div>
-          <div class="badge">
-            <div class="badge-dot"></div>
-            <span>Critical workflow automation</span>
-          </div>
-          <div class="badge">
-            <div class="badge-dot"></div>
-            <span>Executive dashboards in Power BI</span>
-          </div>
+          <div class="badge"><div class="badge-dot"></div><span>Power BI operational dashboards</span></div>
+          <div class="badge"><div class="badge-dot"></div><span>Internal apps with Power Apps</span></div>
+          <div class="badge"><div class="badge-dot"></div><span>Flows with Power Automate</span></div>
         </div>
-
         <div class="hero-ctas">
-          <a href="#contact" class="btn btn-primary">Book a 30-minute call</a>
-          <a href="#solutions" class="btn btn-ghost">See Asistix &amp; Notarix</a>
+          <a href="#contact" class="btn btn-primary">Contact</a>
+          <a href="#solutions" class="btn btn-ghost">View cases and solutions</a>
         </div>
       </div>
-
       <aside class="hero-right">
-        <h3>What Nexus Intelligence delivers</h3>
+        <h3>What Nexus Intelligence can deliver</h3>
         <ul class="hero-list">
-          <li><span>1.</span> Standardize your process in a clear app your team can follow.</li>
-          <li><span>2.</span> Automate approvals, notifications, audit logs, and business rules.</li>
-          <li><span>3.</span> Build traceability for audits and leadership reporting.</li>
-          <li><span>4.</span> Maximize the Microsoft licenses you already pay for.</li>
+          <li><span>1.</span> Clear dashboards for operational and leadership follow-up.</li>
+          <li><span>2.</span> Internal apps to capture and organize business information.</li>
+          <li><span>3.</span> Automated flows for approvals, notifications, and evidence.</li>
+          <li><span>4.</span> Documentation and traceability for administrative processes.</li>
         </ul>
       </aside>
     </section>
-
-    <!-- WHAT I DO -->
     <section>
       <h2>What Nexus Intelligence does</h2>
-      <p>
-        Nexus Intelligence turns complex processes into digital solutions that are reliable, easy to use, and built for scale.
-        I specialize in the Microsoft ecosystem so organizations can fully leverage the licenses they already own—
-        without paying for expensive from-scratch development.
-      </p>
-      <p>
-        This is not “just building an app.” I design the end-to-end architecture: data model, automation, security,
-        compliance logic, and leadership dashboards. I translate policies and business rules (e.g., LFPIORPI) into
-        clear, automatable logic—so the system behaves like your operation, without errors or inconsistent interpretation.
-      </p>
+      <p>Nexus Intelligence turns operational processes into digital solutions using Microsoft 365, Power BI, and Power Platform. The focus is to replace scattered spreadsheets, disconnected emails, and manual follow-up with dashboards, internal apps, automated flows, and more structured data.</p>
+      <p>I work with real business processes: requirements gathering, data modeling, automation, documentation, reporting, and traceability. The goal is to make operations clearer, more measurable, and easier to follow for administrative, operational, and leadership users.</p>
     </section>
-
-    <!-- SOLUTIONS -->
     <section id="solutions">
-      <h2>Solutions ready to deploy in your Microsoft 365 environment</h2>
+      <h2>Solutions and use cases in Microsoft 365</h2>
       <div class="columns-2">
-        <!-- Asistix -->
         <article class="card">
           <div class="card-header-tag tag-asistix">ASISTIX · ATTENDANCE &amp; JUSTIFICATIONS</div>
-          <h3>Centralize requests, approvals, and attendance analytics</h3>
-          <p class="subtle">
-            One workflow for employees, managers, and HR—no lost emails, no scattered spreadsheets.
-          </p>
+          <h3>Attendance and justification analytics and automation case</h3>
+          <p class="subtle">A model based on real experience with attendance control, requests, approvals, evidence, and HR dashboards.</p>
           <ul>
-            <li>Standard intake for justification requests (single entry point).</li>
-            <li>Formal, traceable approvals for managers and HR.</li>
-            <li>Single source of truth logs in Excel Online / SharePoint.</li>
-            <li>Power BI dashboards: absences, lateness, trends, distributions.</li>
-            <li>Role-based portal for employee / manager / leadership views.</li>
+            <li>Standardized request intake.</li><li>Traceable approvals for managers and HR.</li><li>Logs in Excel Online / SharePoint.</li><li>Power BI dashboards: absences, lateness, trends, and incident distribution.</li><li>Role-based views for employees, managers, and leadership.</li>
           </ul>
-          <p><strong>Outcome:</strong> less manual capture, fewer payroll errors, audit-ready traceability.</p>
-
+          <p><strong>Outcome:</strong> less manual capture, stronger traceability, and better HR operational follow-up.</p>
           <div class="hero-ctas" style="margin-top:0.6rem;">
-            <a href="case-asistix.html" class="btn btn-primary btn-download">View Case Study</a>
-            <a href="../folleto-asistix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer" download>
-              Download · Asistix Brochure (PDF)
-            </a>
+            <a href="case-asistix.html" class="btn btn-primary btn-download">View case</a>
+            <a href="../folleto-asistix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer" download>Download · Asistix Brochure (PDF)</a>
           </div>
-
-          <div class="chip-list">
-            <span class="chip">Power Apps</span>
-            <span class="chip">Power Automate</span>
-            <span class="chip">Excel Online</span>
-            <span class="chip">SharePoint</span>
-            <span class="chip">Power BI</span>
-          </div>
+          <div class="chip-list"><span class="chip">Power BI</span><span class="chip">Power Query</span><span class="chip">DAX</span><span class="chip">Power Automate</span><span class="chip">SharePoint</span></div>
         </article>
-
-        <!-- Notarix -->
         <article class="card">
-          <div class="card-header-tag tag-notarix">NOTARIX · NOTARY PLATFORM WITH LFPIORPI</div>
-          <h3>Cases, LFPIORPI compliance, and documents in one platform</h3>
-          <p class="subtle">
-            A Dataverse-centered system designed for notary operations: case tracking, client data, payments,
-            and policy-driven compliance rules (UMAs, deadlines, and scenarios).
-          </p>
+          <div class="card-header-tag tag-notarix">NOTARIX · NOTARY MANAGEMENT</div>
+          <h3>Cases, digital files, and documents in one platform</h3>
+          <p class="subtle">App with Power Apps and Dataverse for notary operations: cases, client registry, payments, operational follow-up, digital files, and automated documents.</p>
           <ul>
-            <li>Case tracking: clients, amounts, payments, SAT folios/receipts.</li>
-            <li>Automated LFPIORPI evaluation: thresholds, flags, and scenario-driven logic.</li>
-            <li>Configurable municipality semaphores by locality.</li>
-            <li>Digital case file with evidence linked to each case.</li>
-            <li>Token-based Word templates for standardized documents.</li>
+            <li>Case tracking: clients, amounts, payments, and folios.</li><li>Configurable catalogs and business rules.</li><li>Operational alerts and follow-up semaphores.</li><li>Digital file with evidence linked to each case.</li><li>Word templates with tokens for standardized documents.</li>
           </ul>
-          <p>
-            <strong>Outcome:</strong> compliance under structured control, clear deadlines, and less reliance on manual calculations.
-          </p>
-
+          <p><strong>Outcome:</strong> more centralized operations, faster documents, and less reliance on scattered controls.</p>
           <div class="hero-ctas" style="margin-top:0.6rem;">
-            <a href="case-notarix.html" class="btn btn-primary btn-download">View Case Study</a>
-            <a href="../folleto-notarix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer" download>
-              Download · Notarix Brochure (PDF)
-            </a>
+            <a href="case-notarix.html" class="btn btn-primary btn-download">View case</a>
+            <a href="../folleto-notarix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer" download>Download · Notarix Brochure (PDF)</a>
           </div>
-
-          <div class="chip-list">
-            <span class="chip">Dataverse</span>
-            <span class="chip">Power Apps</span>
-            <span class="chip">Power Automate</span>
-            <span class="chip">Word Templates</span>
-            <span class="chip">LFPIORPI Compliance</span>
-          </div>
+          <div class="chip-list"><span class="chip">Power Apps</span><span class="chip">Dataverse</span><span class="chip">Power Automate</span><span class="chip">SharePoint</span><span class="chip">Word Templates</span></div>
         </article>
       </div>
     </section>
-
-    <!-- HOW I WORK -->
     <section id="method">
       <h2>How I work</h2>
-      <p class="subtle">
-        Three clear steps to move from your current workflow to a structured, reliable, scalable solution on Microsoft 365.
-      </p>
+      <p class="subtle">Three clear steps to move from a manual process to a more organized, measurable, and maintainable digital solution.</p>
       <div class="steps">
-        <div class="card">
-          <div class="step-number">1</div>
-          <h3>Quick discovery</h3>
-          <p>
-            A 30–60 minute session to understand your current process, systems in use, and main pain points:
-            errors, delays, audits, compliance requirements.
-          </p>
-        </div>
-        <div class="card">
-          <div class="step-number">2</div>
-          <h3>Proposal + prototype</h3>
-          <p>
-            I design the solution on Power Platform: data model, key screens, approval flows, and dashboards.
-            You get a clickable prototype and a fixed-scope proposal (timeline + cost).
-          </p>
-        </div>
-        <div class="card">
-          <div class="step-number">3</div>
-          <h3>Implementation + handoff</h3>
-          <p>
-            I deploy the solution in your tenant, configure roles and permissions, load base data, and train your team.
-            You get a standardized platform that’s traceable and ready to evolve.
-          </p>
-        </div>
+        <div class="card"><div class="step-number">1</div><h3>Quick discovery</h3><p>Review the current process, users involved, files used, pain points, business rules, and reporting needs.</p></div>
+        <div class="card"><div class="step-number">2</div><h3>Proposal + prototype</h3><p>Design a first version with a data model, key screens, basic flows, reports, or documentation structure.</p></div>
+        <div class="card"><div class="step-number">3</div><h3>Implementation + handoff</h3><p>Configure the solution, run functional tests, adjust with users, document the work, and hand it off for operation.</p></div>
       </div>
     </section>
-
-    <!-- ABOUT -->
     <section id="about">
       <h2>About Nexus Intelligence</h2>
       <div class="columns-2">
         <div>
-          <p>
-            Nexus Intelligence is the solutions brand of <strong>Iván Solórzano</strong>,
-            a Microsoft 365 &amp; Power Platform Solutions Architect.
-          </p>
-          <p>
-            I have designed and delivered attendance/justification systems for government organizations,
-            and specialized platforms for notary operations with LFPIORPI compliance and automated document generation.
-          </p>
-          <p>
-            My approach is straightforward: plug-and-play solutions deployed inside your own tenant, backed by solid data models,
-            automation, and dashboards leadership can actually use. I act as a business translator—turning policy and operational reality
-            into clear data structures and workflows that become apps, automations, and actionable reporting.
-          </p>
+          <p>Nexus Intelligence is the portfolio and digital-solutions brand of <strong>Iván Solórzano</strong>, focused on Power BI, Power Platform, and process automation with Microsoft 365.</p>
+          <p>I have worked on attendance and justification solutions for the public sector, operational dashboards in Power BI, administrative process automation, and internal apps for notary management, documentation, and operational follow-up.</p>
+          <p>My approach is practical: understand the process, organize the data, automate repetitive steps, and turn information into useful reports or applications. I aim to translate operational needs into clear, documented, and easy-to-adopt solutions.</p>
         </div>
-
         <div class="card">
           <h3>Certifications &amp; stack</h3>
           <ul>
@@ -634,111 +189,49 @@
             <li>Microsoft Certified: Azure Data Fundamentals (DP-900).</li>
             <li>Microsoft Certified: Azure Fundamentals (AZ-900).</li>
             <li>DataCamp Certified: Data Analyst Associate.</li>
-            <li>
-              Stack: Power Apps (canvas &amp; model-driven), Power Automate, Dataverse, Power BI (DAX &amp; Power Query),
-              SharePoint Online, Excel / Excel Online, Word template automation, Microsoft Forms, SQL, and Python for analytics.
-            </li>
+            <li>Stack: Power BI, DAX, Power Query, SQL/MySQL, Power Apps, Power Automate, Dataverse, SharePoint Online, Excel Online, Microsoft Forms, and document automation.</li>
           </ul>
         </div>
       </div>
     </section>
-
-    <!-- IN PRACTICE -->
     <section id="cases">
       <h2>What it looks like in practice</h2>
-      <p class="subtle">
-        Two concrete examples showing the kind of problems I solve and how they translate into real Microsoft 365 solutions.
-      </p>
-
+      <p class="subtle">Two concrete examples of problems I have worked on and how they translate into real Microsoft 365 solutions.</p>
       <article class="case">
-        <h3>Attendance &amp; justifications control for a government organization (ASISTIX)</h3>
-        <p>
-          Asistix implementation to centralize justification requests, approvals, and attendance tracking for staff.
-        </p>
-        <p>
-          <strong>What it fixed:</strong> informal emails, inconsistent manager criteria, payroll mistakes, and zero audit traceability.
-        </p>
-        <p>
-          <strong>How it was solved:</strong> standardized intake, Power Automate approval workflow, centralized logs in Excel Online / SharePoint,
-          and executive Power BI dashboards.
-        </p>
-
-        <div class="hero-ctas" style="margin-top:0.75rem;">
-          <a href="case-asistix.html" class="btn btn-primary btn-download">View Case Study</a>
-          <a href="../folleto-asistix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer">Brochure PDF</a>
-        </div>
+        <h3>Attendance and justification control for a government organization</h3>
+        <p>Operational automation and analytics case to centralize justification requests, approvals, evidence, and attendance follow-up.</p>
+        <p><strong>What it fixed:</strong> informal emails, inconsistent criteria, follow-up errors, and low audit traceability.</p>
+        <p><strong>How it was solved:</strong> standardized intake, Power Automate approval workflow, Excel Online / SharePoint logs, and Power BI dashboards.</p>
+        <div class="hero-ctas" style="margin-top:0.75rem;"><a href="case-asistix.html" class="btn btn-primary btn-download">View case</a><a href="../folleto-asistix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer">PDF</a></div>
       </article>
-
       <article class="case">
-        <h3>End-to-end notary platform for real-estate focused operations (NOTARIX)</h3>
-        <p>
-          Dataverse + Power Apps platform to centralize cases, clients, payments, SAT folios, and LFPIORPI controls,
-          translating compliance requirements into automated business rules.
-        </p>
-        <p>
-          <strong>What it fixed:</strong> scattered controls across paper/Excel, high compliance risk, and slow document generation.
-        </p>
-        <p>
-          <strong>How it was solved:</strong> complete data model, configurable semaphores, LFPIORPI calculations, token-based Word templates,
-          and a digital case file per case.
-        </p>
-
-        <div class="hero-ctas" style="margin-top:0.75rem;">
-          <a href="case-notarix.html" class="btn btn-primary btn-download">View Case Study</a>
-          <a href="../folleto-notarix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer">Brochure PDF</a>
-        </div>
+        <h3>Notary platform for operational follow-up and documentation</h3>
+        <p>Power Apps + Dataverse app to centralize cases, clients, payments, roles, digital files, operational alerts, and document generation.</p>
+        <p><strong>What it fixed:</strong> scattered paper/Excel controls, manual case follow-up, and slow document generation.</p>
+        <p><strong>How it was solved:</strong> structured data model, operational views, follow-up semaphores, Word templates with tokens, and digital case files.</p>
+        <div class="hero-ctas" style="margin-top:0.75rem;"><a href="case-notarix.html" class="btn btn-primary btn-download">View case</a><a href="../folleto-notarix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer">PDF</a></div>
       </article>
     </section>
-
-    <!-- PORTFOLIO -->
     <section id="portfolio">
       <h2>Portfolio</h2>
-      <p class="subtle">
-        Selected builds showcasing Dataverse architecture, process design, and automation patterns.
-      </p>
-
+      <p class="subtle">Selected projects and prototypes showing data modeling, process design, Power Apps, Power Automate, and Power BI.</p>
       <article class="case" style="border-left-color: var(--gris-proto);">
-        <h3>ADM — Procurement &amp; Inventory (Model-driven)</h3>
-
-        <p>
-          Dataverse model-driven app centered on procurement and inventory workflows, built around core entities,
-          Business Process Flows (BPF), and approval automation for Requisitions (RQ) and Purchase Orders (OC).
-        </p>
-
-        <div class="hero-ctas" style="margin-top:0.75rem;">
-          <a href="case-adm.html" class="btn btn-primary btn-download">View</a>
-        </div>
-
-        <div class="chip-list">
-          <span class="chip">Model-driven app</span>
-          <span class="chip">Dataverse</span>
-          <span class="chip">BPF</span>
-          <span class="chip">Power Automate Approvals</span>
-        </div>
+        <h3>Procurement &amp; Inventory MVP — Model-driven App</h3>
+        <p>Portfolio MVP in Dataverse focused on procurement and inventory processes, with entities for products, suppliers, requisitions, purchase orders, inventory movements, and basic approval flows.</p>
+        <div class="hero-ctas" style="margin-top:0.75rem;"><a href="case-compras-inventario.html" class="btn btn-primary btn-download">View</a></div>
+        <div class="chip-list"><span class="chip">Model-driven app</span><span class="chip">Dataverse</span><span class="chip">BPF</span><span class="chip">Power Automate Approvals</span></div>
       </article>
     </section>
-
-    <!-- CONTACT -->
     <section id="contact">
       <h2>Contact</h2>
       <div class="contact-grid">
         <div>
-          <p>
-            If you want to move beyond scattered spreadsheets and informal processes, book a 30-minute call.
-            I’ll quickly tell you whether a Nexus Intelligence solution makes sense, what it would cost,
-            and how we can automate your business logic.
-          </p>
-
+          <p>If you need to organize a process, automate follow-up, or turn operational data into useful reports, you can contact me to review the case and define a practical solution with Microsoft 365, Power BI, or Power Platform.</p>
           <div class="hero-ctas" style="margin-top: 1rem;">
-            <a href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              Message on WhatsApp
-            </a>
-            <a href="mailto:ivan.solorzano@nxintel.onmicrosoft.com" class="btn btn-ghost">
-              Send email
-            </a>
+            <a href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer" class="btn btn-primary">WhatsApp</a>
+            <a href="mailto:ivan.solorzano@nxintel.onmicrosoft.com" class="btn btn-ghost">Send email</a>
           </div>
         </div>
-
         <div class="card">
           <h3>Contact details</h3>
           <ul class="contact-list">
@@ -751,13 +244,7 @@
       </div>
     </section>
   </main>
-
-  <footer>
-    © <span id="year"></span> Nexus Intelligence · Microsoft 365 &amp; Power Platform Solution Architecture.
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <footer>© <span id="year"></span> Nexus Intelligence · Power BI, Power Platform, and process automation with Microsoft 365.</footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
