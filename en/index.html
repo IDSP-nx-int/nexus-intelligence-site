@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Nexus Intelligence · Power BI &amp; Power Platform</title>
+  <title>Ivan Solorzano · BI &amp; Power Platform Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Digital solutions with Microsoft 365, Power BI, and Power Platform: dashboards, internal apps, process automation, and operational documentation." />
+  <meta name="description" content="Ivan Solorzano's technical portfolio: Power BI, Power Apps, Power Automate, Dataverse, SharePoint, HR analytics, reporting, and process automation projects." />
+
   <style>
     :root {
       --azul-nexus: #09be7a;
@@ -16,235 +17,747 @@
       --borde-suave: #e0e0e0;
       --max-width: 1100px;
     }
+
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--texto); background-color: #ffffff; line-height: 1.5; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--texto);
+      background-color: #ffffff;
+      line-height: 1.5;
+    }
+
     a { color: var(--azul-nexus); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    header { position: sticky; top: 0; z-index: 10; background: #ffffffcc; backdrop-filter: blur(8px); border-bottom: 1px solid var(--borde-suave); }
-    .nav { max-width: var(--max-width); margin: 0 auto; padding: 0.6rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-    .nav-logo { display: flex; align-items: center; gap: 0.6rem; }
-    .nav-logo-text { font-weight: 700; font-size: 1.1rem; color: #111111; white-space: nowrap; }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 0.8rem; font-size: 0.9rem; align-items: center; }
-    .nav-links a { padding: 0.25rem 0.4rem; border-radius: 999px; font-weight: 600; }
-    .nav-links a:hover { background-color: var(--gris-suave); text-decoration: none; }
-    .nav-sep { opacity: 0.35; margin: 0 0.15rem; user-select: none; }
-    .lang { font-weight: 800; letter-spacing: 0.02em; }
-    main { max-width: var(--max-width); margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #ffffffcc;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--borde-suave);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .nav-logo-text {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #111111;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      font-size: 0.9rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      padding: 0.25rem 0.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      background-color: var(--gris-suave);
+      text-decoration: none;
+    }
+
+    .nav-sep {
+      opacity: 0.35;
+      margin: 0 0.15rem;
+      user-select: none;
+    }
+
+    .lang {
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+
     section { margin-bottom: 3rem; }
-    h1, h2, h3 { margin-top: 0; color: #111111; }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      color: #111111;
+    }
+
     h1 { font-size: clamp(2rem, 3vw, 2.6rem); }
-    h2 { font-size: clamp(1.6rem, 2.4vw, 2rem); margin-bottom: 0.75rem; }
-    h3 { font-size: 1.25rem; margin-bottom: 0.4rem; }
+
+    h2 {
+      font-size: clamp(1.6rem, 2.4vw, 2rem);
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+
     p { margin: 0 0 0.75rem; }
-    .subtle { color: #555; font-size: 0.95rem; }
-    .hero { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.8fr); gap: 2rem; align-items: center; padding: 2rem 1.5rem; margin: 1rem 0 2.5rem; background: linear-gradient(135deg, #e6f9f2, #ffffff); border-radius: 14px; border: 1px solid var(--borde-suave); }
-    .hero-brand { display: inline-flex; align-items: center; gap: 0.75rem; margin-bottom: 0.6rem; }
-    .hero-logo-img { height: 100px; width: auto; display: block; border-radius: 10px; }
-    .hero-tag { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.2rem 0.6rem; border-radius: 999px; background-color: #e6f9f2; color: #0b6b4b; font-size: 0.8rem; font-weight: 500; margin-bottom: 0; }
+
+    .subtle {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.8fr);
+      gap: 2rem;
+      align-items: center;
+      padding: 2rem 1.5rem;
+      margin: 1rem 0 2.5rem;
+      background: linear-gradient(135deg, #e6f9f2, #ffffff);
+      border-radius: 14px;
+      border: 1px solid var(--borde-suave);
+    }
+
+    .hero-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-logo-img {
+      height: 100px;
+      width: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background-color: #e6f9f2;
+      color: #0b6b4b;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
     .hero-title { margin: 0.4rem 0 0.75rem; }
-    .hero-subtitle { font-size: 0.98rem; color: #444; max-width: 34rem; }
-    .hero-badges { margin: 1rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; }
-    .badge { padding: 0.2rem 0.6rem; border-radius: 999px; border: 1px solid var(--borde-suave); background-color: #fff; display: inline-flex; align-items: center; gap: 0.3rem; }
-    .badge-dot { width: 8px; height: 8px; border-radius: 999px; background-color: var(--azul-nexus); }
-    .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; border-radius: 999px; padding: 0.5rem 1.1rem; font-size: 0.9rem; border: 1px solid transparent; cursor: pointer; text-decoration: none; white-space: nowrap; }
-    .btn-primary { background-color: var(--azul-nexus); color: #fff; border-color: var(--azul-nexus); }
-    .btn-primary:hover { background-color: #078a62; border-color: #078a62; text-decoration: none; }
-    .btn-ghost { background: #ffffff; color: #333; border-color: var(--borde-suave); }
-    .btn-ghost:hover { background-color: var(--gris-suave); text-decoration: none; }
-    .btn-download { margin-top: 0.6rem; font-size: 0.85rem; padding: 0.4rem 0.9rem; }
-    .hero-right { border-radius: 12px; border: 1px dashed var(--borde-suave); padding: 1rem; background-color: #ffffffaa; font-size: 0.85rem; }
-    .hero-right h3 { font-size: 1rem; margin-bottom: 0.6rem; }
-    .hero-list { list-style: none; margin: 0; padding: 0; }
-    .hero-list li { margin-bottom: 0.4rem; display: flex; align-items: flex-start; gap: 0.4rem; }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: #444;
+      max-width: 34rem;
+    }
+
+    .hero-badges {
+      margin: 1rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .badge {
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--borde-suave);
+      background-color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background-color: var(--azul-nexus);
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border-radius: 999px;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--azul-nexus);
+      color: #fff;
+      border-color: var(--azul-nexus);
+    }
+
+    .btn-primary:hover {
+      background-color: #078a62;
+      border-color: #078a62;
+      text-decoration: none;
+    }
+
+    .btn-ghost {
+      background: #ffffff;
+      color: #333;
+      border-color: var(--borde-suave);
+    }
+
+    .btn-ghost:hover {
+      background-color: var(--gris-suave);
+      text-decoration: none;
+    }
+
+    .btn-download {
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.9rem;
+    }
+
+    .hero-right {
+      border-radius: 12px;
+      border: 1px dashed var(--borde-suave);
+      padding: 1rem;
+      background-color: #ffffffaa;
+      font-size: 0.85rem;
+    }
+
+    .hero-right h3 {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-list li {
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+
     .hero-list li span { font-weight: 600; }
-    .columns-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; align-items: flex-start; }
-    .card { border-radius: 12px; border: 1px solid var(--borde-suave); padding: 1.1rem 1.2rem; background-color: #fff; }
-    .card-header-tag { font-size: 0.8rem; font-weight: 600; margin-bottom: 0.15rem; text-transform: uppercase; letter-spacing: 0.04em; }
+
+    .columns-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .card {
+      border-radius: 12px;
+      border: 1px solid var(--borde-suave);
+      padding: 1.1rem 1.2rem;
+      background-color: #fff;
+    }
+
+    .card-header-tag {
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
     .tag-asistix { color: var(--verde-asistix); }
     .tag-notarix { color: #b8860b; }
     .tag-proto { color: var(--gris-proto); }
-    .chip-list { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.4rem; font-size: 0.8rem; }
-    .chip { padding: 0.15rem 0.55rem; border-radius: 999px; background-color: var(--gris-suave); color: #444; }
-    ul { margin: 0.5rem 0 0.5rem 1.1rem; padding: 0; font-size: 0.9rem; }
-    .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-    .step-number { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 999px; background-color: var(--azul-nexus); color: #fff; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
-    .case { border-left: 3px solid var(--azul-nexus); padding: 0.75rem 1rem; margin-bottom: 1rem; background-color: #fafafa; border-radius: 0 10px 10px 0; border-top: 1px solid var(--borde-suave); border-bottom: 1px solid var(--borde-suave); border-right: 1px solid var(--borde-suave); }
-    .case h3 { margin-top: 0; font-size: 1rem; }
+
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+    }
+
+    .chip {
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--gris-suave);
+      color: #444;
+    }
+
+    ul {
+      margin: 0.5rem 0 0.5rem 1.1rem;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background-color: var(--azul-nexus);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .case {
+      border-left: 3px solid var(--azul-nexus);
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      background-color: #fafafa;
+      border-radius: 0 10px 10px 0;
+      border-top: 1px solid var(--borde-suave);
+      border-bottom: 1px solid var(--borde-suave);
+      border-right: 1px solid var(--borde-suave);
+    }
+
+    .case h3 {
+      margin-top: 0;
+      font-size: 1rem;
+    }
+
     .case strong { font-weight: 600; }
-    .contact-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 1.5rem; align-items: flex-start; }
-    .contact-list { list-style: none; margin: 0.5rem 0 0; padding: 0; font-size: 0.95rem; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin: 0.5rem 0 0;
+      padding: 0;
+      font-size: 0.95rem;
+    }
+
     .contact-list li { margin-bottom: 0.4rem; }
-    footer { border-top: 1px solid var(--borde-suave); padding: 1rem; text-align: center; font-size: 0.8rem; color: #666; background-color: #fafafa; }
-    @media (max-width: 900px) { .hero { grid-template-columns: minmax(0, 1fr); } .columns-2 { grid-template-columns: minmax(0, 1fr); } .steps { grid-template-columns: minmax(0, 1fr); } .contact-grid { grid-template-columns: minmax(0, 1fr); } .nav { flex-direction: column; align-items: flex-start; gap: 0.4rem; } .hero-logo-img { height: 46px; } }
-    @media (max-width: 600px) { main { padding-inline: 0.8rem; } .hero { padding-inline: 1rem; } .hero-brand { align-items: flex-start; } .hero-logo-img { height: 42px; } }
+
+    footer {
+      border-top: 1px solid var(--borde-suave);
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #666;
+      background-color: #fafafa;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: minmax(0, 1fr); }
+      .columns-2 { grid-template-columns: minmax(0, 1fr); }
+      .steps { grid-template-columns: minmax(0, 1fr); }
+      .contact-grid { grid-template-columns: minmax(0, 1fr); }
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+      .hero-logo-img { height: 46px; }
+    }
+
+    @media (max-width: 600px) {
+      main { padding-inline: 0.8rem; }
+      .hero { padding-inline: 1rem; }
+      .hero-brand { align-items: flex-start; }
+      .hero-logo-img { height: 42px; }
+    }
   </style>
 </head>
+
 <body>
   <header>
     <nav class="nav">
-      <div class="nav-logo"><span class="nav-logo-text">Nexus Intelligence</span></div>
+      <div class="nav-logo">
+        <span class="nav-logo-text">Ivan Solorzano</span>
+      </div>
+
       <div class="nav-links">
         <a href="#home">Home</a>
-        <a href="#solutions">Solutions</a>
-        <a href="#method">How I work</a>
+        <a href="#cases">Case Studies</a>
+        <a href="#experience">Experience</a>
+        <a href="#method">Approach</a>
         <a href="#about">About</a>
-        <a href="#cases">In practice</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#portfolio">Projects</a>
         <a href="#contact">Contact</a>
+
         <span class="nav-sep">|</span>
         <a class="lang" href="../es/index.html" aria-label="Switch to Spanish">ES</a>
       </div>
     </nav>
   </header>
+
   <main>
+    <!-- HERO -->
     <section id="home" class="hero">
       <div>
         <div class="hero-brand">
-          <img src="../logo-nexus.png" alt="Nexus Intelligence" class="hero-logo-img" />
-          <div class="hero-tag"><span>Microsoft 365 · Power BI · Power Apps · Power Automate</span></div>
+          <img src="../logo-nexus.png" alt="Nexus Intelligence portfolio mark" class="hero-logo-img" />
+          <div class="hero-tag">
+            <span>TECHNICAL PORTFOLIO · POWER BI · POWER PLATFORM · AUTOMATION</span>
+          </div>
         </div>
-        <h1 class="hero-title">Dashboards, internal apps, and process automation</h1>
-        <p class="hero-subtitle">I build digital solutions with Microsoft 365, Power BI, and Power Platform to organize business processes, reduce manual follow-up, and turn operational data into useful reporting for decision-making.</p>
+
+        <h1 class="hero-title">Business Intelligence, Power Platform, and process automation portfolio</h1>
+        <p class="hero-subtitle">
+          Case studies and projects developed by Ivan Solorzano using Power BI, Power Apps,
+          Power Automate, Dataverse, SharePoint, and Microsoft 365 to turn manual processes
+          and scattered data into clearer, traceable, and useful solutions.
+        </p>
+
         <div class="hero-badges">
-          <div class="badge"><div class="badge-dot"></div><span>Power BI operational dashboards</span></div>
-          <div class="badge"><div class="badge-dot"></div><span>Internal apps with Power Apps</span></div>
-          <div class="badge"><div class="badge-dot"></div><span>Flows with Power Automate</span></div>
+          <div class="badge">
+            <div class="badge-dot"></div>
+            <span>Business Intelligence and operational reporting</span>
+          </div>
+          <div class="badge">
+            <div class="badge-dot"></div>
+            <span>Internal applications with Power Apps</span>
+          </div>
+          <div class="badge">
+            <div class="badge-dot"></div>
+            <span>Automation with Power Automate</span>
+          </div>
         </div>
+
         <div class="hero-ctas">
-          <a href="#contact" class="btn btn-primary">Contact</a>
-          <a href="#solutions" class="btn btn-ghost">View cases and solutions</a>
+          <a href="#cases" class="btn btn-primary">View case studies</a>
+          <a href="https://www.linkedin.com/in/ivansolorzanoidsp/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+            View LinkedIn
+          </a>
         </div>
       </div>
+
       <aside class="hero-right">
-        <h3>What Nexus Intelligence can deliver</h3>
+        <h3>Capabilities demonstrated in this portfolio</h3>
         <ul class="hero-list">
-          <li><span>1.</span> Clear dashboards for operational and leadership follow-up.</li>
-          <li><span>2.</span> Internal apps to capture and organize business information.</li>
-          <li><span>3.</span> Automated flows for approvals, notifications, and evidence.</li>
-          <li><span>4.</span> Documentation and traceability for administrative processes.</li>
+          <li><span>1.</span> Dashboards and analytical models for operational follow-up.</li>
+          <li><span>2.</span> Internal applications for structured data capture and management.</li>
+          <li><span>3.</span> Automated workflows for approvals, alerts, files, and documents.</li>
+          <li><span>4.</span> Data modeling, traceability, and functional documentation.</li>
         </ul>
       </aside>
     </section>
+
+    <!-- ABOUT THIS PORTFOLIO -->
     <section>
-      <h2>What Nexus Intelligence does</h2>
-      <p>Nexus Intelligence turns operational processes into digital solutions using Microsoft 365, Power BI, and Power Platform. The focus is to replace scattered spreadsheets, disconnected emails, and manual follow-up with dashboards, internal apps, automated flows, and more structured data.</p>
-      <p>I work with real business processes: requirements gathering, data modeling, automation, documentation, reporting, and traceability. The goal is to make operations clearer, more measurable, and easier to follow for administrative, operational, and leadership users.</p>
+      <h2>About this portfolio</h2>
+      <p>
+        Nexus Intelligence is the portfolio name under which I organized and documented
+        independent Business Intelligence, Power Platform, and process automation projects.
+      </p>
+      <p>
+        This site brings together practical experience from independent projects and solutions
+        previously developed within the Human Resources area of the Secretariat of Culture of Coahuila.
+        My approach combines process analysis, data modeling, automation, documentation, and reporting
+        to translate operational needs into functional solutions.
+      </p>
     </section>
-    <section id="solutions">
-      <h2>Solutions and use cases in Microsoft 365</h2>
+
+    <!-- SELECTED CASE STUDIES -->
+    <section id="cases">
+      <h2>Selected case studies and projects</h2>
+      <p class="subtle">
+        Examples of solutions developed or structured around real operational needs.
+      </p>
+
       <div class="columns-2">
+        <!-- Attendance and employee justification requests -->
         <article class="card">
-          <div class="card-header-tag tag-asistix">ASISTIX · ATTENDANCE &amp; JUSTIFICATIONS</div>
-          <h3>Attendance and justification analytics and automation case</h3>
-          <p class="subtle">A model based on real experience with attendance control, requests, approvals, evidence, and HR dashboards.</p>
+          <div class="card-header-tag tag-asistix">IMPLEMENTED CASE · HUMAN RESOURCES</div>
+          <h3>Attendance and employee justification analytics and automation</h3>
+          <p class="subtle">
+            A solution developed within the Human Resources area of the Secretariat of Culture of Coahuila
+            to manage attendance, requests, approvals, evidence, and operational reporting.
+          </p>
           <ul>
-            <li>Standardized request intake.</li><li>Traceable approvals for managers and HR.</li><li>Logs in Excel Online / SharePoint.</li><li>Power BI dashboards: absences, lateness, trends, and incident distribution.</li><li>Role-based views for employees, managers, and leadership.</li>
+            <li>Standardized request intake.</li>
+            <li>Traceable approvals for managers and Human Resources.</li>
+            <li>Operational logs in Excel Online and SharePoint.</li>
+            <li>Power BI dashboards for absences, lateness, incidents, and trends.</li>
+            <li>Support for approximately 100 users and 450 monthly requests.</li>
           </ul>
-          <p><strong>Outcome:</strong> less manual capture, stronger traceability, and better HR operational follow-up.</p>
+          <p>
+            <strong>Outcome:</strong> stronger traceability, less manual follow-up, and better visibility
+            into attendance incidents, absences, and employee justification requests.
+          </p>
+
           <div class="hero-ctas" style="margin-top:0.6rem;">
-            <a href="case-asistix.html" class="btn btn-primary btn-download">View case</a>
-            <a href="../folleto-asistix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer" download>Download · Asistix Brochure (PDF)</a>
+            <a href="case-asistix.html" class="btn btn-primary btn-download">View case study</a>
+            <a href="../folleto-asistix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer">
+              View PDF
+            </a>
           </div>
-          <div class="chip-list"><span class="chip">Power BI</span><span class="chip">Power Query</span><span class="chip">DAX</span><span class="chip">Power Automate</span><span class="chip">SharePoint</span></div>
+
+          <div class="chip-list">
+            <span class="chip">Power BI</span>
+            <span class="chip">Power Query</span>
+            <span class="chip">DAX</span>
+            <span class="chip">Power Automate</span>
+            <span class="chip">SharePoint</span>
+          </div>
         </article>
+
+        <!-- Notarix -->
         <article class="card">
-          <div class="card-header-tag tag-notarix">NOTARIX · NOTARY MANAGEMENT</div>
-          <h3>Cases, digital files, and documents in one platform</h3>
-          <p class="subtle">App with Power Apps and Dataverse for notary operations: cases, client registry, payments, operational follow-up, digital files, and automated documents.</p>
+          <div class="card-header-tag tag-notarix">NOTARIX · INDEPENDENT PROJECT</div>
+          <h3>Notary operations, digital files, and document generation</h3>
+          <p class="subtle">
+            An independent project developed with Power Apps, Dataverse, Power Automate, and SharePoint
+            to centralize notary procedures, clients, payments, roles, documents, operational alerts,
+            and document generation.
+          </p>
           <ul>
-            <li>Case tracking: clients, amounts, payments, and folios.</li><li>Configurable catalogs and business rules.</li><li>Operational alerts and follow-up semaphores.</li><li>Digital file with evidence linked to each case.</li><li>Word templates with tokens for standardized documents.</li>
+            <li>Registration and follow-up of procedures, clients, amounts, payments, and folios.</li>
+            <li>Dataverse tables, relationships, catalogs, forms, and validations.</li>
+            <li>Operational alerts and status indicators.</li>
+            <li>Digital files with evidence linked to each procedure.</li>
+            <li>Word templates with dynamic tokens for standardized documents.</li>
           </ul>
-          <p><strong>Outcome:</strong> more centralized operations, faster documents, and less reliance on scattered controls.</p>
+          <p>
+            <strong>Outcome:</strong> structured information, centralized operations,
+            stronger traceability, and less reliance on scattered controls.
+          </p>
+
           <div class="hero-ctas" style="margin-top:0.6rem;">
-            <a href="case-notarix.html" class="btn btn-primary btn-download">View case</a>
-            <a href="../folleto-notarix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer" download>Download · Notarix Brochure (PDF)</a>
+            <a href="case-notarix.html" class="btn btn-primary btn-download">View case study</a>
+            <a href="../folleto-notarix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer">
+              View PDF
+            </a>
           </div>
-          <div class="chip-list"><span class="chip">Power Apps</span><span class="chip">Dataverse</span><span class="chip">Power Automate</span><span class="chip">SharePoint</span><span class="chip">Word Templates</span></div>
+
+          <div class="chip-list">
+            <span class="chip">Power Apps</span>
+            <span class="chip">Dataverse</span>
+            <span class="chip">Power Automate</span>
+            <span class="chip">SharePoint</span>
+            <span class="chip">Word Templates</span>
+          </div>
         </article>
       </div>
     </section>
+
+    <!-- APPLIED EXPERIENCE -->
+    <section id="experience">
+      <h2>Applied experience</h2>
+      <p class="subtle">
+        Professional context behind the case studies and projects included in this portfolio.
+      </p>
+
+      <article class="case">
+        <h3>Human Resources · Secretariat of Culture of Coahuila</h3>
+        <p>
+          Development of reports, dashboards, analytical models, and automations for attendance,
+          incidents, overtime, absences, employee justification requests, and institutional compliance.
+        </p>
+        <ul>
+          <li>Integration of Excel, SQL/MySQL, biometric systems, and operational logs.</li>
+          <li>Power BI dashboards and reports for HR and administrative follow-up.</li>
+          <li>Automation of requests and employee justifications using Forms, Power Automate, and SharePoint.</li>
+          <li>Information validation, reporting support, and document traceability.</li>
+          <li>Audit support for 14 administrative units.</li>
+        </ul>
+      </article>
+
+      <article class="case">
+        <h3>Independent projects · Nexus Intelligence portfolio</h3>
+        <p>
+          A period of independent project development and technical portfolio work using Power Apps,
+          Dataverse, Power Automate, SharePoint, and Microsoft 365.
+        </p>
+        <ul>
+          <li>Development of NOTARIX as the featured independent project.</li>
+          <li>Design of tables, relationships, catalogs, forms, and validations.</li>
+          <li>Automated workflows for operational follow-up, alerts, and file handling.</li>
+          <li>Document generation using Word templates and dynamic tokens.</li>
+          <li>Information structures prepared for operational follow-up and KPI reporting.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- WORK APPROACH -->
     <section id="method">
-      <h2>How I work</h2>
-      <p class="subtle">Three clear steps to move from a manual process to a more organized, measurable, and maintainable digital solution.</p>
+      <h2>How I approach projects</h2>
+      <p class="subtle">
+        A practical approach to turning operational needs into clear and maintainable digital solutions.
+      </p>
+
       <div class="steps">
-        <div class="card"><div class="step-number">1</div><h3>Quick discovery</h3><p>Review the current process, users involved, files used, pain points, business rules, and reporting needs.</p></div>
-        <div class="card"><div class="step-number">2</div><h3>Proposal + prototype</h3><p>Design a first version with a data model, key screens, basic flows, reports, or documentation structure.</p></div>
-        <div class="card"><div class="step-number">3</div><h3>Implementation + handoff</h3><p>Configure the solution, run functional tests, adjust with users, document the work, and hand it off for operation.</p></div>
+        <div class="card">
+          <div class="step-number">1</div>
+          <h3>Process analysis</h3>
+          <p>
+            Identification of users, data sources, operational rules,
+            pain points, and follow-up requirements.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">2</div>
+          <h3>Functional and technical design</h3>
+          <p>
+            Definition of the data model, screens, workflows, validations,
+            reports, and required documentation.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">3</div>
+          <h3>Build and validation</h3>
+          <p>
+            Solution development, functional testing, user feedback,
+            adjustments, and operational documentation.
+          </p>
+        </div>
       </div>
     </section>
+
+    <!-- ABOUT -->
     <section id="about">
-      <h2>About Nexus Intelligence</h2>
+      <h2>About Ivan Solorzano</h2>
       <div class="columns-2">
         <div>
-          <p>Nexus Intelligence is the portfolio and digital-solutions brand of <strong>Iván Solórzano</strong>, focused on Power BI, Power Platform, and process automation with Microsoft 365.</p>
-          <p>I have worked on attendance and justification solutions for the public sector, operational dashboards in Power BI, administrative process automation, and internal apps for notary management, documentation, and operational follow-up.</p>
-          <p>My approach is practical: understand the process, organize the data, automate repetitive steps, and turn information into useful reports or applications. I aim to translate operational needs into clear, documented, and easy-to-adopt solutions.</p>
+          <p>
+            BI and Automation Analyst with experience in Power BI, Power Query, DAX,
+            SQL/MySQL, Excel, Power Automate, SharePoint, and Power Platform.
+          </p>
+          <p>
+            I have developed dashboards, reports, and automations for Human Resources processes,
+            attendance, incidents, employee justification requests, document traceability,
+            and administrative follow-up. I also developed independent projects such as NOTARIX
+            with Power Apps and Dataverse.
+          </p>
+          <p>
+            I am currently open to opportunities in Business Intelligence, data analysis,
+            HR Analytics, reporting, and process automation.
+          </p>
         </div>
+
         <div class="card">
-          <h3>Certifications &amp; stack</h3>
+          <h3>Certifications and stack</h3>
           <ul>
-            <li>Microsoft Certified: Power Platform Functional Consultant Associate (PL-200).</li>
             <li>Microsoft Certified: Power BI Data Analyst Associate (PL-300).</li>
+            <li>Microsoft Certified: Power Platform Functional Consultant Associate (PL-200).</li>
             <li>Microsoft Certified: Azure Data Fundamentals (DP-900).</li>
             <li>Microsoft Certified: Azure Fundamentals (AZ-900).</li>
             <li>DataCamp Certified: Data Analyst Associate.</li>
-            <li>Stack: Power BI, DAX, Power Query, SQL/MySQL, Power Apps, Power Automate, Dataverse, SharePoint Online, Excel Online, Microsoft Forms, and document automation.</li>
+            <li>
+              Stack: Power BI, DAX, Power Query, SQL/MySQL, Excel, Power Apps,
+              Power Automate, Dataverse, SharePoint, and Microsoft Forms.
+            </li>
           </ul>
         </div>
       </div>
     </section>
-    <section id="cases">
-      <h2>What it looks like in practice</h2>
-      <p class="subtle">Two concrete examples of problems I have worked on and how they translate into real Microsoft 365 solutions.</p>
-      <article class="case">
-        <h3>Attendance and justification control for a government organization</h3>
-        <p>Operational automation and analytics case to centralize justification requests, approvals, evidence, and attendance follow-up.</p>
-        <p><strong>What it fixed:</strong> informal emails, inconsistent criteria, follow-up errors, and low audit traceability.</p>
-        <p><strong>How it was solved:</strong> standardized intake, Power Automate approval workflow, Excel Online / SharePoint logs, and Power BI dashboards.</p>
-        <div class="hero-ctas" style="margin-top:0.75rem;"><a href="case-asistix.html" class="btn btn-primary btn-download">View case</a><a href="../folleto-asistix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer">PDF</a></div>
-      </article>
-      <article class="case">
-        <h3>Notary platform for operational follow-up and documentation</h3>
-        <p>Power Apps + Dataverse app to centralize cases, clients, payments, roles, digital files, operational alerts, and document generation.</p>
-        <p><strong>What it fixed:</strong> scattered paper/Excel controls, manual case follow-up, and slow document generation.</p>
-        <p><strong>How it was solved:</strong> structured data model, operational views, follow-up semaphores, Word templates with tokens, and digital case files.</p>
-        <div class="hero-ctas" style="margin-top:0.75rem;"><a href="case-notarix.html" class="btn btn-primary btn-download">View case</a><a href="../folleto-notarix.pdf" class="btn btn-ghost btn-download" target="_blank" rel="noopener noreferrer">PDF</a></div>
-      </article>
-    </section>
+
+    <!-- PROJECTS -->
     <section id="portfolio">
-      <h2>Portfolio</h2>
-      <p class="subtle">Selected projects and prototypes showing data modeling, process design, Power Apps, Power Automate, and Power BI.</p>
+      <h2>Additional portfolio projects</h2>
+      <p class="subtle">
+        Selected prototypes demonstrating data modeling, process design, and automation.
+      </p>
+
       <article class="case" style="border-left-color: var(--gris-proto);">
         <h3>Procurement &amp; Inventory MVP — Model-driven App</h3>
-        <p>Portfolio MVP in Dataverse focused on procurement and inventory processes, with entities for products, suppliers, requisitions, purchase orders, inventory movements, and basic approval flows.</p>
-        <div class="hero-ctas" style="margin-top:0.75rem;"><a href="case-compras-inventario.html" class="btn btn-primary btn-download">View</a></div>
-        <div class="chip-list"><span class="chip">Model-driven app</span><span class="chip">Dataverse</span><span class="chip">BPF</span><span class="chip">Power Automate Approvals</span></div>
+        <p>
+          A Dataverse MVP for procurement and inventory processes, including tables for products,
+          suppliers, requisitions, purchase orders, inventory movements, and basic approval workflows.
+        </p>
+
+        <div class="hero-ctas" style="margin-top:0.75rem;">
+          <a href="case-compras-inventario.html" class="btn btn-primary btn-download">View project</a>
+        </div>
+
+        <div class="chip-list">
+          <span class="chip">Model-driven app</span>
+          <span class="chip">Dataverse</span>
+          <span class="chip">BPF</span>
+          <span class="chip">Power Automate Approvals</span>
+        </div>
       </article>
     </section>
+
+    <!-- CONTACT -->
     <section id="contact">
-      <h2>Contact</h2>
+      <h2>Professional contact</h2>
       <div class="contact-grid">
         <div>
-          <p>If you need to organize a process, automate follow-up, or turn operational data into useful reports, you can contact me to review the case and define a practical solution with Microsoft 365, Power BI, or Power Platform.</p>
+          <p>
+            I am currently open to professional opportunities in Business Intelligence,
+            data analysis, HR Analytics, Power BI, process automation, and Power Platform.
+          </p>
+
           <div class="hero-ctas" style="margin-top: 1rem;">
-            <a href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer" class="btn btn-primary">WhatsApp</a>
-            <a href="mailto:ivan.solorzano@nxintel.onmicrosoft.com" class="btn btn-ghost">Send email</a>
+            <a href="https://www.linkedin.com/in/ivansolorzanoidsp/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              View LinkedIn
+            </a>
+            <a href="mailto:ivansolorzano714@gmail.com" class="btn btn-ghost">
+              Send email
+            </a>
           </div>
         </div>
+
         <div class="card">
           <h3>Contact details</h3>
           <ul class="contact-list">
-            <li><strong>Name:</strong> Iván Daniel Solórzano Pérez</li>
-            <li><strong>Email:</strong> <a href="mailto:ivan.solorzano@nxintel.onmicrosoft.com">ivan.solorzano@nxintel.onmicrosoft.com</a></li>
-            <li><strong>Phone / WhatsApp:</strong> <a href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">+52 844&nbsp;362&nbsp;3217</a></li>
-            <li><strong>Location:</strong> Saltillo, Coahuila · Mexico</li>
+            <li><strong>Name:</strong> Ivan Daniel Solorzano Perez</li>
+            <li><strong>Email:</strong> <a href="mailto:ivansolorzano714@gmail.com">ivansolorzano714@gmail.com</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ivansolorzanoidsp/" target="_blank" rel="noopener noreferrer">ivansolorzanoidsp</a></li>
+            <li><strong>Location:</strong> Saltillo, Coahuila, Mexico · Open to relocation</li>
           </ul>
         </div>
       </div>
     </section>
   </main>
-  <footer>© <span id="year"></span> Nexus Intelligence · Power BI, Power Platform, and process automation with Microsoft 365.</footer>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+  <footer>
+    © <span id="year"></span> Ivan Solorzano · Nexus Intelligence Portfolio · Business Intelligence, Power Platform, and automation.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
