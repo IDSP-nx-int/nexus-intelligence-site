@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>NOTARIX Case Study · Nexus Intelligence</title>
+  <title>NOTARIX Case Study · Ivan Solorzano Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="NOTARIX case study: a Dataverse + Power Apps platform for notary operations and LFPIORPI compliance with document automation." />
-
+  <meta name="description" content="NOTARIX case study by Ivan Solorzano: a Power Apps and Dataverse solution for notary operations, digital files, operational alerts, and document automation." />
   <style>
     :root{
       --accent: #ffb900;   /* Notarix amber */
@@ -225,237 +224,155 @@
     }
   </style>
 </head>
-
 <body>
   <header>
     <nav class="nav">
       <div class="nav-left">
-        <span class="brand">Nexus Intelligence</span>
-        <a href="index.html" class="muted">← Back to Home</a>
+        <span class="brand">Ivan Solorzano</span>
+        <a href="index.html" class="muted">← Back to Portfolio</a>
       </div>
       <div class="nav-links">
         <a href="#context">Context</a>
         <a href="#solution">Solution</a>
         <a href="#architecture">Architecture</a>
-        <a href="#features">Key Features</a>
-        <a href="#metrics">Metrics</a>
-        <a href="#screens">Screenshots</a>
+        <a href="#features">Features</a>
+        <a href="#scope">Scope</a>
+        <a href="#screens">Screens</a>
       </div>
     </nav>
   </header>
-
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div>
-        <div class="pill"><span class="dot"></span> Case Study · Dataverse + Power Apps</div>
-        <h1>NOTARIX — Notary Operations Platform with LFPIORPI Compliance</h1>
-        <p class="muted">
-          A Dataverse-centered platform that centralizes notary cases (trámites), enforces LFPIORPI rules, manages evidence,
-          tracks municipal deadlines (semaphores), and automates document generation using tokenized Word templates.
-        </p>
-
+        <div class="pill"><span class="dot"></span> Independent project · Dataverse + Power Apps</div>
+        <h1>NOTARIX — Notary Operations and Document Management</h1>
+        <p class="muted">An independent Power Apps and Dataverse project designed to centralize notary procedures, clients, payments, roles, digital files, operational alerts, and document generation. The solution also includes structured controls to support LFPIORPI-related operational follow-up.</p>
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">Request a quick demo</a>
+          <a class="btn btn-primary" href="index.html#cases">View Portfolio</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/ivansolorzanoidsp/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
-
         <div class="chips">
-          <span class="chip">Dataverse</span>
-          <span class="chip">Power Apps</span>
-          <span class="chip">Power Automate</span>
-          <span class="chip">SharePoint </span>
-          <span class="chip">Word Automation</span>
+          <span class="chip">Dataverse</span><span class="chip">Power Apps</span><span class="chip">Power Automate</span><span class="chip">SharePoint</span><span class="chip">Word Automation</span>
         </div>
       </div>
-
       <aside class="right-card">
-        <h3 style="margin-top:0;">Quick facts (target)</h3>
+        <h3 style="margin-top:0;">Quick facts</h3>
         <ul class="kvs">
-          <li><strong>Primary goal:</strong> compliance-first operations + evidence traceability</li>
-          <li><strong>Users / roles:</strong> 2 (Notary / Accounting)</li>
-          <li><strong>Cases per month:</strong> 50</li>
-          <li><strong>Screens:</strong> 13</li>
-          <li><strong>Flows:</strong> 2</li>
+          <li><strong>Type:</strong> Independent project</li>
+          <li><strong>Domain:</strong> Notary operations and documentation</li>
+          <li><strong>Target users:</strong> Small notary office</li>
+          <li><strong>Focus:</strong> Structured data, traceability, alerts, and documents</li>
+          <li><strong>Status:</strong> Functional project and technical portfolio case</li>
         </ul>
-        <p class="muted" style="margin-top:0.8rem;"></p>
       </aside>
     </section>
 
-    <!-- 1) Context -->
     <section id="context">
-      <h2>1) Context / Problem</h2>
-      <p>
-        Notary operations were fragmented across spreadsheets and scattered files, increasing the risk of missing municipal deadlines,
-        weakening evidence handling, and making LFPIORPI compliance dependent on manual calculations and individual interpretation.
-      </p>
+      <h2>1) Context and problem</h2>
+      <p>Notary operations may depend on spreadsheets, paper files, separate payment controls, manual calculations, and informal follow-up. This makes it difficult to maintain a clear view of each procedure, the people involved, outstanding documents, deadlines, and payments.</p>
     </section>
 
-    <!-- 2) Solution -->
     <section id="solution">
-      <h2>2) Solution (what I delivered)</h2>
+      <h2>2) Implemented solution</h2>
       <div class="grid-2">
         <div class="card">
-          <h3>Core modules delivered</h3>
+          <h3>Main modules</h3>
           <ul>
-            <li><strong>Case 360 (Trámite 360)</strong>: centralized tracking (clients, amounts, payments, SAT folios/receipts).</li>
-            <li><strong>LFPIORPI automation</strong>: threshold evaluation, flags, and policy-driven calculations.</li>
-            <li><strong>Municipal semaphores</strong>: configurable deadlines (Red/Amber/Green) per municipality.</li>
-            <li><strong>Digital case file</strong>: evidence centralized and linked to each case.</li>
-            <li><strong>Document automation</strong>: Word templates using dynamic tokens for standardized outputs.</li>
+            <li><strong>Procedure management:</strong> registration and operational follow-up.</li>
+            <li><strong>Client registry:</strong> people, roles, master data, and history.</li>
+            <li><strong>Payments:</strong> amounts, concepts, receipts, and procedure relationships.</li>
+            <li><strong>Digital case file:</strong> documents and evidence linked to each procedure.</li>
+            <li><strong>Document generation:</strong> Word templates with dynamic tokens.</li>
           </ul>
         </div>
-
         <div class="card">
-          <h3>Delivery style</h3>
+          <h3>Delivery approach</h3>
           <ul>
-            <li>Deployed inside the client’s Microsoft tenant.</li>
-            <li>Model-first design: normalized tables + catalogs for scalable behavior.</li>
-            <li>Auditability as a first-class constraint: evidence, traceability, and controlled outputs.</li>
+            <li>Canvas app developed with Power Apps and Dataverse.</li>
+            <li>Structured tables, relationships, catalogs, and validations.</li>
+            <li>Power Automate flows for document generation and supporting processes.</li>
+            <li>SharePoint and OneDrive for templates, evidence, and generated files.</li>
           </ul>
-          <p class="muted" style="margin-top:0.6rem;">
-            NOTARIX reduces compliance risk and operational variance without increasing manual workload.
-          </p>
+          <p class="muted" style="margin-top:0.6rem;">The objective was to reduce repeated capture, centralize files, and improve operational visibility.</p>
         </div>
       </div>
     </section>
 
-    <!-- 3) Architecture -->
     <section id="architecture">
-      <h2>3) Architecture</h2>
-
+      <h2>3) Architecture and data structure</h2>
       <div class="grid-2">
         <div class="card">
-          <h3>Data</h3>
+          <h3>Data model</h3>
           <ul>
-            <li><strong>Dataverse-centered model</strong> with normalized entities + catalogs (parameter-driven rules).</li>
-            <li><strong>Compliance logic</strong> supported by structured fields (thresholds, flags, timelines, evidence pointers).</li>
+            <li>Dataverse tables for procedures, people, roles, payments, catalogs, and digital files.</li>
+            <li>Relationships between people, procedures, roles, payments, and documents.</li>
+            <li>Catalogs for statuses, deed types, legal acts, roles, and operational parameters.</li>
+            <li>Structured fields to reduce free-text capture and support future reporting.</li>
           </ul>
         </div>
-
         <div class="card">
-          <h3>Automation + Docs + Reporting</h3>
+          <h3>Automation and documents</h3>
           <ul>
-            <li><strong>Power Automate</strong>: orchestration for traceability (notifications, logging, document outputs).</li>
-            <li><strong>SharePoint</strong>: templates + evidence storage + links from Dataverse records.</li>
-            <li><strong>Reporting</strong>: operational control views and export-ready outputs.</li>
+            <li>Power Automate for document generation and file handling.</li>
+            <li>SharePoint and OneDrive for templates, generated documents, and evidence.</li>
+            <li>Word templates with replaceable tokens populated from application data.</li>
+            <li>Operational views for status, pending items, and deadlines.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- 4) Key Features -->
     <section id="features">
-      <h2>4) Key Features</h2>
+      <h2>4) Key features</h2>
       <div class="card">
         <ul>
-          <li><strong>Municipality-based semaphores</strong> with configurable deadline rules (per locality).</li>
-          <li><strong>6-month accumulation logic</strong> (grouping by RFC + act family; accumulated amounts vs threshold).</li>
-          <li><strong>UMA versioning</strong> (parameter-driven values for calculations across periods).</li>
-          <li><strong>SAT notice control</strong> (folios, substitutions/cancellations, and expiration tracking).</li>
-          <li><strong>Draft → Officialization workflow</strong> (finalize only when evidence and required data are complete).</li>
-          <li><strong>Token-based document automation</strong> using client-configurable Word templates.</li>
+          <li><strong>Procedure 360 view:</strong> data, people, roles, payments, documents, and status in one workflow.</li>
+          <li><strong>Digital case file:</strong> documentation linked to the corresponding procedure and client.</li>
+          <li><strong>Operational alerts:</strong> status indicators and deadline follow-up.</li>
+          <li><strong>Person roles:</strong> buyer, seller, borrower, or other roles depending on the procedure.</li>
+          <li><strong>Document generation:</strong> Word templates populated with dynamic fields.</li>
+          <li><strong>Reporting-ready foundation:</strong> structured data prepared for KPI and operational reporting.</li>
         </ul>
       </div>
     </section>
 
-    <!-- 5) Metrics -->
-    <section id="metrics">
-      <h2>5) Metrics / Scale (target)</h2>
+    <section id="scope">
+      <h2>5) Scope</h2>
       <div class="grid-2">
         <div class="card">
-          <h3>Scale</h3>
+          <h3>Included</h3>
           <ul>
-            <li><strong>Users / roles:</strong> 2 (Notary / Accounting)</li>
-            <li><strong>Cases per month:</strong> 50</li>
-            <li><strong>Screens:</strong> 13</li>
-            <li><strong>Automations (flows):</strong> 2</li>
+            <li>Power Apps Canvas application.</li>
+            <li>Dataverse data model with core tables and relationships.</li>
+            <li>Modules for procedures, clients, payments, roles, and digital files.</li>
+            <li>Supporting Power Automate flows.</li>
+            <li>Word templates for document generation.</li>
           </ul>
         </div>
-
         <div class="card">
-          <h3>Compliance targets</h3>
+          <h3>Future improvements</h3>
           <ul>
-            <li><strong>Deadline types tracked:</strong> municipal and federal</li>
-            <li><strong>Evidence completeness rule:</strong> SAT filing folio required</li>
-            <li><strong>Primary risk reduced:</strong> manual calculation variance + missing evidence + missed deadlines</li>
+            <li>Power BI dashboards for procedure and deadline monitoring.</li>
+            <li>More formal role-based security for sensitive information.</li>
+            <li>Managed solutions and Dev/Test/Prod ALM.</li>
+            <li>Regression testing for critical rules and calculations.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- 6) Screens -->
     <section id="screens">
-      <h2>6) Screenshots</h2>
-      <p class="muted">
-       
-      </p>
-
+      <h2>6) Screens</h2>
+      <p class="muted">Representative screenshots of the project.</p>
       <div class="grid-2">
-        <figure>
-          <img
-            src="../notarix-01-resumen-360-semaforos-lfpiorpi.png"
-            alt="NOTARIX - Case 360 / Summary view with municipal semaphores and LFPIORPI compliance signals"
-            loading="lazy"
-          />
-          <figcaption>
-            1) Case 360 (Summary): municipal semaphores + LFPIORPI status in the same operational view.
-          </figcaption>
-        </figure>
-
-        <figure>
-          <img
-            src="../notarix-02-tramites-list.png"
-            alt="NOTARIX - Main cases list with filters and status fields"
-            loading="lazy"
-          />
-          <figcaption>
-            2) Cases list: centralized tracking with filters and status fields (single source of truth).
-          </figcaption>
-        </figure>
-
-        <figure>
-          <img
-            src="../notarix-03-padron-clientes-adjuntos.png"
-            alt="NOTARIX - Client registry module showing master data, history, and linked attachments"
-            loading="lazy"
-          />
-          <figcaption>
-            3) Client registry + Attachments: master data with history and evidence/attachments linked to the record.
-          </figcaption>
-        </figure>
-
-        <figure>
-          <img
-            src="../notarix-04-formularios-tokens-plantillas.png"
-            alt="NOTARIX - Forms module with key-value tokens and linked Word templates"
-            loading="lazy"
-          />
-          <figcaption>
-            4) Forms + Tokens + Templates: key-value capture and Word template binding for document automation.
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- 7) Improvements -->
-    <section id="next">
-      <h2>7) Next improvements</h2>
-      <div class="card">
-        <ul>
-          <li>Add <strong>regression checks</strong> for compliance rules (versioned rule sets + automated validations).</li>
-          <li>Formalize <strong>ALM</strong> (managed solutions, environment variables, deployment pipelines).</li>
-          <li>Add <strong>monitoring + audit dashboards</strong> (rule drift, missing evidence, approaching deadlines).</li>
-        </ul>
+        <figure><img src="../notarix-01-resumen-360-semaforos-lfpiorpi.png" alt="NOTARIX summary view with operational alerts and LFPIORPI-related indicators" loading="lazy" /><figcaption>1) Procedure summary: status, operational alerts, and key information in one view.</figcaption></figure>
+        <figure><img src="../notarix-02-tramites-list.png" alt="NOTARIX main procedure list" loading="lazy" /><figcaption>2) Procedure list with filters and status fields.</figcaption></figure>
+        <figure><img src="../notarix-03-padron-clientes-adjuntos.png" alt="NOTARIX client registry and attachments" loading="lazy" /><figcaption>3) Client registry, history, and linked evidence.</figcaption></figure>
+        <figure><img src="../notarix-04-formularios-tokens-plantillas.png" alt="NOTARIX forms, tokens, and Word templates" loading="lazy" /><figcaption>4) Forms, tokens, and templates used for document generation.</figcaption></figure>
       </div>
     </section>
   </main>
-
-  <footer>
-    © <span id="year"></span> Nexus Intelligence · Case Studies
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <footer>© <span id="year"></span> Ivan Solorzano · Nexus Intelligence Portfolio</footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
