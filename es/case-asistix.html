@@ -2,13 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>ASISTIX · Caso operativo · Nexus Intelligence</title>
+  <title>Analítica de asistencia · Portafolio de Iván Solórzano</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Caso operativo ASISTIX: analítica y automatización para control de asistencia y justificantes usando Microsoft 365, Power Automate, SharePoint, Excel Online y Power BI."
+    content="Caso implementado por Iván Solórzano: analítica de asistencia, solicitudes de justificante, aprobaciones, evidencias y reporteo en Power BI con Microsoft 365."
   />
-
   <style>
     :root{
       --accent: #09be7a;
@@ -225,15 +224,15 @@
   <header>
     <nav class="nav">
       <div class="nav-left">
-        <span class="brand">Nexus Intelligence</span>
-        <a href="index.html" class="muted">← Volver al inicio</a>
+        <span class="brand">Iván Solórzano</span>
+        <a href="index.html" class="muted">← Volver al portafolio</a>
       </div>
       <div class="nav-links">
         <a href="#context">Contexto</a>
         <a href="#solution">Solución</a>
         <a href="#architecture">Modelo</a>
         <a href="#features">Funciones</a>
-        <a href="#metrics">Métricas</a>
+        <a href="#scope">Alcance</a>
         <a href="#screens">Pantallas</a>
       </div>
     </nav>
@@ -242,16 +241,18 @@
   <main>
     <section class="hero">
       <div>
-        <div class="pill"><span class="dot"></span> Caso operativo · Microsoft 365</div>
-        <h1>ASISTIX — Analítica y automatización de asistencia</h1>
+        <div class="pill"><span class="dot"></span> Caso implementado en RH · Microsoft 365</div>
+        <h1>Analítica de asistencia y automatización de justificantes</h1>
         <p class="muted">
-          Caso real de automatización y analítica para control de asistencia, solicitudes de justificante,
-          aprobaciones, evidencias y dashboards para RH y dirección usando herramientas Microsoft 365.
+          Caso implementado dentro del área de Recursos Humanos para control de asistencia,
+          solicitudes de justificante, aprobaciones, evidencias, trazabilidad operativa y
+          reporteo en Power BI. El caso se documenta en este portafolio bajo el nombre ASISTIX.
         </p>
 
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">
-            Contacto
+          <a class="btn btn-primary" href="index.html#cases">Ver portafolio</a>
+          <a class="btn" href="https://www.linkedin.com/in/ivansolorzanoidsp/" target="_blank" rel="noopener noreferrer">
+            LinkedIn
           </a>
         </div>
 
@@ -267,49 +268,50 @@
       <aside class="right-card">
         <h3 style="margin-top:0;">Datos rápidos</h3>
         <ul class="kvs">
-          <li><strong>Contexto:</strong> solución interna para organización pública</li>
+          <li><strong>Contexto:</strong> solución interna para una organización pública</li>
           <li><strong>Usuarios aproximados:</strong> 100</li>
-          <li><strong>Solicitudes mensuales:</strong> 450 aprox.</li>
-          <li><strong>Área usuaria:</strong> RH / Dirección / Jefaturas</li>
+          <li><strong>Solicitudes mensuales:</strong> aproximadamente 450</li>
+          <li><strong>Áreas usuarias:</strong> RH, jefaturas, empleados y dirección</li>
           <li><strong>Enfoque:</strong> trazabilidad, reporteo y control operativo</li>
         </ul>
       </aside>
     </section>
 
     <section id="context">
-      <h2>1) Contexto / problema</h2>
+      <h2>1) Contexto y problema</h2>
       <p>
-        El control de asistencias y justificantes estaba distribuido entre correos, archivos, registros manuales
-        y consultas operativas. Esto generaba riesgo de pérdida de información, criterios inconsistentes,
-        poca trazabilidad y dificultad para consolidar reportes para RH y dirección.
+        El control de asistencia y justificantes estaba distribuido entre correos,
+        archivos, registros manuales y consultas operativas recurrentes. Esto generaba
+        riesgo de pérdida de información, criterios inconsistentes, baja trazabilidad
+        y dificultad para consolidar reportes para Recursos Humanos y dirección.
       </p>
     </section>
 
     <section id="solution">
-      <h2>2) Solución</h2>
+      <h2>2) Solución implementada</h2>
       <div class="grid-2">
         <div class="card">
-          <h3>Entregables principales</h3>
+          <h3>Componentes principales</h3>
           <ul>
-            <li><strong>Captura centralizada</strong> de solicitudes mediante Microsoft Forms.</li>
+            <li><strong>Captura estandarizada</strong> de solicitudes mediante Microsoft Forms.</li>
             <li><strong>Flujos de aprobación</strong> con Power Automate, Outlook y reglas por tipo de solicitud.</li>
             <li><strong>Evidencia documental</strong> almacenada y vinculada mediante SharePoint.</li>
-            <li><strong>Bitácoras estructuradas</strong> en Excel Online como fuente operativa para consulta y reporteo.</li>
-            <li><strong>Dashboards Power BI</strong> para seguimiento de ausencias, retardos, justificantes e incidencias.</li>
+            <li><strong>Bitácoras operativas estructuradas</strong> en Excel Online.</li>
+            <li><strong>Dashboards en Power BI</strong> para ausencias, retardos, justificantes e incidencias.</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Flujo operativo</h3>
           <ul>
-            <li>Empleado envía solicitud con datos requeridos.</li>
-            <li>Power Automate aplica validaciones y envía aprobación.</li>
-            <li>Jefatura aprueba o rechaza.</li>
-            <li>Se notifica resultado y se registra en bitácora.</li>
-            <li>Power BI consume la información para reporteo operativo y ejecutivo.</li>
+            <li>El empleado envía una solicitud con la información requerida.</li>
+            <li>Power Automate aplica validaciones y envía la aprobación.</li>
+            <li>La jefatura correspondiente aprueba o rechaza.</li>
+            <li>El resultado se notifica y registra en la bitácora operativa.</li>
+            <li>Power BI utiliza la información consolidada para reporteo operativo y directivo.</li>
           </ul>
-          <p class="muted" style="margin-top:0.6rem;">
-            La solución ayudó a convertir un proceso manual en un flujo más estructurado, trazable y medible.
+          <p class="muted">
+            La solución convirtió un proceso manual en un flujo más estructurado, trazable y medible.
           </p>
         </div>
       </div>
@@ -317,13 +319,12 @@
 
     <section id="architecture">
       <h2>3) Modelo analítico y arquitectura</h2>
-
       <div class="grid-2">
         <div class="card">
           <h3>Modelo de datos</h3>
           <ul>
-            <li><strong>Calendario laboral empleado-día</strong> como base analítica central.</li>
-            <li><strong>Registros biométricos</strong> como fuente de eventos de entrada/salida.</li>
+            <li><strong>Calendario empleado-día</strong> como base analítica.</li>
+            <li><strong>Registros biométricos</strong> como fuente de eventos de entrada y salida.</li>
             <li><strong>Catálogos</strong> de empleados, horarios, días inhábiles y tipos de justificante.</li>
             <li><strong>Bitácoras de justificantes</strong> provenientes de formularios y registros operativos.</li>
           </ul>
@@ -333,8 +334,8 @@
           <h3>Automatización y reporteo</h3>
           <ul>
             <li><strong>Power Automate</strong> para validaciones, aprobaciones, notificaciones y registro de resultados.</li>
-            <li><strong>SharePoint</strong> para evidencia y archivos relacionados.</li>
-            <li><strong>Excel Online</strong> como bitácora operativa y fuente estructurada.</li>
+            <li><strong>SharePoint</strong> para evidencia y archivos de soporte.</li>
+            <li><strong>Excel Online</strong> como fuente operativa estructurada.</li>
             <li><strong>Power BI</strong> para modelos, medidas DAX, dashboards y análisis mensual.</li>
           </ul>
         </div>
@@ -345,85 +346,82 @@
       <h2>4) Funciones clave</h2>
       <div class="card">
         <ul>
-          <li><strong>Clasificación de incidencias:</strong> normal, retardo, falta, justificado o pendiente.</li>
+          <li><strong>Clasificación de asistencia:</strong> normal, retardo, falta, justificado o pendiente.</li>
           <li><strong>Ventanas de solicitud:</strong> control de periodos permitidos y reglas por tipo de justificante.</li>
           <li><strong>Trazabilidad:</strong> solicitante, aprobador, fecha, resultado, evidencia y estatus.</li>
-          <li><strong>Reporteo operativo:</strong> seguimiento por empleado, área, mes, tipo de incidencia y estatus.</li>
-          <li><strong>Modelo empleado-día:</strong> permite analizar qué debía ocurrir y qué ocurrió realmente.</li>
+          <li><strong>Reporteo operativo:</strong> análisis por empleado, área, mes, tipo de incidencia y estatus.</li>
+          <li><strong>Análisis empleado-día:</strong> comparación entre la asistencia esperada y la registrada.</li>
         </ul>
       </div>
     </section>
 
-    <section id="metrics">
+    <section id="scope">
       <h2>5) Métricas y alcance</h2>
       <div class="grid-2">
         <div class="card">
           <h3>Escala aproximada</h3>
           <ul>
-            <li><strong>Usuarios:</strong> 100 aprox.</li>
-            <li><strong>Solicitudes mensuales:</strong> 450 aprox.</li>
-            <li><strong>Fuentes:</strong> Forms, Excel Online, SharePoint, SQL/MySQL, sistema biométrico.</li>
-            <li><strong>Reportes:</strong> seguimiento operativo y ejecutivo en Power BI.</li>
+            <li><strong>Usuarios:</strong> aproximadamente 100</li>
+            <li><strong>Solicitudes mensuales:</strong> aproximadamente 450</li>
+            <li><strong>Fuentes:</strong> Forms, Excel Online, SharePoint, SQL/MySQL y datos biométricos</li>
+            <li><strong>Reportes:</strong> seguimiento operativo y directivo en Power BI</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Indicadores trabajados</h3>
+          <h3>Indicadores analizados</h3>
           <ul>
             <li>Ausencias y retardos.</li>
-            <li>Justificantes aprobados, rechazados o pendientes.</li>
+            <li>Solicitudes aprobadas, rechazadas y pendientes.</li>
             <li>Incidencias por área, empleado y periodo.</li>
             <li>Empleados con incidencias recurrentes.</li>
-            <li>Seguimiento mensual para RH y dirección.</li>
+            <li>Seguimiento mensual para Recursos Humanos y dirección.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section id="screens">
-      <h2>6) Pantallas</h2>
-      <p class="muted">
-        Capturas representativas del flujo de captura, aprobación, evidencia y reporteo.
-      </p>
+    <section id="next">
+      <h2>6) Posibles mejoras</h2>
+      <div class="card">
+        <ul>
+          <li>Migrar las bitácoras operativas de Excel Online a Dataverse.</li>
+          <li>Agregar recordatorios y escalamiento automático para aprobaciones pendientes.</li>
+          <li>Formalizar ambientes Dev/Test/Prod para despliegues controlados.</li>
+          <li>Ampliar dashboards con tendencias, recurrencia y tiempos de respuesta.</li>
+        </ul>
+      </div>
+    </section>
 
+    <section id="screens">
+      <h2>7) Pantallas</h2>
+      <p class="muted">Capturas representativas de la solución implementada.</p>
       <div class="grid-2">
         <figure>
-          <img src="../asistix-01-form.png" alt="ASISTIX - Formulario Microsoft Forms con ramificación" loading="lazy" />
-          <figcaption>1) Formulario de captura con campos requeridos y lógica por tipo de solicitud.</figcaption>
+          <img src="../asistix-01-form.png" alt="Formulario de solicitud de justificante en Microsoft Forms" loading="lazy" />
+          <figcaption>1) Formulario estandarizado con campos requeridos y lógica de ramificación.</figcaption>
         </figure>
 
         <figure>
-          <img src="../asistix-02-approval-email.png" alt="ASISTIX - Ejemplo de correo de aprobación" loading="lazy" />
-          <figcaption>2) Correo de aprobación con resultado aprobar/rechazar y trazabilidad.</figcaption>
+          <img src="../asistix-02-approval-email.png" alt="Correo de aprobación de justificante laboral" loading="lazy" />
+          <figcaption>2) Correo de aprobación con acciones de aprobar o rechazar y trazabilidad.</figcaption>
         </figure>
 
         <figure>
-          <img src="../asistix-03-sharepoint-evidence.png" alt="ASISTIX - Evidencia en SharePoint" loading="lazy" />
+          <img src="../asistix-03-sharepoint-evidence.png" alt="Evidencia de justificante almacenada en SharePoint" loading="lazy" />
           <figcaption>3) Evidencia almacenada en SharePoint y vinculada al registro.</figcaption>
         </figure>
 
         <figure>
-          <img src="../asistix-04-powerbi-kpis.png" alt="ASISTIX - KPIs en Power BI" loading="lazy" />
-          <figcaption>4) KPIs en Power BI para seguimiento operativo del periodo.</figcaption>
+          <img src="../asistix-04-powerbi-kpis.png" alt="KPIs de asistencia y justificantes en Power BI" loading="lazy" />
+          <figcaption>4) Indicadores en Power BI para seguimiento operativo.</figcaption>
         </figure>
-      </div>
-    </section>
-
-    <section id="next">
-      <h2>7) Mejoras futuras</h2>
-      <div class="card">
-        <ul>
-          <li>Migrar bitácoras operativas desde Excel Online hacia Dataverse para mayor gobernanza.</li>
-          <li>Agregar recordatorios automáticos y escalamiento de aprobaciones pendientes.</li>
-          <li>Formalizar ambientes Dev/Test/Prod para empaquetado y despliegue controlado.</li>
-          <li>Ampliar dashboards con métricas de tendencia, recurrencia y tiempos de respuesta.</li>
-        </ul>
       </div>
     </section>
   </main>
 
   <footer>
-    © <span id="year"></span> Nexus Intelligence · Casos y portafolio
+    © <span id="year"></span> Iván Solórzano · Portafolio Nexus Intelligence
   </footer>
 
   <script>
