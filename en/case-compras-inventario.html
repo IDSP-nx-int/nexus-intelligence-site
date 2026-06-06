@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Procurement & Inventory MVP · Nexus Intelligence</title>
+  <title>Procurement &amp; Inventory MVP · Ivan Solorzano Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio MVP in Dataverse and Power Apps Model-Driven for procurement, requisitions, purchase orders, inventory, and approvals." />
+  <meta name="description" content="Portfolio MVP developed by Ivan Solorzano with Dataverse and Power Apps Model-driven Apps for procurement, requisitions, purchase orders, inventory, business process flows, and approvals." />
   <style>
     :root{
       --accent:#09be7a;
@@ -108,15 +108,15 @@
   <header>
     <nav class="nav">
       <div class="nav-left">
-        <span class="brand">Nexus Intelligence</span>
-        <a href="index.html" class="muted">← Back to Home</a>
+        <span class="brand">Ivan Solorzano</span>
+        <a href="index.html" class="muted">← Back to Portfolio</a>
       </div>
       <div class="nav-links">
         <a href="#context">Context</a>
         <a href="#solution">Solution</a>
         <a href="#architecture">Model</a>
         <a href="#features">Features</a>
-        <a href="#metrics">Scope</a>
+        <a href="#scope">Scope</a>
         <a href="#screens">Screens</a>
       </div>
     </nav>
@@ -124,67 +124,153 @@
   <main>
     <section class="hero">
       <div>
-        <div class="pill"><span class="dot"></span> Portfolio · Dataverse · Model-driven App</div>
-        <h1>Procurement & Inventory MVP</h1>
-        <p class="muted">Portfolio MVP developed in Dataverse and Power Apps Model-Driven to practice procurement, requisitions, purchase orders, inventory, Business Process Flows, and approval patterns with Power Automate.</p>
+        <div class="pill"><span class="dot"></span> Portfolio MVP · Dataverse · Model-driven App</div>
+        <h1>Procurement &amp; Inventory MVP</h1>
+        <p class="muted">A technical portfolio project developed with Dataverse and Power Apps Model-driven Apps to demonstrate procurement, requisition, purchase order, inventory, Business Process Flow, and approval patterns.</p>
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="https://wa.me/528443623217" target="_blank" rel="noopener noreferrer">Contact</a>
+          <a class="btn btn-primary" href="index.html#portfolio">View Portfolio</a>
+          <a class="btn" href="https://www.linkedin.com/in/ivansolorzanoidsp/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
       <aside class="right-card">
         <h3 style="margin-top:0;">Quick facts</h3>
-        <ul class="kvs"><li><strong>Type:</strong> portfolio MVP</li>
-<li><strong>Modules:</strong> Requisitions, Purchase Orders, Inventory, Catalogs</li>
-<li><strong>BPFs:</strong> 2, Requisition and Purchase Order</li>
-<li><strong>Flows:</strong> basic approvals with Power Automate</li>
-<li><strong>Dashboards:</strong> not included in this version</li></ul>
+        <ul class="kvs">
+          <li><strong>Type:</strong> Technical portfolio MVP</li>
+          <li><strong>Modules:</strong> Requisitions, Purchase Orders, Inventory, Catalogs</li>
+          <li><strong>BPFs:</strong> Requisition and Purchase Order</li>
+          <li><strong>Flows:</strong> Basic approvals with Power Automate</li>
+          <li><strong>Status:</strong> Prototype, not a production deployment</li>
+        </ul>
       </aside>
     </section>
+
     <section id="context">
-<h2>1) Context / objective</h2>
-<p>This MVP was built as a portfolio project to practice Dataverse data modeling, model-driven apps, process guidance with Business Process Flows, and approval automation.</p><p>Procurement and inventory was selected because it represents real relationships between products, suppliers, projects, requisitions, purchase orders, and inventory movements.</p>
-</section>
-<section id="solution">
-<h2>2) Implemented solution</h2>
-<div class='grid-2'><div class='card'><h3>MVP core</h3><ul><li><strong>Model-driven app</strong> organized by procurement, inventory, projects, and catalogs.</li><li><strong>Dataverse model</strong> with related operational and catalog tables.</li><li><strong>Requisition BPF</strong>: capture, approval request, resolution, and closing.</li><li><strong>Purchase Order BPF</strong>: capture, approval, issuing, and follow-up.</li><li><strong>Approval flows</strong> with Power Automate and Dataverse status updates.</li></ul></div><div class='card'><h3>Design approach</h3><ul><li>Separation between operational entities and catalogs.</li><li>Use of lookups, choices, and relationships to reduce free-text capture.</li><li>Stage-based process guidance to organize user execution.</li><li>Foundation prepared for future business rules, validations, and reporting.</li></ul></div></div>
-</section>
-<section id="architecture">
-<h2>3) Model and structure</h2>
-<div class='grid-2'><div class='card'><h3>Data model</h3><ul><li>Products, suppliers, customers, and projects as base entities.</li><li>Requisitions and purchase orders as transactional entities.</li><li>Inventory movements and balances for operational tracking.</li><li>Relationships designed to support forms, views, BPFs, and flows.</li></ul></div><div class='card'><h3>Automation</h3><ul><li>Business Process Flows to guide requisition and purchase order stages.</li><li>Power Automate Approvals to approve or reject requests.</li><li>Status fields updated in Dataverse based on the approval outcome.</li><li>Foundation to incorporate inventory validations and authorization rules.</li></ul></div></div>
-</section>
-<section id="features">
-<h2>4) Key features</h2>
-<div class='card'><ul><li><strong>Process-guided UX:</strong> visible stages through Business Process Flows.</li><li><strong>Relational model:</strong> catalogs referenced by lookups instead of free text.</li><li><strong>Basic approvals:</strong> approved/rejected result reflected in Dataverse.</li><li><strong>Inventory structure:</strong> movements and balances ready to evolve into stronger rules.</li><li><strong>Visual documentation:</strong> screenshots of tables, columns, BPFs, flows, and sitemap.</li></ul></div>
-</section>
-<section id="metrics">
-<h2>5) Scope</h2>
-<div class='grid-2'><div class='card'><h3>Included</h3><ul><li>Main tables for products, suppliers, customers, and projects.</li><li>Requisitions, purchase orders, and detail lines.</li><li>Inventory: movements and balances.</li><li>Two Business Process Flows.</li><li>Basic approval flows.</li></ul></div><div class='card'><h3>Not included in this version</h3><ul><li>Power BI dashboards.</li><li>Complete role and permission matrix.</li><li>Formal Dev/Test/Prod ALM.</li><li>Load testing or production hardening.</li></ul></div></div>
-</section>
-<section id="next">
-<h2>7) Next improvements</h2>
-<div class='card'><ul><li>Add role matrix: requester, approver, procurement, and warehouse.</li><li>Add inventory rules: no negative stock, movement types, and audit trail.</li><li>Add operational dashboards: backlog, cycle time, and aging approvals.</li><li>Formalize ALM: managed solution, environment variables, and connection references.</li></ul></div>
-</section>
+      <h2>1) Context and objective</h2>
+      <p>This MVP was created as a portfolio project to practice Dataverse data modeling, model-driven app configuration, Business Process Flows, and approval automation.</p>
+      <p>Procurement and inventory were selected because they involve clear relationships between products, suppliers, projects, requisitions, purchase orders, and inventory movements.</p>
+    </section>
+
+    <section id="solution">
+      <h2>2) Implemented solution</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>MVP core</h3>
+          <ul>
+            <li><strong>Model-driven app</strong> organized into procurement, inventory, projects, and catalogs.</li>
+            <li><strong>Dataverse model</strong> with related operational and catalog tables.</li>
+            <li><strong>Requisition BPF</strong> covering capture, approval request, resolution, and closing.</li>
+            <li><strong>Purchase Order BPF</strong> covering capture, approval, issuing, and follow-up.</li>
+            <li><strong>Approval flows</strong> with Power Automate and Dataverse status updates.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Design approach</h3>
+          <ul>
+            <li>Separation of transactional tables and reusable catalogs.</li>
+            <li>Use of lookups, choices, and relationships to reduce free-text capture.</li>
+            <li>Stage-based process guidance for more consistent user execution.</li>
+            <li>Foundation prepared for future rules, validations, permissions, and reporting.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture">
+      <h2>3) Data model and automation</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Data model</h3>
+          <ul>
+            <li>Products, suppliers, customers, and projects as base tables.</li>
+            <li>Requisitions and purchase orders as transactional tables.</li>
+            <li>Inventory movements and balances for operational tracking.</li>
+            <li>Relationships designed to support forms, views, BPFs, and flows.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Automation</h3>
+          <ul>
+            <li>Business Process Flows for requisition and purchase order stages.</li>
+            <li>Power Automate approvals for approve/reject decisions.</li>
+            <li>Status updates in Dataverse based on approval outcomes.</li>
+            <li>Foundation for inventory validations and authorization rules.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2>4) Key features</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Process-guided user experience:</strong> visible stages through Business Process Flows.</li>
+          <li><strong>Relational structure:</strong> catalogs referenced through lookups instead of free text.</li>
+          <li><strong>Basic approvals:</strong> approval results reflected in Dataverse status fields.</li>
+          <li><strong>Inventory foundation:</strong> movements and balances prepared for stronger future rules.</li>
+          <li><strong>Visual documentation:</strong> screenshots of tables, columns, BPFs, flows, and sitemap.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="scope">
+      <h2>5) Scope</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Included</h3>
+          <ul>
+            <li>Main tables for products, suppliers, customers, and projects.</li>
+            <li>Requisitions, purchase orders, and line items.</li>
+            <li>Inventory movements and balances.</li>
+            <li>Two Business Process Flows.</li>
+            <li>Basic approval flows.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Not included in this version</h3>
+          <ul>
+            <li>Power BI dashboards.</li>
+            <li>Complete role and permission matrix.</li>
+            <li>Formal Dev/Test/Prod ALM.</li>
+            <li>Load testing or production hardening.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="next">
+      <h2>6) Potential next improvements</h2>
+      <div class="card">
+        <ul>
+          <li>Add role-based access for requester, approver, procurement, and warehouse users.</li>
+          <li>Add inventory rules such as no negative stock, movement types, and audit history.</li>
+          <li>Add operational dashboards for backlog, cycle time, and aging approvals.</li>
+          <li>Formalize ALM with managed solutions, environment variables, and connection references.</li>
+        </ul>
+      </div>
+    </section>
 
     <section id="screens">
-      <h2>Screens</h2>
-      <p class="muted">Representative screenshots of the solution.</p>
-      <div class="grid-2"><figure><img src="../adm-01-landing-navigation.png" alt="Procurement and Inventory MVP - module navigation" loading="lazy" /><figcaption>1) Module navigation inside the model-driven app.</figcaption></figure>
-<figure><img src="../adm-02-solution-objects-overview.png" alt="Procurement and Inventory MVP - solution objects" loading="lazy" /><figcaption>2) Solution objects overview: tables, processes, and flows.</figcaption></figure>
-<figure><img src="../ADM_ERD_Dataverse.png" alt="Procurement and Inventory MVP - Dataverse ERD" loading="lazy" /><figcaption>3) ERD: relationships between main tables.</figcaption></figure>
-<figure><img src="../adm-04-tables-list.png" alt="Procurement and Inventory MVP - tables list" loading="lazy" /><figcaption>4) Table inventory included in the MVP.</figcaption></figure>
-<figure><img src="../adm-05-requisicion-columns.png" alt="Procurement and Inventory MVP - requisition columns" loading="lazy" /><figcaption>5) Requisition: key columns, lookups, and choices.</figcaption></figure>
-<figure><img src="../adm-06-ordencompra-columns.png" alt="Procurement and Inventory MVP - purchase order columns" loading="lazy" /><figcaption>6) Purchase Order: key columns and relationships.</figcaption></figure>
-<figure><img src="../adm-07-inventariomovimiento-columns.png" alt="Procurement and Inventory MVP - inventory movement columns" loading="lazy" /><figcaption>7) Inventory Movement: movement fields and references.</figcaption></figure>
-<figure><img src="../adm-08-pages-sitemap.png" alt="Procurement and Inventory MVP - sitemap" loading="lazy" /><figcaption>8) Sitemap: navigation structure by module.</figcaption></figure>
-<figure><img src="../adm-09-ordencompra-form-bpf.png" alt="Procurement and Inventory MVP - purchase order form with BPF" loading="lazy" /><figcaption>9) Purchase Order: form with process bar.</figcaption></figure>
-<figure><img src="../adm-10-requisicion-form-bpf.png" alt="Procurement and Inventory MVP - requisition form with BPF" loading="lazy" /><figcaption>10) Requisition: form with process bar.</figcaption></figure>
-<figure><img src="../adm-11-bpf-requisicion.png" alt="Procurement and Inventory MVP - requisition BPF" loading="lazy" /><figcaption>11) BPF: requisition process.</figcaption></figure>
-<figure><img src="../adm-12-flow-aprobacion-rq.png" alt="Procurement and Inventory MVP - requisition approval flow" loading="lazy" /><figcaption>12) RQ flow: approval and status update.</figcaption></figure>
-<figure><img src="../adm-13-bpf-ordencompra.png" alt="Procurement and Inventory MVP - purchase order BPF" loading="lazy" /><figcaption>13) BPF: purchase order process.</figcaption></figure>
-<figure><img src="../adm-14-flow-aprobacion-oc.png" alt="Procurement and Inventory MVP - purchase order approval flow" loading="lazy" /><figcaption>14) OC flow: approval and status update.</figcaption></figure></div>
+      <h2>7) Screens</h2>
+      <p class="muted">Representative screenshots of the MVP.</p>
+      <div class="grid-2">
+        <figure><img src="../adm-01-landing-navigation.png" alt="Procurement and Inventory MVP module navigation" loading="lazy" /><figcaption>1) Module navigation inside the model-driven app.</figcaption></figure>
+        <figure><img src="../adm-02-solution-objects-overview.png" alt="Procurement and Inventory MVP solution objects" loading="lazy" /><figcaption>2) Solution objects overview: tables, processes, and flows.</figcaption></figure>
+        <figure><img src="../ADM_ERD_Dataverse.png" alt="Procurement and Inventory MVP Dataverse ERD" loading="lazy" /><figcaption>3) Entity relationship diagram for the main tables.</figcaption></figure>
+        <figure><img src="../adm-04-tables-list.png" alt="Procurement and Inventory MVP tables list" loading="lazy" /><figcaption>4) Tables included in the MVP.</figcaption></figure>
+        <figure><img src="../adm-05-requisicion-columns.png" alt="Procurement and Inventory MVP requisition columns" loading="lazy" /><figcaption>5) Requisition columns, lookups, and choices.</figcaption></figure>
+        <figure><img src="../adm-06-ordencompra-columns.png" alt="Procurement and Inventory MVP purchase order columns" loading="lazy" /><figcaption>6) Purchase Order columns and relationships.</figcaption></figure>
+        <figure><img src="../adm-07-inventariomovimiento-columns.png" alt="Procurement and Inventory MVP inventory movement columns" loading="lazy" /><figcaption>7) Inventory Movement fields and references.</figcaption></figure>
+        <figure><img src="../adm-08-pages-sitemap.png" alt="Procurement and Inventory MVP sitemap" loading="lazy" /><figcaption>8) Sitemap organized by module.</figcaption></figure>
+        <figure><img src="../adm-09-ordencompra-form-bpf.png" alt="Purchase order form with Business Process Flow" loading="lazy" /><figcaption>9) Purchase Order form with process stages.</figcaption></figure>
+        <figure><img src="../adm-10-requisicion-form-bpf.png" alt="Requisition form with Business Process Flow" loading="lazy" /><figcaption>10) Requisition form with process stages.</figcaption></figure>
+        <figure><img src="../adm-11-bpf-requisicion.png" alt="Requisition Business Process Flow" loading="lazy" /><figcaption>11) Requisition Business Process Flow.</figcaption></figure>
+        <figure><img src="../adm-12-flow-aprobacion-rq.png" alt="Requisition approval flow" loading="lazy" /><figcaption>12) Requisition approval and status-update flow.</figcaption></figure>
+        <figure><img src="../adm-13-bpf-ordencompra.png" alt="Purchase order Business Process Flow" loading="lazy" /><figcaption>13) Purchase Order Business Process Flow.</figcaption></figure>
+        <figure><img src="../adm-14-flow-aprobacion-oc.png" alt="Purchase order approval flow" loading="lazy" /><figcaption>14) Purchase Order approval and status-update flow.</figcaption></figure>
+      </div>
     </section>
   </main>
-  <footer>© <span id="year"></span> Nexus Intelligence · Portfolio</footer>
+  <footer>© <span id="year"></span> Ivan Solorzano · Nexus Intelligence Portfolio</footer>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
